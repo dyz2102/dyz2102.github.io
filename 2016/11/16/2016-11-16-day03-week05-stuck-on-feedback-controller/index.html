@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="##Objective
-Today we went over User Story again and came up with a series of tasks, which would change our app from a site where admins matched users on dates, to users (“askers”) requesting dates and">
+<meta name="description" content="Objective
+Today we went over User Story again and came up with a series of tasks, which would change our app from a site where admins matched users on dates, to users (“askers”) requesting dates and h">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Day03 Week05 - Stuck on "Feedback" Controller">
 <meta property="og:url" content="http://yoursite.com/2016/11/16/2016-11-16-day03-week05-stuck-on-feedback-controller/index.html">
 <meta property="og:site_name" content="DYZ的笔记">
-<meta property="og:description" content="##Objective
-Today we went over User Story again and came up with a series of tasks, which would change our app from a site where admins matched users on dates, to users (“askers”) requesting dates and">
-<meta property="og:updated_time" content="2016-12-17T06:10:34.000Z">
+<meta property="og:description" content="Objective
+Today we went over User Story again and came up with a series of tasks, which would change our app from a site where admins matched users on dates, to users (“askers”) requesting dates and h">
+<meta property="og:updated_time" content="2016-12-17T19:24:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day03 Week05 - Stuck on "Feedback" Controller">
-<meta name="twitter:description" content="##Objective
-Today we went over User Story again and came up with a series of tasks, which would change our app from a site where admins matched users on dates, to users (“askers”) requesting dates and">
+<meta name="twitter:description" content="Objective
+Today we went over User Story again and came up with a series of tasks, which would change our app from a site where admins matched users on dates, to users (“askers”) requesting dates and h">
 
 
 
@@ -321,19 +321,19 @@ Today we went over User Story again and came up with a series of tasks, which wo
       
 
       
-        <p>##Objective</p>
+        <p><strong>Objective</strong></p>
 <p>Today we went over User Story again and came up with a series of tasks, which would change our app from a site where admins matched users on dates, to users (“askers”) requesting dates and having post owners (“posters”) deciding who to pick. The most important of which were: building an <code>asker_request</code> relationship that askers would generate once they request a date; building a separate <code>order_two</code> model that would hold 1 post (date, which includes 1 user who posted the post) and 1 user (asker). Other tasks involved further enhancing webpage views, connecting various pages and adding to forms, building an <code>interests</code> model to hold interest tags of users, as well as making the <code>feedback</code> model more usable.</p>
 <p>My main focus has been on the <code>feedback</code> model. I’m nearly done but still has one but yet to be fixed regarding deletion (I believe).</p>
-<p>##Reflective</p>
+<p><strong>Reflective</strong></p>
 <p>Today was bad because it’s my second time being late to our morning meeting, prompting everyone to ask me what’s going on. I have a chronic bad habit of staying up late, and it’s something I <em>really really really</em> need to fix.</p>
 <p>For this reason I’m going to leave my computer at the classroom so that I can go home and sleep right away tonight.</p>
 <p>With regards to the project, I learned a lot about routing and CRUD today through practice. My first version of <code>feedback</code> MVC was terribly written with many unused CRUD actions in different controllers, and view files that weren’t being accessed - it was all over the place.</p>
 <p>I saved a version and restarted the MVC codes, only this time I wrote down before hand which pages needed to be made and which actions were needed in which controllers. This made things much more clear and I was able to get all the URLs to display correctly (e.g. <code>admin/order/5/feedback/2/edit</code>, instead of <code>admin/feedback/2/edit</code>).</p>
 <p>However, there is still an issue outstanding whereby if the admin deletes a feedback in the console, then when a new feedback is written it cannot be found by the current code (off by 1 id). I’ve worked on this the past couple hours to no avail. Hopefully we can figure this out tomorrow.</p>
-<p>##Interpretive</p>
+<p><strong>Interpretive</strong></p>
 <p>A key learning today was the importance to plan ahead when writing controllers that are accessed by multiple namespaces, it’s simply too confusing if you code on the fly.</p>
 <p>Another key learning today was how to submit form info into a specific route. So we’ve learned from <em>rails101</em> project that if you want to submit to <code>posts</code> under <code>groups</code>, then the form should have <code>form_for [@group,@post] do |post|</code>. And yesterday we figured out that to submit under a namespace would be <code>form_for [:admin,@post] do |post|</code>. Combining the two together we’d get <code>[form_for [:admin,@order,@feedback] do |feedback|</code> for something to be submitted in namespace “admin” and under an “order” resources.</p>
-<p>##Decisional</p>
+<p><strong>Decisional</strong></p>
 <p>Today was very challenging in general given both a bad start and a tough problem to tackle. Tomorrow I’ll get the day started early and hopefully crack the <code>feedback</code> CRUD issue.</p>
 
       
@@ -445,7 +445,7 @@ Today we went over User Story again and came up with a series of tasks, which wo
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">67</span>
+              <span class="site-state-item-count">65</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

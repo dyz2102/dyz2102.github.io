@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="##Objective
-Today we discussed the User Story further and came up with a number of tasks that could be added to the existing project. The tasks were mainly around posts and admin views. I took on the">
+<meta name="description" content="Objective
+Today we discussed the User Story further and came up with a number of tasks that could be added to the existing project. The tasks were mainly around posts and admin views. I took on the ta">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Day02 Week05 - Building Mailer and Model "feedbacks"">
 <meta property="og:url" content="http://yoursite.com/2016/11/15/2016-11-15-day02-week05-building-mailer-and-model-feedbacks/index.html">
 <meta property="og:site_name" content="DYZ的笔记">
-<meta property="og:description" content="##Objective
-Today we discussed the User Story further and came up with a number of tasks that could be added to the existing project. The tasks were mainly around posts and admin views. I took on the">
-<meta property="og:updated_time" content="2016-12-17T06:10:34.000Z">
+<meta property="og:description" content="Objective
+Today we discussed the User Story further and came up with a number of tasks that could be added to the existing project. The tasks were mainly around posts and admin views. I took on the ta">
+<meta property="og:updated_time" content="2016-12-17T19:24:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day02 Week05 - Building Mailer and Model "feedbacks"">
-<meta name="twitter:description" content="##Objective
-Today we discussed the User Story further and came up with a number of tasks that could be added to the existing project. The tasks were mainly around posts and admin views. I took on the">
+<meta name="twitter:description" content="Objective
+Today we discussed the User Story further and came up with a number of tasks that could be added to the existing project. The tasks were mainly around posts and admin views. I took on the ta">
 
 
 
@@ -321,15 +321,15 @@ Today we discussed the User Story further and came up with a number of tasks tha
       
 
       
-        <p>##Objective</p>
+        <p><strong>Objective</strong></p>
 <p>Today we discussed the User Story further and came up with a number of tasks that could be added to the existing project. The tasks were mainly around <code>posts</code> and <code>admin</code> views. I took on the tasks of adding in the <code>OrderMailer</code> where appropriate, as well as adding in a new model for <code>feedback</code> which is something the users add every time a meeting took place, the content of which will be used to generate a <strong>“experiences page”</strong> later on.</p>
-<p>##Reflective</p>
+<p><strong>Reflective</strong></p>
 <p>Generating the mailer was more difficult than I expected, as this time I wanted to be more thorough. For instance, in our current app, we have 2 individuals meeting. Once they’re assigned, an automated message should be sent to 2 people instead of 1. Also, when a meeting sucessfully takes place, the congratulatory email should also be <em>bcc-ed</em> to admins so we know an order is complete.</p>
 <p>The <code>feedback</code> model was also much more challenging than expected. As both user and admin needed to access and edit feedbacks in their control panels, there needed be 3 controllers, each with certain parts of CRUD and also some view pages to go with the controllers.</p>
-<p>##Interpretive</p>
+<p><strong>Interpretive</strong></p>
 <p>I learned about manipulating the form code to <code>[:admin, @feedbacks]</code> to have path for information entered through <code>admin/feedbacks_controller</code>. Also learned to assign 2 email addresses to a variable and then call that variable in Mailer to send to multiple people, and the code to find all admin emails is <code>@admin_recipients = @admin.select(:email).map(&amp;:email)</code>. Also just felt in general I can create CRUD much faster than before.</p>
 <p>Because we are now in new territory from previous projects, a lot of the times we are left on our own to de-bug a certain issue. This requires me to be more familiar with the rails console, which I am still learning.</p>
-<p>##Decisional</p>
+<p><strong>Decisional</strong></p>
 <p>Today was productive but we’ve come to realization of certain parts of our app that’s going to be very difficult to build, such as expanding to a 2 x 2 functionality. We will plow through the week to get all the basics done with 1 x 1 functions and see if we can work on a 2 x 2 version next week.</p>
 
       
@@ -441,7 +441,7 @@ Today we discussed the User Story further and came up with a number of tasks tha
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">67</span>
+              <span class="site-state-item-count">65</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

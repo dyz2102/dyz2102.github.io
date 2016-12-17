@@ -94,7 +94,7 @@ I also succe">
 <meta property="og:description" content="##Observation
 Starting today I’m going to add a title to each blog post instead of the generic title of “DayXX WeekXX” so that I can tell from the title roughly what I’d be writing about.
 I also succe">
-<meta property="og:updated_time" content="2016-12-17T06:10:34.000Z">
+<meta property="og:updated_time" content="2016-12-17T19:24:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day03 Week03 - Shopping Site with Order Status">
 <meta name="twitter:description" content="##Observation
@@ -328,14 +328,14 @@ I also succe">
 <p>Starting today I’m going to add a title to each blog post instead of the generic title of “DayXX WeekXX” so that I can tell from the title roughly what I’d be writing about.</p>
 <p>I also successfully built the mailer function and allowed it to be previewed locally using <em>gem letter_openter</em>. But because the homework instruction has asked that we “complete the formatting” for the emails, I have not submitted the mail function screenshots. I learned that emails cannot be formatted as easily because once it’s sent out it cannot read a separate <em>.css</em> file for formatting so all of the CSS need to be written inline. This would take forever given my lack of experience writing CSS, so I took some time figuring out how to use gems to help… but still working on it so more on that later when I have it all figured out.</p>
 <p>I built the <code>admin/orders</code> page to view all orders without referencing any previous homework instructions, but by referencing the previous <em>job-listing</em> and <em>rails103</em> homeworks codes.</p>
-<p>##Reflective</p>
+<p><strong>Reflective</strong></p>
 <p>The highlight today was when I <em>logically</em> figured out how to route <code>admin/orders</code> destroy action correctly between the Controller and Views. So up to this point, I would often copy/paste an CRUD action definition from another controller or a previous project, and test whether it would work for the current controller by trial-and-error. But this time I understood that because <em>destroy</em> method works on a single order, thus the order must be found, and the finding should be based on the token which was pre-generated when each order is <em>created</em>, so <code>find_by_token(params[:id])</code> </p>
 <p>The low point today was when I tried to look up how to use <code>gem roadie</code> to figure out how email formatting works, it was not immediately clear to me how to do so. I found this website (<a href="https://cookieshq.co.uk/posts/how-to-style-emails-with-rails-and-roadie/" target="_blank" rel="external">https://cookieshq.co.uk/posts/how-to-style-emails-with-rails-and-roadie/</a>) that seemed to have a very good instruction on how to build good-looking emails, but I couldn’t follow the instructions entirely. I couldn’t understand the following lines:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">3. Separate HTML (I&apos;ve put it into HAML for readability) from the CSS. Put the HAML file in your app/views/layouts folder and the CSS on your app/assets/stylesheets folder.</div><div class="line"></div><div class="line">4. Add email.css to the asset precompilation line on your application.rb.</div><div class="line"></div><div class="line">5. Tell your mailer, or some of your emails methods, to use the layout you just created. This is very easy and explained on the Rails Guides</div><div class="line"></div><div class="line">6. Get your layout to yield for the contents in your email views. As you will be working with tables, it could be a good a idea to have the main table in the layout, and the rows corresponding for the header and the footer in the layout as well. In the gist linked before, you can see an example, but it will vary depending on your template.</div><div class="line"></div><div class="line">7. Adapt your mailer views to work as (or within) a table.</div></pre></td></tr></table></figure>
 <p>I will get some help on using <em>gem roadie</em> and see if I can get it working once I’ve completed the other development-oriented tasks.</p>
-<p>##Interpretive</p>
+<p><strong>Interpretive</strong></p>
 <p>One thing I realized is that working on beautifying an app can take a very long time. Bootstrap is great, but it has <em>one</em> theme, a very “bootstrapped” theme. So while its functions can be tested, it could never make the kind of visual impact I’d like without some level of customization, or better yet, an entirely new theme from a shrewd designer.</p>
-<p>##Decisional</p>
+<p><strong>Decisional</strong></p>
 <p>Tomorrow I will work more efficiently and try to catch up with the tasks given. I think deployment will cause some headaches (with the mailer, key, and everything else that’s different from developmeent environment).</p>
 
       
@@ -447,7 +447,7 @@ I also succe">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">67</span>
+              <span class="site-state-item-count">65</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

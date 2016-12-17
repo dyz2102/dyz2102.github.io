@@ -99,7 +99,7 @@
 #Reflective-反应性
 直到昨天晚上，整个组的还是士气高昂的。可能是因为老师一直在夸奖我们的前端">
 <meta property="og:image" content="http://user-image.logdown.io/user/19391/blog/18870/post/1124801/H5drvzWgTuqaBm6LVrdR_Screen%20Shot%202016-11-20%20at%206.21.02%20PM.png">
-<meta property="og:updated_time" content="2016-12-17T06:10:34.000Z">
+<meta property="og:updated_time" content="2016-12-17T19:24:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Week05 - Weekly Summary - Group Project First Demo Stage">
 <meta name="twitter:description" content="#Objective-客观性
@@ -337,7 +337,7 @@
 <p>今天成功完成了demo。为了顺利完成demo，我们昨天临时将部分还未完善的功能临时删除处理，例如Feedback的修改、删除，OrderTwo在邀约方后台无法查看等。下午我们花了很多时间深度分享了一下本周作为团队一起做项目的第一个星期。</p>
 <p>#Reflective-反应性</p>
 <p>直到昨天晚上，整个组的还是士气高昂的。可能是因为老师一直在夸奖我们的前端完整度，所以我们一直以为自己走在整个cohort的前面。但今天demo的时候才发现，原来好几个团队不仅将前端也用简单大方的视觉方式展现，同时也实现了一些我们尚未实现的功能（如五星打分、聊天框等）。这让最后一组展示的我们有些措手不及，也影响了demo时的临时表现。尽管团队认为demo的整体效果和逻辑还是不错的，但在presentation方面其实可以做到更好。</p>
-<p>##Interpretive-诠释性</p>
+<p><strong>Interpretive</strong>-诠释性</p>
 <p>下午分享会时，我分享了本周最大的收获和最大的坑：</p>
 <p>###最大收获</p>
 <p>本周最大收获当属深刻意识到提前规划的重要性。不仅仅是宏观层面从项目的目的、目标、功能的排期和分工而言，而在微观层面，个人对功能实现时的提前思考也是非常重要的。</p>
@@ -352,7 +352,7 @@
 <p>而此时想要在<code>order_two</code>的controller下找到edit的路径，则需要这样写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;% @order_twos.each do |order| %&gt;</div><div class="line">...</div><div class="line">&lt;% order.feedbacks.where(:user_id =&gt; current_user).each do |feedback| %&gt;</div><div class="line">...</div><div class="line">&lt;%= link_to(&quot;修改反馈&quot;, edit_account_order_two_feedback_path(order.id, feedback.id), class: &quot;btn btn-sm btn-default outline&quot;) %&gt;</div><div class="line">&lt;% end %&gt;</div><div class="line">&lt;% end %&gt;</div></pre></td></tr></table></figure></p>
 <p>以上代码是在同一页面上，在每一个<code>order_two</code>下面的每一个<code>order.feedback</code>里找到edit的路径。这里的重点在于edit路径中的`(order.id, feedback.id），因为在route中这里需要两个数值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/account/order_twos/:order_two_id/feedbacks/:id/edit</div></pre></td></tr></table></figure></p>
 <p>所以提供的第一个是order的id，第二个是feedback的id（感谢梁超教会我这里括号内信息的意思）。</p>
-<p>##Decisional-决定性</p>
+<p><strong>Decisional</strong>-决定性</p>
 <p>本周初步开始从“把教程中的代码套用到新的项目上”进入“自己理解后根据需求修改代码”，非常有成就感的一步。下周开始我们会用两天时间Eatgether所有的功能，接下来的时间会用于将显示出来的信息正常化，将整个网站美化，可能会调用团队的整体精力从后端逐步转移到前段。</p>
 
       
@@ -464,7 +464,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">67</span>
+              <span class="site-state-item-count">65</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
