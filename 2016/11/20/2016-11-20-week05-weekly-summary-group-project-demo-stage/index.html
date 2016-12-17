@@ -1,0 +1,702 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="#Objective-客观性
+从今天起写中文，不装逼了。
+今天成功完成了demo。为了顺利完成demo，我们昨天临时将部分还未完善的功能临时删除处理，例如Feedback的修改、删除，OrderTwo在邀约方后台无法查看等。下午我们花了很多时间深度分享了一下本周作为团队一起做项目的第一个星期。
+#Reflective-反应性
+直到昨天晚上，整个组的还是士气高昂的。可能是因为老师一直在夸奖我们的前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Week05 - Weekly Summary - Group Project First Demo Stage">
+<meta property="og:url" content="http://yoursite.com/2016/11/20/2016-11-20-week05-weekly-summary-group-project-demo-stage/index.html">
+<meta property="og:site_name" content="DYZ的笔记">
+<meta property="og:description" content="#Objective-客观性
+从今天起写中文，不装逼了。
+今天成功完成了demo。为了顺利完成demo，我们昨天临时将部分还未完善的功能临时删除处理，例如Feedback的修改、删除，OrderTwo在邀约方后台无法查看等。下午我们花了很多时间深度分享了一下本周作为团队一起做项目的第一个星期。
+#Reflective-反应性
+直到昨天晚上，整个组的还是士气高昂的。可能是因为老师一直在夸奖我们的前端">
+<meta property="og:image" content="http://user-image.logdown.io/user/19391/blog/18870/post/1124801/H5drvzWgTuqaBm6LVrdR_Screen%20Shot%202016-11-20%20at%206.21.02%20PM.png">
+<meta property="og:updated_time" content="2016-12-17T06:10:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Week05 - Weekly Summary - Group Project First Demo Stage">
+<meta name="twitter:description" content="#Objective-客观性
+从今天起写中文，不装逼了。
+今天成功完成了demo。为了顺利完成demo，我们昨天临时将部分还未完善的功能临时删除处理，例如Feedback的修改、删除，OrderTwo在邀约方后台无法查看等。下午我们花了很多时间深度分享了一下本周作为团队一起做项目的第一个星期。
+#Reflective-反应性
+直到昨天晚上，整个组的还是士气高昂的。可能是因为老师一直在夸奖我们的前端">
+<meta name="twitter:image" content="http://user-image.logdown.io/user/19391/blog/18870/post/1124801/H5drvzWgTuqaBm6LVrdR_Screen%20Shot%202016-11-20%20at%206.21.02%20PM.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/11/20/2016-11-20-week05-weekly-summary-group-project-demo-stage/"/>
+
+
+
+
+
+  <title> Week05 - Weekly Summary - Group Project First Demo Stage | DYZ的笔记 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">DYZ的笔记</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">用文字帮助思考</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/20/2016-11-20-week05-weekly-summary-group-project-demo-stage/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ的笔记">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ的笔记" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Week05 - Weekly Summary - Group Project First Demo Stage
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-20T11:02:00+08:00">
+                2016-11-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/11/20/2016-11-20-week05-weekly-summary-group-project-demo-stage/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/11/20/2016-11-20-week05-weekly-summary-group-project-demo-stage/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#Objective-客观性</p>
+<p>从今天起写中文，不装逼了。</p>
+<p>今天成功完成了demo。为了顺利完成demo，我们昨天临时将部分还未完善的功能临时删除处理，例如Feedback的修改、删除，OrderTwo在邀约方后台无法查看等。下午我们花了很多时间深度分享了一下本周作为团队一起做项目的第一个星期。</p>
+<p>#Reflective-反应性</p>
+<p>直到昨天晚上，整个组的还是士气高昂的。可能是因为老师一直在夸奖我们的前端完整度，所以我们一直以为自己走在整个cohort的前面。但今天demo的时候才发现，原来好几个团队不仅将前端也用简单大方的视觉方式展现，同时也实现了一些我们尚未实现的功能（如五星打分、聊天框等）。这让最后一组展示的我们有些措手不及，也影响了demo时的临时表现。尽管团队认为demo的整体效果和逻辑还是不错的，但在presentation方面其实可以做到更好。</p>
+<p>##Interpretive-诠释性</p>
+<p>下午分享会时，我分享了本周最大的收获和最大的坑：</p>
+<p>###最大收获</p>
+<p>本周最大收获当属深刻意识到提前规划的重要性。不仅仅是宏观层面从项目的目的、目标、功能的排期和分工而言，而在微观层面，个人对功能实现时的提前思考也是非常重要的。</p>
+<p>举例而言，在实现Feedback功能时，由于之前很多时候都是一步步根据老师教程写入代码，所以习惯性在写入Feedback model之后直接就开始写Feedback的controller里的CRUD，并没有思考属于account下和admin下的Feedback controller，并且在写Feedback的view的时候也是想到一个页面写一个。</p>
+<p>因此，尽管Feedback初步功能实现了，但MVC之间的功能非常混乱，有的CRUD action是多余的、有的view页面是不会用到的。</p>
+<p>后来我在上传第一版Feedback功能的git之后，在纸上将Feedback功能所需要的MVC重新梳理了一遍，然后根据规划好的布局从top-down开始先建立controller里的action，然后添加和删除view的页面，最后再来将这些action和页面里的代码写出来，重新上传。</p>
+<p>###最大的坑</p>
+<p>本周最大的是在routing方面。其实在这周之前我一直不够了解<code>routes.rb</code>文件和所有路由线路的关系。比如哪些resources会出现在多个namespace下面。之前的认知还停留在知道新的model需要作为resources，这样才能撰写CRUD，但没有明白如果是一个resources下（比如orders）下面再有隶属的resources（比如feedbacks）应该如何应对。</p>
+<p>双重resources会影响整个MVC流程，但更难的其实是在不同的view里面如何传正确的路径和路径所指的数据。比如，在<code>account/order_twos/index.html.erb</code>里面，如果要调用除了order以外的数据，在path里面不能像之前比较简单的架构下只需要找到path(order)那样，而需要提供两个数值：</p>
+<p>如果routes如下：<br><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1124801/H5drvzWgTuqaBm6LVrdR_Screen%20Shot%202016-11-20%20at%206.21.02%20PM.png" alt="Screen Shot 2016-11-20 at 6.21.02 PM.png"></p>
+<p>Feedback的controller如下：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">edit</span></span></div><div class="line">	@order = OrderTwo.find(params[<span class="symbol">:order_two_id</span>])</div><div class="line">	@feedback = current_user.feedbacks.find(params[<span class="symbol">:id</span>])</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
+<p>而此时想要在<code>order_two</code>的controller下找到edit的路径，则需要这样写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;% @order_twos.each do |order| %&gt;</div><div class="line">...</div><div class="line">&lt;% order.feedbacks.where(:user_id =&gt; current_user).each do |feedback| %&gt;</div><div class="line">...</div><div class="line">&lt;%= link_to(&quot;修改反馈&quot;, edit_account_order_two_feedback_path(order.id, feedback.id), class: &quot;btn btn-sm btn-default outline&quot;) %&gt;</div><div class="line">&lt;% end %&gt;</div><div class="line">&lt;% end %&gt;</div></pre></td></tr></table></figure></p>
+<p>以上代码是在同一页面上，在每一个<code>order_two</code>下面的每一个<code>order.feedback</code>里找到edit的路径。这里的重点在于edit路径中的`(order.id, feedback.id），因为在route中这里需要两个数值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/account/order_twos/:order_two_id/feedbacks/:id/edit</div></pre></td></tr></table></figure></p>
+<p>所以提供的第一个是order的id，第二个是feedback的id（感谢梁超教会我这里括号内信息的意思）。</p>
+<p>##Decisional-决定性</p>
+<p>本周初步开始从“把教程中的代码套用到新的项目上”进入“自己理解后根据需求修改代码”，非常有成就感的一步。下周开始我们会用两天时间Eatgether所有的功能，接下来的时间会用于将显示出来的信息正常化，将整个网站美化，可能会调用团队的整体精力从后端逐步转移到前段。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/17/2016-11-17-day04-week05-further-stuck-on-feedback-controller/" rel="next" title="Day04 Week05 - Further Stuck on Feedback Controller">
+                <i class="fa fa-chevron-left"></i> Day04 Week05 - Further Stuck on Feedback Controller
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/21/2016-11-21-day01-week06-team-entering-front-end-phase/" rel="prev" title="Day01 Week06 - Team Entering Font-End Phase">
+                Day01 Week06 - Team Entering Font-End Phase <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox">
+  <script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-585582358ed3985c" async = "async" ></script>
+</div>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/tshirt_fullstack.jpg"
+               alt="朱英楠David" />
+          <p class="site-author-name" itemprop="name">朱英楠David</p>
+          <p class="site-description motion-element" itemprop="description">Aim for the moon, and land among the stars.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">67</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/dyz2102" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/davidyzhu" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://cn.linkedin.com/in/davidyzhu" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhuyingnan" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-question-circle-o"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-telegram"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">朱英楠David</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'dyzblog';
+      var disqus_identifier = '2016/11/20/2016-11-20-week05-weekly-summary-group-project-demo-stage/';
+
+      var disqus_title = "Week05 - Weekly Summary - Group Project First Demo Stage";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

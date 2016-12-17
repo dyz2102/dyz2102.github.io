@@ -1,180 +1,1898 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+<!doctype html>
+
+
+
   
 
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Aim for the moon, and land among the stars.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DYZ的笔记">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="DYZ的笔记">
+<meta property="og:description" content="Aim for the moon, and land among the stars.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DYZ的笔记">
+<meta name="twitter:description" content="Aim for the moon, and land among the stars.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"hide"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title> DYZ的笔记 </title>
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">DYZ的笔记</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">用文字帮助思考</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/12/16/hello-world/" class="article-date">
-  <time datetime="2016-12-16T04:44:00.000Z" itemprop="datePublished">2016-12-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
 
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/12/16/hello-world/" data-id="ciwrbk66y0000mgd078hr5r9t" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
+    </ul>
   
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2016/12/16/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2016 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/16/2016-12-16-problem-with-verify-authenticity-token-when-uploading-to-heroku/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ的笔记">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ的笔记" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/16/2016-12-16-problem-with-verify-authenticity-token-when-uploading-to-heroku/" itemprop="url">
+                  【功能】Controller中verify_authenticity_token上传到Heroku出现bug
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-16T07:30:00+08:00">
+                2016-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/16/2016-12-16-problem-with-verify-authenticity-token-when-uploading-to-heroku/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/16/2016-12-16-problem-with-verify-authenticity-token-when-uploading-to-heroku/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>原本代码：</p>
+<figure class="highlight ruby"><figcaption><span>application_controller.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ApplicationController</span> &lt; ActionController::Base</span></div><div class="line">  protect_from_forgery <span class="symbol">with:</span> <span class="symbol">:exception</span></div><div class="line">  skip_before_action <span class="symbol">:verify_authenticity_token</span></div></pre></td></tr></table></figure>
+<p>本地运行app没有问题，上传到Heroku成功，打开Heroku app开始报错“Application Error”。输入heroku run rails console发现问题是<code>verify_authenticity_token has not been defined (ArgumentError)</code>。</p>
+<p>修改：</p>
+<figure class="highlight ruby"><figcaption><span>application_controller.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ApplicationController</span> &lt; ActionController::Base</span></div><div class="line">  protect_from_forgery <span class="symbol">with:</span> <span class="symbol">:exception</span></div><div class="line">  <span class="comment"># skip_before_action :verify_authenticity_token</span></div></pre></td></tr></table></figure>
+<p>不确定为什么之前加了这一行，但改好之后整个app运行正常，原本设计在登陆前能看到的东西都可以看到，改要求登陆的地方也都会正常要求登陆。</p>
+<p>参考：<br><a href="http://stackoverflow.com/questions/39260198/verify-authenticity-token-has-not-been-defined" target="_blank" rel="external">http://stackoverflow.com/questions/39260198/verify-authenticity-token-has-not-been-defined</a></p>
+<p><a href="https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/request_forgery_protection.rb#L122" target="_blank" rel="external">https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/request_forgery_protection.rb#L122</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 
 
-<script src="/js/script.js"></script>
+    
+      
 
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/15/2016-12-15-why-those-entrepreneurs-who-seem-to-do-well-are-all-good-at-bullshitting/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ的笔记">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ的笔记" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/15/2016-12-15-why-those-entrepreneurs-who-seem-to-do-well-are-all-good-at-bullshitting/" itemprop="url">
+                  【体会】为什么创业做得不错的人都是大忽悠？
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-15T17:59:00+08:00">
+                2016-12-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/15/2016-12-15-why-those-entrepreneurs-who-seem-to-do-well-are-all-good-at-bullshitting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/15/2016-12-15-why-those-entrepreneurs-who-seem-to-do-well-are-all-good-at-bullshitting/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今晚跟一个从华尔街回国的朋友聊天，发现金融圈跑出来创业的人，在学生时代都拥有一个共同标签：特别能忽悠。</p>
+<p>其实很make sense。会忽悠的人在融资、营销、销售、挖人这些初创阶段比较重要的事情上都颇有优势，所以很容易感觉表面繁华。</p>
+<p>但是，会忽悠的人往往产品做得稀烂，Retention几乎为0。<br>这可能是中国创业者和美国创业者最大的不同。</p>
+<p>很可惜，我在学生时代并没有这样的标签，所以只能靠后天补勤了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/13/2016-12-13-how-to-calm-and-rational-look-at-what-people-around-us-think-of-your-business-idea/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ的笔记">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ的笔记" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/13/2016-12-13-how-to-calm-and-rational-look-at-what-people-around-us-think-of-your-business-idea/" itemprop="url">
+                  【体会】如何客观理性冷静的看待周遭人怎么看你的创业想法？
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-13T19:45:00+08:00">
+                2016-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/13/2016-12-13-how-to-calm-and-rational-look-at-what-people-around-us-think-of-your-business-idea/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/13/2016-12-13-how-to-calm-and-rational-look-at-what-people-around-us-think-of-your-business-idea/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近跟几个想创业的朋友聊了一些他们的创业idea，有感而发：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1. 大部分人看好的项目，最终不一定成功</div><div class="line"></div><div class="line">2. 大部分人不看好的项目，最终不一定不成功</div><div class="line"></div><div class="line">3. 最终成功的项目，大部分人一开始都不看好</div><div class="line"></div><div class="line">4. 最终不成功的项目，没有人记得一开始大家看不看好</div></pre></td></tr></table></figure>
+<p>总结：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">大部分人怎么看你的创业项目根本没任何毛线关系，尽管有些漏洞百出的白痴idea，但也可以在产品一上线的时候迅速知道可不可行</div><div class="line"></div><div class="line">太过于在乎其他人怎么看你的idea，唯一影响的是你自己的军心</div><div class="line"></div><div class="line">很少投资人能够预测未来，不要把运气好的人和有insight的人搞混</div></pre></td></tr></table></figure>
+<p>只有几个人的想法重要：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">1. 你自己</div><div class="line"></div><div class="line">0. 你的团队</div><div class="line"></div><div class="line">0. 最亲的人</div><div class="line"></div><div class="line">0. 已经投了你的人</div></pre></td></tr></table></figure>
+<p>你是1，其他的都是0.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/13/2016-12-13-1204366/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ的笔记">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ的笔记" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/13/2016-12-13-1204366/" itemprop="url">
+                  【功能】如何添加文档编辑器CKEditor
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-13T13:25:00+08:00">
+                2016-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/13/2016-12-13-1204366/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/13/2016-12-13-1204366/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>装gem</p>
+</li>
+<li><p>rails generate ckeditor:install –orm=active_record –backend=carrierwave</p>
+</li>
+<li><p>config/routes has mount Ckeditor::Engine =&gt; ‘/ckeditor’</p>
+</li>
+<li><p>application.js has //= require ckeditor/init</p>
+</li>
+<li><p>rake db:migrate, restart server</p>
+</li>
+<li></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/13/2016-12-13-how-to-add-turbolinks-and-have-document-ready-commands-function-properly/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ的笔记">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ的笔记" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/13/2016-12-13-how-to-add-turbolinks-and-have-document-ready-commands-function-properly/" itemprop="url">
+                  【功能】如何在使用Turbolink的时候下达document.ready指令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-13T11:57:00+08:00">
+                2016-12-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/13/2016-12-13-how-to-add-turbolinks-and-have-document-ready-commands-function-properly/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/13/2016-12-13-how-to-add-turbolinks-and-have-document-ready-commands-function-properly/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##问题：<br>Turbolinks在帮助页面加速（不去重新加载已经加载过的物件）的时候，JS指令“document.ready”不会被引发，所以根据该指令产生的jQuery动作也不会执行。在网站页面不多、物件不复杂的时候，直接干掉Turbolinks是可行的（也是<a href="http://dyz2102-blog.logdown.com/posts/1149250" target="_blank" rel="external">之前写的一篇教学</a>中所推荐的），但当页面越来越多，加载速度越来越慢的时候，使用Turbolinks变得十分重要，所以需要将”document.ready”修改成一个Turbolinks会发出的指令。</p>
+<p>##解决方案：</p>
+<p>将<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div><div class="line">	//<span class="title">YOUR</span> <span class="title">FUNCTION</span></div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>修改为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).on(<span class="string">"turbolinks:load"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div><div class="line">	//<span class="title">YOUR</span> <span class="title">FUNCTION</span></div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>记住要加回Turbolinks：</p>
+<figure class="highlight javascript"><figcaption><span>application.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require turbolinks</span></div></pre></td></tr></table></figure>
+<p>这样页面的指令就会在正常执行了。</p>
+<p>参考：<a href="http://guides.rubyonrails.org/working_with_javascript_in_rails.html#turbolinks" target="_blank" rel="external">http://guides.rubyonrails.org/working_with_javascript_in_rails.html#turbolinks</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/10/2016-12-10-1193479/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ的笔记">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ的笔记" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/10/2016-12-10-1193479/" itemprop="url">
+                  silicon valley
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-10T13:06:00+08:00">
+                2016-12-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/10/2016-12-10-1193479/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/10/2016-12-10-1193479/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>stripe and airbnb episodes on Stanford startup class</p>
+<p>VP of Engineering. - focus on coding and make the best code and that makes money. But if u build product no one wants, u can’t charge. U can’t ask what ppl want, you have to test it out. Then u give up.</p>
+<p>U encounter a lot of customers.</p>
+<p>一开始想要自动化会很容易死。做一个东西等着它爆掉 - 千分之一，几乎不可能</p>
+<p>Peter Thiel。<br>“Competition is for losers. “ - go after a small market u can monopolize<br>“Go for what is hot in the market.” - fast PMF - ur revenue will enable u to enter the next market. </p>
+<p>First thing you do: 熟悉的，可以变现的事情。</p>
+<p>回到台湾：GrowthHack =&gt; SAAS =&gt; Intercom =&gt;</p>
+<p>Must have a PMF first before using GrowthHack. So must find her PMF =&gt; Teaching rails.</p>
+<p>“Kill Your Wantrepreneur” - 1. follow these guides word for word 2. PMF</p>
+<p>Use feedback articles to improve onboarding.</p>
+<p>问卷上的NPS。把所有人变成10分；6分以下的人不要 </p>
+<p>Do things that don’t scale (first). The product is bound to have a lot of bugs (at first). If</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/06/2016-12-06-day02-week08-company-shares-company-of-friends-pk/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ的笔记">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ的笔记" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/06/2016-12-06-day02-week08-company-shares-company-of-friends-pk/" itemprop="url">
+                  Day02 Week08 - 接案公司分享、大公司朋友PK
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-06T17:49:00+08:00">
+                2016-12-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/06/2016-12-06-day02-week08-company-shares-company-of-friends-pk/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/06/2016-12-06-day02-week08-company-shares-company-of-friends-pk/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天的两件事情我觉得比较值得回味。</p>
+<p>第一件就是Xdite分享了接案公司的运营。<br>第二件是晚上去一个朋友的局被好友劝说去大公司工作。</p>
+<p>1.</p>
+<p>接案公司是我昨天晚上在班上提出的一个想法，为的是解决我们很多人在课程结束后还渴望继续练习，同时需要找工作产生收入的需求。联合开一个接案公司可以解决这个问题，一方面有项目可以继续练习，另一方面又可以开始有收入。与此同时，接案公司在台湾碰到的两大瓶颈：人才短缺和市场太小，在大陆都不是问题。</p>
+<p>但今天早上，Xdite老师分享了接案公司的心得后，这一条路似乎又看起来没有那么promising。核心点在于接案公司的盈利能力很大程度上取决于客户。好客户想法不变、修改不多、按时付费、结算尾款。坏客户朝三暮四、各种改动、拖延付款、尾款坏账。在这种行业里，公司的收入是浮动的（案子有时多有时少 + 付款是被动的），但开销却是固定的（程序员工资 + 房租），所以很容易在市场不景气或者客户不靠谱的时候拖垮一家公司，或者至少说接案的钱并没有那么好赚。</p>
+<p>就这样，我们从约饭、VPN到接案三个不同idea的迅速转移又回到了原点。</p>
+<p>2.</p>
+<p>今天晚上，我跟几个很久没见的朋友们喝东西。我现在已经不隐瞒学编程这件事情了。如我所料，其中两位朋友开始说6万块如何不值，如何用3个程序员4万工资2个礼拜就开发出来了两个角色两个版本的iOS App。另外一个朋友拉着我聊了许久，觉得我应该去一个大的科技公司工作几年再创业，认为独自干的学习成本太高，不如积累好资源、想清楚再干。</p>
+<p>Well，这些东西我在过去半年里，已经反复想过很多遍了。</p>
+<p>技术可不可以外包？当然可以。作为一个推荐所有创业者“能外包的东西尽量外包”的人，我为什么会想不开，自己去学最难学会的那个本可以外包的东西？因为我需要在连4万块工资都开不起的时候把东西做出来。我已经很清楚地看到，MVP不是做一次就结束了，而是需要不断修改，甚至做很多次才能完善的东西。而创业idea，更是有可能快速失败后快速更换。所以即便在资本寒冬之后程序员外包成本急剧下降，没有钱想要聘人写一版又一版的程序是不现实的。</p>
+<p>另外说一下去大公司这一点。</p>
+<p>如果我打算用未来两年时间摸索创业，而我面临的选择是A：去BAT/GFA工作两年，还是B：连续创业失败3次？我会选B。很多人可能永远无法理解，唯一让你“创业能力”更强的工作，就是创业。去大公司积累人脉、看准需求、看好趋势，都比不上在创业过程中用实际的产品去碰撞实际的需求。</p>
+<p>以上。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/05/2016-12-05-1173899/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ的笔记">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ的笔记" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/05/2016-12-05-1173899/" itemprop="url">
+                  全栈营之8周心得 - 你好我是朱英楠，一只程序猿
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-05T13:03:00+08:00">
+                2016-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/05/2016-12-05-1173899/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/05/2016-12-05-1173899/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##如何正确的面对自己？</p>
+<p>起笔写这个心得，比我想象中要难好多。</p>
+<p>我其实并不是一个喜欢研究如何“学习”的人，或者说我在较早的时候就已经经历了迷恋研究如何学习的时期。我在大一的时候痴迷于GTD，买了很多书，给自己做了inbox、文件夹、各种todo list、用了各种App（那个时候就用了第一版经常闪退的Evernote Beta），后来发现效率的确有提升，但并没有那么“神奇”，和我自己持续正常努力的结果可能不会有太大差距。也可能是因为从小就足够会学习，家里满墙奖状、高中当选学生会主席、哥伦比亚大学提前录取、本科毕业就年薪百万，这些对我来说虽然不算轻而易举，但真的也没那么难。我是个典型的实践主义者：Just do it。思考，远没有执行来的有快感。</p>
+<p>我也不是不擅长写字。我7年前就开了<a href="www.davidyzhu.wordpress.com">自己的博客</a>，从高盛辞职的时候写过整个金融圈都看到过的“<a href="http://mp.weixin.qq.com/s?__biz=MzAxODExMDM1NA==&amp;mid=202742321&amp;idx=1&amp;sn=a66633e9e3d178c0e009146c03910922#rd" target="_blank" rel="external">我为何离开香港</a>”，在<a href="https://www.zhihu.com/people/zhuyingnan" target="_blank" rel="external">知乎</a>上过去一年也积累了接近一万个粉丝。但我不喜欢写日记。也不擅长总结自己学习的过程或方法论。我比较擅长的是分享人生阅历、在每一个人生节点为什么做出和别人不太一样的决定的思考，或者对最近所观察到的事情做出自己的一些看法和总结。换句话说，一篇文章对我来说更像是一个会被展示的项目，而不是一段文字记录或思路整理。这是个我仍需要克服的问题。</p>
+<p>在”Just Do It”的模式下运行惯了的我，却发现在创业这件事情上并行不通。在过去两年中，我尝试过两次互联网创业，享受了融资成功、百人团队、9个月烧掉一千万的盛世，也体验过产品零增长、融资失败、合伙人撕逼、团队解散的挫败。长这么大第一次深刻意识到，再漂亮的简历、再牛逼的背景、再花哨的西装、再强大的自我包装能力，在市场面前，完全没有任何卵用。</p>
+<p>你可以说我是一个自以为是的over-achiever，一个精致的利己主义者，一个创业动机不纯的wantrepreneur——我曾经100%是，直到现在一部分的我，可能还是。</p>
+<p>通常，和我类似背景的人在碰到上述困难的时候，会选择去读MBA，准确的说是哈佛、沃顿、斯坦福的MBA。但当我脑海中闪过这样的念头的时，我会立刻将其抹杀，因为我不需要再多一个名校标签，被潜意识的逃避所屈服，两年后回到远点，再一次思考工作vs.创业的窘境。</p>
+<p>所以我选择了面对。面对自己的失败的最大好处，就是让所有心高气傲的想法统统被干掉。全栈营开学第一天，我没有要做队长，甚至在前两周都没有说什么话。我告诉自己，我就是个什么都不懂的初学者，我需要做的唯一一件事，就是学。所以，能够让我真正进入学习状态的，不是智商或勤奋，而是抛开了我的傲慢。</p>
+<p>##创业失败了，所以呢？</p>
+<p>创业失败后的总结过程中，我越来越认为创业不是需要去理解多么高阶、深奥、复杂的理论，而是将一些非常简单又基本的原则真正去实践。以下是我认为在所读过的文字中最能够概括创业所需的基本原则：</p>
+<ol>
+<li>Companies create X amount of value, and capture Y% of X（创造价值X，然后获取X里面的Y%占比）.</li>
+<li>Avoid competition and always try to monopolize a small market（避免竞争，尽可能垄断一个微小市场）.</li>
+<li>The best way to think of startup ideas is not to try to think of startup ideas. It’s to look for problems, preferrably problems you have yourself（思考创业点子的最好办法就是不要去想创业点子，而是去找寻问题，最好是你自己正面临的问题）.</li>
+<li>The best startup ideas tent to have three things in common（最好的创业点子拥有以下特征）:<br> a. they’re something the founders themselves want（是创始人自己想要的东西）<br> b. that they themselves can build（是创始人可以创造的东西）<br> c. and that few others realize are worth doing（而且很少其他人会认为这件东西有价值）.</li>
+</ol>
+<p>前两条来自Peter Thiel 2012年在<a href="http://startupclass.samaltman.com/courses/lec05/" target="_blank" rel="external">斯坦福的创业课</a>，后来被整理写入他的书《从零到一》，后两条来自<a href="http://paulgraham.com/startupideas.html" target="_blank" rel="external">Paul Graham的博客</a>，同样写于2012年。</p>
+<p>这些原则可能会是我下一次创业的指南针，但其中有一个很大的缺口：<strong>4.b——创始人需要自己能够打造自己想要用来解决问题的产品。</strong> 而这，也正是我学编程的原因。</p>
+<p>过去两年，我看到了太多创业者在开发上所浪费的时间、精力、钱，最终打造出来设计丑、体验差、没人用的产品。选择创业是为了给世界创造价值，而这样的创业只会摧毁价值。</p>
+<p>我没有对身边的任何人提我要去学编程这件事情。他们不会那么容易理解，我也懒得浪费时间去解释自己。在获得了我唯一需要的支持后（我的家人），我就报名了全栈营。</p>
+<p>##全栈营是什么鬼？</p>
+<p>刚来全栈营的时候，我是怀疑的。经验告诉我，大部分告诉你能够速成的东西都是骗人的。</p>
+<p>我不知道Ruby on Rails是什么。我查了网上的解释，还是不知道Ruby on Rails是什么。我听过Github无数次，甚至之前创业的iOS代码就备份在Github上，但我不知道一行Github指令，也不说不出Github是什么。我上一次写代码，是13岁的时候为了让自己的MySpace能够更好看一些，勉强用HTML调整了背景图、字体、颜色。所以对，我也不知道CSS是什么，因为没用过。</p>
+<p>7个星期的项目成果，大概是长这样：</p>
+<p>【第一个项目：贴吧，开学前两周独立完成】<br><img src="http://ww2.sinaimg.cn/large/7853084cjw1fah1wg1dm9j20nd06s0sr.jpg" alt=""></p>
+<p>【第二个项目：论坛，开学前独立完成】<br><img src="http://ww1.sinaimg.cn/large/7853084cjw1fah1yryq10j20xg0bcq3t.jpg" alt=""></p>
+<p>【第三个项目：招聘网站，独立6天完成】<br><img src="http://ww4.sinaimg.cn/large/7853084cjw1fah2n3us8fj20nv0gh77p.jpg" alt=""></p>
+<p>【第四个项目：电商，独立8天完成】<br><img src="http://ww4.sinaimg.cn/large/7853084cjw1fah259q8zwj20de0hejum.jpg" alt=""></p>
+<p>【第五个项目：投票游戏，2人2天完成的Hackathon】<br><img src="http://ww2.sinaimg.cn/large/7853084cjw1fah1zkta87j20xc0dhgpr.jpg" alt=""></p>
+<p>【第六个项目：约饭平台，5人15个工作日完成】<br><img src="http://ww3.sinaimg.cn/large/7853084cjw1fah24sf9p8j20bt0xkwjk.jpg" alt=""></p>
+<p>如果说我曾经怀疑自己成为一个全栈工程师的潜力，在做完这6个项目之后，我不再有任何怀疑。尽管我现在还不足以称自己为“全栈”，但我已经具备了开发最基础功能的web + mobile前端和后端技能（从这里延伸到iOS/Android也提供了快捷的方法和教材）。更重要的是，我已经拥有了自学开发任何其他简单功能的基础。不喜欢写日记的我，也攒下了近60篇博客，其中约10篇是关于开发某个功能的方法或总结。</p>
+<p>不得不承认，在“把学生教会”这一件事上，全栈营做到了。</p>
+<p>##所以Ruby on Rails到底是什么？</p>
+<p>如果一个程序是一个世界，那么程序员就是建造这个世界的神。《创世记》中，神说：“要有光”，就有了光。但神是如何获得制作光的工具？万一光子并不知道如何连接在一起让光线可以从A照射到B呢？万一被光照射到的地方并无法反光所以透露不出自己的颜色呢？人只看得到光，所以认为神可以用一句话让光出现，但人并不知道神是这么造光的。</p>
+<p>神要创造光，需要两样东西：给光下达指令的方式，和下达指令的框架。前者可以使任何神和光都懂的语言，而后者，是让神在写任何东西的时候都可以快速高效的写出来，而不需要去担心存放东西空间的大小、里面的物质等其他琐碎却复杂的细节。</p>
+<p>所以，在这个世界里：</p>
+<ul>
+<li>神=程序员</li>
+<li>光=程序</li>
+<li>人=用户</li>
+<li>神对光下达指令的方式=Ruby</li>
+<li>神创造任何东西的框架=Rails</li>
+</ul>
+<p>写程序的人非常多，程序非常多，语言也非常多，但为什么说Ruby on Rails会比其他方式更快？因为Rails对神想要做的事情做了很多的预估和猜测，设计了一系列方便神去创造的框架细节。就像在一个锅碗瓢盆因有尽有的厨房炒菜和跟在一个什么都需要去买的厨房炒菜是完全不一样的。Rails就是那个连新鲜调味料都帮你备好的厨房。</p>
+<p>##7个星期中具体都学到了些什么？</p>
+<p>在过去一段时间的学习中，我最大的surprise就是Rails有多么的简单。回顾日记，我可以清楚的看到自己是在哪一天学到了什么：开始学会<a href="http://dyz2102-blog.logdown.com/posts/1013486" target="_blank" rel="external">用Google自己搜教学</a>完成某个功能（第3天…）、<a href="http://dyz2102-blog.logdown.com/posts/1016843" target="_blank" rel="external">如何写seed文档</a>（第4天）、<a href="http://dyz2102-blog.logdown.com/posts/1034465-day01-week02" target="_blank" rel="external">上传附件</a>（第6天）、理解migration和<a href="http://dyz2102-blog.logdown.com/posts/1042590" target="_blank" rel="external">重建db</a>（第8天）、<a href="http://dyz2102-blog.logdown.com/posts/1047572" target="_blank" rel="external">自由搭建routes</a>（第9天）、<a href="http://dyz2102-blog.logdown.com/posts/1061503-day01-week03" target="_blank" rel="external">写CRUD以外的新action</a>（第11天）、<a href="http://dyz2102-blog.logdown.com/posts/1068920-day03-week03-shopping-site-with-order-delivery" target="_blank" rel="external">自动发邮件</a>（第13天）、<a href="http://dyz2102-blog.logdown.com/posts/1070126-day04-week03" target="_blank" rel="external">装状态机</a>（第14天）、<a href="http://dyz2102-blog.logdown.com/posts/1070126-day04-week03" target="_blank" rel="external">使用AWS存储文件</a>（第15天）、<a href="http://dyz2102-blog.logdown.com/posts/1073097-manage-aws-key-using-figaro-on-heroku-for-carrierwave" target="_blank" rel="external">用Figaro保护AWS云服务</a>（第16天）、<a href="http://dyz2102-blog.logdown.com/posts/1084768" target="_blank" rel="external">如何规划Hackathon的超短线开发</a>、<a href="http://dyz2102-blog.logdown.com/posts/1103135" target="_blank" rel="external">做Landing Page</a>（第20天）。</p>
+<p>从第五周起（第21天）我们进入团队开发模式，项目管理和协作变成了首要学习要点，也就是从这里开始真正模拟实战开发项目的场景。没有什么产品会是一个人独立写出来的，而无法协作的人一定无法成为好的程序员。也是在这个时候，我开始觉得我的小宇宙爆发了。从<a href="http://dyz2102-blog.logdown.com/posts/1106141-day01-week05-collab-on-proj-eatgether" target="_blank" rel="external">写User Story</a>、<a href="http://dyz2102-blog.logdown.com/posts/1139165-week06-the-sixth-week-summary-importance-of-teamwork" target="_blank" rel="external">在Redmine上切票</a>、<a href="http://dyz2102-blog.logdown.com/posts/1149797-eat2gether-onboarding-documents" target="_blank" rel="external">写Onboarding文档</a>，到<a href="http://dyz2102-blog.logdown.com/posts/1171106" target="_blank" rel="external">写前端</a>、<a href="http://dyz2102-blog.logdown.com/posts/1138305-day04-week06-demo-version-of-the-product" target="_blank" rel="external">做demo</a>，都在一定程度上发挥了我的罗辑思维能力、项目管理能力和视觉审美。我们团队也顺利成为全班进度最快、产品最完整的团队。</p>
+<p>##8周6万的课，是否值得？</p>
+<p>人在衡量一段经历的价值的时候会展现出惊人的认知偏差。成果令人开心的事情价值很容易抬高，反之则无论前面体验如何都会变的不值；自己选择的事情很容易觉得宝贵，被强迫的选择很容易不值；经过千辛万苦被虐到废的经历会十分珍惜，轻易得来的东西则不那么在乎。所以当我们问一个人某段经历是否值得的时候，100个人会有100种答案。</p>
+<p>按照我创业前工资来算，过去2个月的机会成本大概是26万人民币。但我在很早之前就已经放弃了按月计算机会成本的短视角。因为这样算的人，永远不会离开高薪打工的岗位去尝试任何带有较高风险的事情。打工和创业，就像是债权回报和股权回报的对比。买债券拿到的是每月的固定收益（工资），而股权回报可以几年不分红甚至亏损，而在未来的某一天腾飞，获得几十甚至上百倍的回报。</p>
+<p>从一个技术的门外汉，到能独立开发极简程序、共同开发完整可上线程序，能够看懂Stackoverflow上的交流贴并自己实现没有做过的新功能、解决没有碰到过的bug，这一切对我来说，其实已经远远超出了我对自己“程序员”身份的假想。有很多人会去花时间选择编程语言，甚至去网上跟人撕哪一种语言更好。在这一点上quote一句老人的话“不管黑猫白猫，捉到老鼠就是好猫”。</p>
+<p>在我上一次创业当中，开发一款iOS的App，从立项到内测花了近4个月时间，用了1个iOS、1个后端、1个后端实习生、1个产品经理、1个外包设计师、1个全职设计师，开了几十万的工资。而现在的我，再继续练习1-2个月之后，可以1个人完成那6个人做的所有事情。</p>
+<p>但在这里学到比编程更有价值的，是关于创业的一些best practice和know-how。Landing Page, User Story, 项目管理，Growth Hacking…如果说编程让我创业的成功率从1%上升到了2%，那么这些其他的知识可能让2%成为了5%（虽然实际情况可能这些概率都得再除以10，哈哈哈）。</p>
+<p>##结论</p>
+<p>在过去半年里，我拒绝了来自投行、PE的offer，以及来自影视行业、医药行业、创业公司CFO的橄榄枝。无论是投资人还是创业者，下注小概率事件的人都是有一定赌性。既然只能下注一次，为什么不博一把大点的呢？</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/04/2016-12-04-1171106/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ的笔记">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ的笔记" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/04/2016-12-04-1171106/" itemprop="url">
+                  【体会】写前端的一些体会
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-04T08:24:00+08:00">
+                2016-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/04/2016-12-04-1171106/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/04/2016-12-04-1171106/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>过去两周team基本进入了前后端共同推进阶段，而我作为组内设计元素的主要贡献者，不可避免的花了大量时间写前端。这不是我想做的，因为学技术的目的是希望能够自主开发更多功能，但为了项目推进，必须要实现最大化每个人的产值，同时也是对自己前端HTML、CSS很好的练习。</p>
+<p>两周前端写下来，分享一下自己的体会：</p>
+<p>##前端和后端一样需要提前规划</p>
+<p>我在之前的一篇日记中提到过，在项目进行到一定程度，MVC需要<a href="http://dyz2102-blog.logdown.com/posts/1124801-week05-weekly-summary-group-project-demo-stage" target="_blank" rel="external">提前规划再写入</a>。前端开发其实在荧幕适配这个问题上是类似的。由于我们项目从一开始只想到了电脑荧幕适配，所以没有写入任何的小荧幕适配CSS。这就导致在之后写入这代码的时候需要修改大量以前的代码，排版和CSS定义越多的地方修改越大。</p>
+<p>由于Bootstrap提供了非常便利的responsive grid system，所以其实在一开始写的时候就应该想好两套适配模式：电脑和移动端，基本可以用Bootstrap上的<code>col-md-XX</code>和<code>col-xs-XX</code>覆盖。而只有需要罗列大量物件的地方才需要考虑使用<code>col-lg-XX</code>和其他大小的适配。</p>
+<p>另外，如果所有页面都通过Bootstrap nav tab以及render partial的方式呈现，可以让使用的时候几乎没有任何跳转（“设计师”项目应该就是这样设计的，所有页面都是partial的形态存在views/common下面）。但同样，这种写法需要一开始就定好，因为之后修改的时候营业面需要将view里面的定义通过controller重新确定，越往后越麻烦。</p>
+<p>##前端的核心不是技术，是审美和时间</p>
+<p>之前以为技术大牛朋友跟我说过，后端决定了项目的底线，前端决定了项目的上线。虽然不是100%完全认同，但基本上表达了项目前后端的角色。前端不需要对编程有深刻的理解，不需要对项目管理有详细的规划，只需要懂得如何通过HTML/CSS/jQuery来实现视觉上的效果。而且有了Bootstrap、jQuery、HTML5、CSS3等便捷语言的出现，在开发模式下其实想要调整前端也非常容易。</p>
+<p>但前端却是可以非常耗时间的意向工作。每实现一个新的视觉效果、生成一个新的页面，都需要花大量的时间去编排。甚至套模板也不是很便捷，因为大部分模板都是为基本的HTML、CSS而写，都不那么智能，在根据自己网站需求套上之后如果要加效果还得另行写入。</p>
+<p>所以如Xdite所做的，前端完全可以外包给一个专业点的设计师，同时有一个in-house胜任者就可以完成。</p>
+<p>##珍惜时间，远离APP</p>
+<p>下周希望学习高瑞是如何用15秒生成“法律在线”项目App的，然后如果整个产品都是JS + Partial的形式，基本上不会有太多页面跳转，使用起来跟App的体验是差不多的。App开发时，手机荧幕大小的适配、App Store的认证、审核，都会耗费大量的时间和精力，在创业早期，能不碰就千万别碰。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/02/2016-12-02-weekly-summary/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ的笔记">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ的笔记" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/02/2016-12-02-weekly-summary/" itemprop="url">
+                  Weekly Summary - 最后demo + 求职技巧
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-02T07:37:00+08:00">
+                2016-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/02/2016-12-02-weekly-summary/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/12/02/2016-12-02-weekly-summary/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##Objective</p>
+<p>关于今天的课程, 你记得什么?</p>
+<ul>
+<li>上午进行了group project的最后一次demo</li>
+<li>下午Xdite分享了有关技术人才求职的技巧与心得，以及如何包装自己的简历和整个public profile</li>
+</ul>
+<p>完成了什么?</p>
+<ul>
+<li>通常demo之后大家都会比较松散，想要多休息和整理</li>
+<li>下午weekly meeting的时候组员们分享了过去一周的感想和心得</li>
+</ul>
+<p>##Reflective</p>
+<p>今天的高峰是什么?</p>
+<ul>
+<li>Xdite分享技术行业人才求职的public profile时候，深刻了解到如何去展示自己的学习成果</li>
+</ul>
+<p>今天的低点是什么?</p>
+<ul>
+<li>demo之后效率不高，每次demo后应该立刻开weekly meeting，一天的工作一定要有momentum，否则就会懒散下来浪费很多没必要浪费的时间</li>
+</ul>
+<p>##Interpretive</p>
+<p>我们今天学到了什么?</p>
+<ul>
+<li>程序员public profile应该如何建立</li>
+</ul>
+<p>今天一个重要的领悟是什么?</p>
+<ul>
+<li>大家都发现当项目衍生到接近上线时，任何功能上的改动都需要格外小心，一个字段会改掉所有现有数据的呈现、一个新model的关系会将MVC变得更加复杂，所以必须一开始就将MVC全部规划好在开始写，否则会变得非常乱</li>
+</ul>
+<p>##Decisional</p>
+<p>我们会如何用一句话形容今天的工作<br>有哪些工作需要明天继续努力?</p>
+<ul>
+<li>周末会花时间写整个课程下来的学习心得，也是我一直以来自己就很想做但一直懒没有做的事情。非常庆幸是课程的一部分。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
   </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/tshirt_fullstack.jpg"
+               alt="朱英楠David" />
+          <p class="site-author-name" itemprop="name">朱英楠David</p>
+          <p class="site-description motion-element" itemprop="description">Aim for the moon, and land among the stars.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">67</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/dyz2102" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/davidyzhu" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://cn.linkedin.com/in/davidyzhu" target="_blank" title="LinkedIn">
+                  
+                    <i class="fa fa-fw fa-linkedin"></i>
+                  
+                  LinkedIn
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/zhuyingnan" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-question-circle-o"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-telegram"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">朱英楠David</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'dyzblog';
+      var disqus_identifier = 'index.html';
+
+      var disqus_title = "";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+
+    </script>
+  
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
 </body>
 </html>
