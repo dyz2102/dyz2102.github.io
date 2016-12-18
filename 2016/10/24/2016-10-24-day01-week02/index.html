@@ -86,23 +86,23 @@
 
 <meta name="description" content="Objective
 
-Today we began “Phase 2” of the Job Listing Project, which involved Steps 6 through 8. 
-Step 6 involved using the .order method and the “case…when…else…” statement to sort job listing by di">
+Today we began “Phase 2” of the Job Listing Project, which involved Steps 6 through 8.
+Step 6 involved using the .order method and the “case…when…else…” statement to sort job listing by dif">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Day01 Week02">
 <meta property="og:url" content="http://yoursite.com/2016/10/24/2016-10-24-day01-week02/index.html">
 <meta property="og:site_name" content="DYZ的笔记">
 <meta property="og:description" content="Objective
 
-Today we began “Phase 2” of the Job Listing Project, which involved Steps 6 through 8. 
-Step 6 involved using the .order method and the “case…when…else…” statement to sort job listing by di">
-<meta property="og:updated_time" content="2016-12-17T06:10:34.000Z">
+Today we began “Phase 2” of the Job Listing Project, which involved Steps 6 through 8.
+Step 6 involved using the .order method and the “case…when…else…” statement to sort job listing by dif">
+<meta property="og:updated_time" content="2016-12-18T05:49:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day01 Week02">
 <meta name="twitter:description" content="Objective
 
-Today we began “Phase 2” of the Job Listing Project, which involved Steps 6 through 8. 
-Step 6 involved using the .order method and the “case…when…else…” statement to sort job listing by di">
+Today we began “Phase 2” of the Job Listing Project, which involved Steps 6 through 8.
+Step 6 involved using the .order method and the “case…when…else…” statement to sort job listing by dif">
 
 
 
@@ -329,8 +329,8 @@ Step 6 involved using the .order method and the “case…when…else…” stat
       
         <h2>Objective</h2>
 
-<p>Today we began “Phase 2” of the Job Listing Project, which involved Steps 6 through 8. </p>
-<p>Step 6 involved using the .order method and the “case…when…else…” statement to sort job listing by different metrics. This was fairly simple as the instructor has given sufficient hints in the slides. </p>
+<p>Today we began “Phase 2” of the Job Listing Project, which involved Steps 6 through 8.</p>
+<p>Step 6 involved using the .order method and the “case…when…else…” statement to sort job listing by different metrics. This was fairly simple as the instructor has given sufficient hints in the slides.</p>
 <p>Step 7 involved using the Carrierwave gem to upload PDF-version resumes. Installing the gem and get the uploaded to work was the easy part, but establishing the relationship between <em>Resume</em>, <em>Job</em>, and <em>User</em> was challenging (details below).</p>
 <p>Step 8 involved adding the number of resume applied to a certain job posting to the admin view page, as well as making this number a live HTML link connecting to the resume index for view and download. This required good grasp of <em>rake routes</em> to ensure that I got the right paths set for links and was quite challenging as well.</p>
 <h2>Reflective</h2>
@@ -339,12 +339,13 @@ Step 6 involved using the .order method and the “case…when…else…” stat
 <h2>Interpretive</h2>
 
 <p>I learned two very important lessons today. One is that when building a form to enter information for a second-layer model, the code @MODEL isn’t sufficient, but needed to include [:MODEL1, @MODEL2]. For instance, in the second line below, <em>resume</em> is under <em>job</em>, and a form to upload <em>resume</em> would require square brackets around to establish a relationship with <em>job</em>:</p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div class="well"&gt;</div><div class="line">  &lt;%= form_for [:job, @resume], html: &#123; multipart: true &#125; do |f| %&gt;</div><div class="line">    &lt;%= f.label :name %&gt;</div><div class="line">    &lt;%= f.text_field :name %&gt;</div><div class="line">    &lt;%= f.label :attachment %&gt;</div><div class="line">    &lt;%= f.file_field :attachment %&gt;</div><div class="line">    &lt;%= f.submit "Save", class: "btn btn-primary" %&gt;</div><div class="line">  &lt;% end %&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div class="well"&gt;</div><div class="line">  &lt;%=<span class="ruby"> form_for [<span class="symbol">:job</span>, @resume], <span class="symbol">html:</span> &#123; <span class="symbol">multipart:</span> <span class="literal">true</span> &#125; <span class="keyword">do</span> <span class="params">|f|</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.label <span class="symbol">:name</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.text_field <span class="symbol">:name</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.label <span class="symbol">:attachment</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.file_field <span class="symbol">:attachment</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.submit <span class="string">"Save"</span>, <span class="class"><span class="keyword">class</span>: "<span class="title">btn</span> <span class="title">btn</span>-<span class="title">primary</span>" </span></span>%&gt;</div><div class="line">  &lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 <p>Another important lessons I learned today is that in a three-model situation, when uploading a <em>resume</em>, we need to also set <strong>which</strong> <em>job</em> and <em>user</em> the resume belonged to. This is established by the following under the `resumes_controller.rb’:</p>
 <figure class="highlight ruby"><figcaption><span>jobs_controller.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create</span></span></div><div class="line">   @job = Job.find(params[<span class="symbol">:job_id</span>])</div><div class="line">   @resume = Resume.new(resume_params)</div><div class="line"></div><div class="line">   @resume.job = @job</div><div class="line">   @resume.user = current_user</div><div class="line"></div><div class="line">	<span class="keyword">if</span> @resume.save</div><div class="line">     redirect_to job_path(@job), <span class="symbol">notice:</span> <span class="string">"The resume <span class="subst">#&#123;@resume.name&#125;</span> has been uploaded."</span></div><div class="line">   <span class="keyword">else</span></div><div class="line">     render <span class="string">"new"</span></div><div class="line">   <span class="keyword">end</span></div></pre></td></tr></table></figure>
 <p>Essentially, if in the model there is a “belongs_to” relationship from one model to another, this needs also to be reflected in the controller.</p>
-<p></p><h2>Decisional</h2><p></p>
-<h2 id="Decisional"><a href="#Decisional" class="headerlink" title="Decisional"></a>Decisional</h2><p>Today was overall productive as I was able to complete the assignment using Google (StackOverflow), the instructor’s PDF instructions, as well as the TA’s assistance. But I feel that I still lack understanding of the Ruby language and will begin to spend more time learning the fundamental aspects this week.</p>
+<h2>Decisional</h2>
+
+<p>Today was overall productive as I was able to complete the assignment using Google (StackOverflow), the instructor’s PDF instructions, as well as the TA’s assistance. But I feel that I still lack understanding of the Ruby language and will begin to spend more time learning the fundamental aspects this week.</p>
 
       
     </div>
@@ -459,12 +460,12 @@ Step 6 involved using the .order method and the “case…when…else…” stat
                src="/uploads/tshirt_fullstack.jpg"
                alt="朱英楠David" />
           <p class="site-author-name" itemprop="name">朱英楠David</p>
-          <p class="site-description motion-element" itemprop="description">Aim for the moon, and land among the stars.</p>
+          <p class="site-description motion-element" itemprop="description">Aim for the moon,   and land among the stars.</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">65</span>
+              <span class="site-state-item-count">64</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -540,7 +541,7 @@ Step 6 involved using the .order method and the “case…when…else…” stat
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Objective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Reflective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Interpretive</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">Decisional</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decisional"><span class="nav-number">5.</span> <span class="nav-text">Decisional</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Objective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">Reflective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Interpretive</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">Decisional</span></a></li></ol></div>
             
 
           </div>
