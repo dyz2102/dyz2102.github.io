@@ -328,13 +328,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/25/2016-10-25-1038942/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/25/2016-10-25-1038942/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -466,13 +459,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/25/2016-10-25-1038223/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/25/2016-10-25-1038223/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -602,13 +588,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/25/2016-10-25-1037647/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/25/2016-10-25-1037647/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -734,13 +713,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/24/2016-10-24-day01-week02/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/24/2016-10-24-day01-week02/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -777,7 +749,7 @@
 <h2>Interpretive</h2>
 
 <p>I learned two very important lessons today. One is that when building a form to enter information for a second-layer model, the code @MODEL isn’t sufficient, but needed to include [:MODEL1, @MODEL2]. For instance, in the second line below, <em>resume</em> is under <em>job</em>, and a form to upload <em>resume</em> would require square brackets around to establish a relationship with <em>job</em>:</p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div class="well"&gt;</div><div class="line">  &lt;%=<span class="ruby"> form_for [<span class="symbol">:job</span>, @resume], <span class="symbol">html:</span> &#123; <span class="symbol">multipart:</span> <span class="literal">true</span> &#125; <span class="keyword">do</span> <span class="params">|f|</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.label <span class="symbol">:name</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.text_field <span class="symbol">:name</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.label <span class="symbol">:attachment</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.file_field <span class="symbol">:attachment</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.submit <span class="string">"Save"</span>, <span class="class"><span class="keyword">class</span>: "<span class="title">btn</span> <span class="title">btn</span>-<span class="title">primary</span>" </span></span>%&gt;</div><div class="line">  &lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div class="well"&gt;</div><div class="line">  &lt;%= form_for [:job, @resume], html: &#123; multipart: true &#125; do |f| %&gt;</div><div class="line">    &lt;%= f.label :name %&gt;</div><div class="line">    &lt;%= f.text_field :name %&gt;</div><div class="line">    &lt;%= f.label :attachment %&gt;</div><div class="line">    &lt;%= f.file_field :attachment %&gt;</div><div class="line">    &lt;%= f.submit "Save", class: "btn btn-primary" %&gt;</div><div class="line">  &lt;% end %&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 <p>Another important lessons I learned today is that in a three-model situation, when uploading a <em>resume</em>, we need to also set <strong>which</strong> <em>job</em> and <em>user</em> the resume belonged to. This is established by the following under the `resumes_controller.rb’:</p>
 <figure class="highlight ruby"><figcaption><span>jobs_controller.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create</span></span></div><div class="line">   @job = Job.find(params[<span class="symbol">:job_id</span>])</div><div class="line">   @resume = Resume.new(resume_params)</div><div class="line"></div><div class="line">   @resume.job = @job</div><div class="line">   @resume.user = current_user</div><div class="line"></div><div class="line">	<span class="keyword">if</span> @resume.save</div><div class="line">     redirect_to job_path(@job), <span class="symbol">notice:</span> <span class="string">"The resume <span class="subst">#&#123;@resume.name&#125;</span> has been uploaded."</span></div><div class="line">   <span class="keyword">else</span></div><div class="line">     render <span class="string">"new"</span></div><div class="line">   <span class="keyword">end</span></div></pre></td></tr></table></figure>
 <p>Essentially, if in the model there is a “belongs_to” relationship from one model to another, this needs also to be reflected in the controller.</p>
@@ -875,13 +847,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/23/2016-10-23-1032025/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/23/2016-10-23-1032025/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -999,13 +964,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/23/2016-10-23-1031809/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/23/2016-10-23-1031809/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1129,13 +1087,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/23/2016-10-23-1031513/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/23/2016-10-23-1031513/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1264,13 +1215,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/20/2016-10-20-1016843/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/20/2016-10-20-1016843/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1402,13 +1346,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/20/2016-10-20-css-learning-jobs/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/20/2016-10-20-css-learning-jobs/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -1529,13 +1466,6 @@
           
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/20/2016-10-20-1016381/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/10/20/2016-10-20-1016381/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -1838,31 +1768,16 @@
 
   
 
-    <script type="text/javascript">
-      var disqus_shortname = 'dyzblog';
-      var disqus_identifier = 'page/6/index.html';
-
-      var disqus_title = "";
 
 
-      function run_disqus_script(disqus_script) {
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
 
-      run_disqus_script('count.js');
-
-      
-
-    </script>
-  
+	
 
 
 
 
+
+	
 
   
   
