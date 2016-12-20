@@ -1,0 +1,1069 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>DYZ.Life</title>
+  <subtitle>用文字帮助思考</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-12-17T06:10:34.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>朱英楠David</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【功能】Controller中verify_authenticity_token上传到Heroku出现bug</title>
+    <link href="http://yoursite.com/2016/12/16/2016-12-16-problem-with-verify-authenticity-token-when-uploading-to-heroku/"/>
+    <id>http://yoursite.com/2016/12/16/2016-12-16-problem-with-verify-authenticity-token-when-uploading-to-heroku/</id>
+    <published>2016-12-15T23:30:00.000Z</published>
+    <updated>2016-12-17T06:10:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>原本代码：</p>
+<figure class="highlight ruby"><figcaption><span>application_controller.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ApplicationController</span> &lt; ActionController::Base</span></div><div class="line">  protect_from_forgery <span class="symbol">with:</span> <span class="symbol">:exception</span></div><div class="line">  skip_before_action <span class="symbol">:verify_authenticity_token</span></div></pre></td></tr></table></figure>
+<p>本地运行app没有问题，上传到Heroku成功，打开Heroku app开始报错“Application Error”。输入heroku run rails console发现问题是<code>verify_authenticity_token has not been defined (ArgumentError)</code>。</p>
+<p>修改：</p>
+<figure class="highlight ruby"><figcaption><span>application_controller.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ApplicationController</span> &lt; ActionController::Base</span></div><div class="line">  protect_from_forgery <span class="symbol">with:</span> <span class="symbol">:exception</span></div><div class="line">  <span class="comment"># skip_before_action :verify_authenticity_token</span></div></pre></td></tr></table></figure>
+<p>不确定为什么之前加了这一行，但改好之后整个app运行正常，原本设计在登陆前能看到的东西都可以看到，改要求登陆的地方也都会正常要求登陆。</p>
+<p>参考：<br><a href="http://stackoverflow.com/questions/39260198/verify-authenticity-token-has-not-been-defined" target="_blank" rel="external">http://stackoverflow.com/questions/39260198/verify-authenticity-token-has-not-been-defined</a></p>
+<p><a href="https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/request_forgery_protection.rb#L122" target="_blank" rel="external">https://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/request_forgery_protection.rb#L122</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;原本代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;application_controller.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【体会】为什么创业做得不错的人都是大忽悠？</title>
+    <link href="http://yoursite.com/2016/12/15/2016-12-15-why-those-entrepreneurs-who-seem-to-do-well-are-all-good-at-bullshitting/"/>
+    <id>http://yoursite.com/2016/12/15/2016-12-15-why-those-entrepreneurs-who-seem-to-do-well-are-all-good-at-bullshitting/</id>
+    <published>2016-12-15T09:59:00.000Z</published>
+    <updated>2016-12-17T06:10:34.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今晚跟一个从华尔街回国的朋友聊天，发现金融圈跑出来创业的人，在学生时代都拥有一个共同标签：特别能忽悠。</p>
+<p>其实很make sense。会忽悠的人在融资、营销、销售、挖人这些初创阶段比较重要的事情上都颇有优势，所以很容易感觉表面繁华。</p>
+<p>但是，会忽悠的人往往产品做得稀烂，Retention几乎为0。<br>这可能是中国创业者和美国创业者最大的不同。</p>
+<p>很可惜，我在学生时代并没有这样的标签，所以只能靠后天补勤了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今晚跟一个从华尔街回国的朋友聊天，发现金融圈跑出来创业的人，在学生时代都拥有一个共同标签：特别能忽悠。&lt;/p&gt;
+&lt;p&gt;其实很make sense。会忽悠的人在融资、营销、销售、挖人这些初创阶段比较重要的事情上都颇有优势，所以很容易感觉表面繁华。&lt;/p&gt;
+&lt;p&gt;但是，会忽悠的
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【体会】如何客观理性冷静的看待周遭人怎么看你的创业想法？</title>
+    <link href="http://yoursite.com/2016/12/13/2016-12-13-how-to-calm-and-rational-look-at-what-people-around-us-think-of-your-business-idea/"/>
+    <id>http://yoursite.com/2016/12/13/2016-12-13-how-to-calm-and-rational-look-at-what-people-around-us-think-of-your-business-idea/</id>
+    <published>2016-12-13T11:45:00.000Z</published>
+    <updated>2016-12-20T11:21:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近跟几个想创业的朋友聊了一些他们的创业idea，有感而发：</p>
+<ol>
+<li><p>大部分人看好的项目，最终不一定成功</p>
+</li>
+<li><p>大部分人不看好的项目，最终不一定不成功</p>
+</li>
+<li><p>最终成功的项目，大部分人一开始都不看好</p>
+</li>
+<li><p>最终不成功的项目，没有人记得一开始大家看不看好</p>
+</li>
+</ol>
+<p>总结：</p>
+<p>大部分人怎么看你的创业项目根本没任何毛线关系，尽管有些漏洞百出的白痴idea，但也可以在产品一上线的时候迅速知道可不可行</p>
+<p>太过于在乎其他人怎么看你的idea，唯一影响的是你自己的军心</p>
+<p>很少投资人能够预测未来，不要把运气好的人和有insight的人搞混</p>
+<p>只有几个人的想法重要：</p>
+<p>1 . 你自己</p>
+<p>0 . 你的团队</p>
+<p>0 . 最亲的人</p>
+<p>0 . 已经投了你的人</p>
+<p>你是1，其他的都是0.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近跟几个想创业的朋友聊了一些他们的创业idea，有感而发：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;大部分人看好的项目，最终不一定成功&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;大部分人不看好的项目，最终不一定不成功&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;最终成功的项目，大部分人一开始都不看
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【功能】如何在使用Turbolink的时候下达document.ready指令</title>
+    <link href="http://yoursite.com/2016/12/13/2016-12-13-how-to-add-turbolinks-and-have-document-ready-commands-function-properly/"/>
+    <id>http://yoursite.com/2016/12/13/2016-12-13-how-to-add-turbolinks-and-have-document-ready-commands-function-properly/</id>
+    <published>2016-12-13T03:57:00.000Z</published>
+    <updated>2016-12-20T11:21:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>##问题：<br>Turbolinks在帮助页面加速（不去重新加载已经加载过的物件）的时候，JS指令“document.ready”不会被引发，所以根据该指令产生的jQuery动作也不会执行。在网站页面不多、物件不复杂的时候，直接干掉Turbolinks是可行的（也是<a href="http://dyz2102-blog.logdown.com/posts/1149250" target="_blank" rel="external">之前写的一篇教学</a>中所推荐的），但当页面越来越多，加载速度越来越慢的时候，使用Turbolinks变得十分重要，所以需要将”document.ready”修改成一个Turbolinks会发出的指令。</p>
+<p>##解决方案：</p>
+<p>将<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div><div class="line">	//<span class="title">YOUR</span> <span class="title">FUNCTION</span></div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>修改为<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">document</span>).on(<span class="string">"turbolinks:load"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div><div class="line">	//<span class="title">YOUR</span> <span class="title">FUNCTION</span></div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>记住要加回Turbolinks：</p>
+<figure class="highlight javascript"><figcaption><span>application.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//= require turbolinks</span></div></pre></td></tr></table></figure>
+<p>这样页面的指令就会在正常执行了。</p>
+<p>参考：<a href="http://guides.rubyonrails.org/working_with_javascript_in_rails.html#turbolinks" target="_blank" rel="external">http://guides.rubyonrails.org/working_with_javascript_in_rails.html#turbolinks</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##问题：&lt;br&gt;Turbolinks在帮助页面加速（不去重新加载已经加载过的物件）的时候，JS指令“document.ready”不会被引发，所以根据该指令产生的jQuery动作也不会执行。在网站页面不多、物件不复杂的时候，直接干掉Turbolinks是可行的（也是&lt;a 
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Day02 Week08 - 接案公司分享、大公司朋友PK</title>
+    <link href="http://yoursite.com/2016/12/06/2016-12-06-day02-week08-company-shares-company-of-friends-pk/"/>
+    <id>http://yoursite.com/2016/12/06/2016-12-06-day02-week08-company-shares-company-of-friends-pk/</id>
+    <published>2016-12-06T09:49:00.000Z</published>
+    <updated>2016-12-20T11:22:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天的两件事情我觉得比较值得回味。</p>
+<p>第一件就是Xdite分享了接案公司的运营。<br>第二件是晚上去一个朋友的局被好友劝说去大公司工作。</p>
+<p>1.</p>
+<p>接案公司是我昨天晚上在班上提出的一个想法，为的是解决我们很多人在课程结束后还渴望继续练习，同时需要找工作产生收入的需求。联合开一个接案公司可以解决这个问题，一方面有项目可以继续练习，另一方面又可以开始有收入。与此同时，接案公司在台湾碰到的两大瓶颈：人才短缺和市场太小，在大陆都不是问题。</p>
+<p>但今天早上，Xdite老师分享了接案公司的心得后，这一条路似乎又看起来没有那么promising。核心点在于接案公司的盈利能力很大程度上取决于客户。好客户想法不变、修改不多、按时付费、结算尾款。坏客户朝三暮四、各种改动、拖延付款、尾款坏账。在这种行业里，公司的收入是浮动的（案子有时多有时少 + 付款是被动的），但开销却是固定的（程序员工资 + 房租），所以很容易在市场不景气或者客户不靠谱的时候拖垮一家公司，或者至少说接案的钱并没有那么好赚。</p>
+<p>就这样，我们从约饭、VPN到接案三个不同idea的迅速转移又回到了原点。</p>
+<p>2.</p>
+<p>今天晚上，我跟几个很久没见的朋友们喝东西。我现在已经不隐瞒学编程这件事情了。如我所料，其中两位朋友开始说6万块如何不值，如何用3个程序员4万工资2个礼拜就开发出来了两个角色两个版本的iOS App。另外一个朋友拉着我聊了许久，觉得我应该去一个大的科技公司工作几年再创业，认为独自干的学习成本太高，不如积累好资源、想清楚再干。</p>
+<p>Well，这些东西我在过去半年里，已经反复想过很多遍了。</p>
+<p>技术可不可以外包？当然可以。作为一个推荐所有创业者“能外包的东西尽量外包”的人，我为什么会想不开，自己去学最难学会的那个本可以外包的东西？因为我需要在连4万块工资都开不起的时候把东西做出来。我已经很清楚地看到，MVP不是做一次就结束了，而是需要不断修改，甚至做很多次才能完善的东西。而创业idea，更是有可能快速失败后快速更换。所以即便在资本寒冬之后程序员外包成本急剧下降，没有钱想要聘人写一版又一版的程序是不现实的。</p>
+<p>另外说一下去大公司这一点。</p>
+<p>如果我打算用未来两年时间摸索创业，而我面临的选择是A：去BAT/GFA工作两年，还是B：连续创业失败3次？我会选B。很多人可能永远无法理解，唯一让你“创业能力”更强的工作，就是创业。去大公司积累人脉、看准需求、看好趋势，都比不上在创业过程中用实际的产品去碰撞实际的需求。</p>
+<p>以上。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天的两件事情我觉得比较值得回味。&lt;/p&gt;
+&lt;p&gt;第一件就是Xdite分享了接案公司的运营。&lt;br&gt;第二件是晚上去一个朋友的局被好友劝说去大公司工作。&lt;/p&gt;
+&lt;p&gt;1.&lt;/p&gt;
+&lt;p&gt;接案公司是我昨天晚上在班上提出的一个想法，为的是解决我们很多人在课程结束后还渴望继续练习
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>全栈营之8周心得 - 你好我是朱英楠，一只程序猿</title>
+    <link href="http://yoursite.com/2016/12/05/2016-12-05-%E5%85%A8%E6%A0%88%E5%BF%83%E5%BE%97/"/>
+    <id>http://yoursite.com/2016/12/05/2016-12-05-全栈心得/</id>
+    <published>2016-12-05T05:03:00.000Z</published>
+    <updated>2016-12-20T11:20:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>如何正确的面对自己？</strong></p>
+<p>起笔写这个心得，比我想象中要难好多。</p>
+<p>我其实并不是一个喜欢研究如何“学习”的人，或者说我在较早的时候就已经经历了迷恋研究如何学习的时期。我在大一的时候痴迷于GTD，买了很多书，给自己做了inbox、文件夹、各种todo list、用了各种App（那个时候就用了第一版经常闪退的Evernote Beta），后来发现效率的确有提升，但并没有那么“神奇”，和我自己持续正常努力的结果可能不会有太大差距。也可能是因为从小就足够会学习，家里满墙奖状、高中当选学生会主席、哥伦比亚大学提前录取、本科毕业就年薪百万，这些对我来说虽然不算轻而易举，但真的也没那么难。我是个典型的实践主义者：Just do it。思考，远没有执行来的有快感。</p>
+<p>我也不是不擅长写字。我7年前就开了<a href="www.davidyzhu.wordpress.com">自己的博客</a>，从高盛辞职的时候写过整个金融圈都看到过的“<a href="http://mp.weixin.qq.com/s?__biz=MzAxODExMDM1NA==&amp;mid=202742321&amp;idx=1&amp;sn=a66633e9e3d178c0e009146c03910922#rd" target="_blank" rel="external">我为何离开香港</a>”，在<a href="https://www.zhihu.com/people/zhuyingnan" target="_blank" rel="external">知乎</a>上过去一年也积累了接近一万个粉丝。但我不喜欢写日记。也不擅长总结自己学习的过程或方法论。我比较擅长的是分享人生阅历、在每一个人生节点为什么做出和别人不太一样的决定的思考，或者对最近所观察到的事情做出自己的一些看法和总结。换句话说，一篇文章对我来说更像是一个会被展示的项目，而不是一段文字记录或思路整理。这是个我仍需要克服的问题。</p>
+<p>在”Just Do It”的模式下运行惯了的我，却发现在创业这件事情上并行不通。在过去两年中，我尝试过两次互联网创业，享受了融资成功、百人团队、9个月烧掉一千万的盛世，也体验过产品零增长、融资失败、合伙人撕逼、团队解散的挫败。长这么大第一次深刻意识到，再漂亮的简历、再牛逼的背景、再花哨的西装、再强大的自我包装能力，在市场面前，完全没有任何卵用。</p>
+<p>你可以说我是一个自以为是的over-achiever，一个精致的利己主义者，一个创业动机不纯的wantrepreneur——我曾经100%是，直到现在一部分的我，可能还是。</p>
+<p>通常，和我类似背景的人在碰到上述困难的时候，会选择去读MBA，准确的说是哈佛、沃顿、斯坦福的MBA。但当我脑海中闪过这样的念头的时，我会立刻将其抹杀，因为我不需要再多一个名校标签，被潜意识的逃避所屈服，两年后回到远点，再一次思考工作vs.创业的窘境。</p>
+<p>所以我选择了面对。面对自己的失败的最大好处，就是让所有心高气傲的想法统统被干掉。全栈营开学第一天，我没有要做队长，甚至在前两周都没有说什么话。我告诉自己，我就是个什么都不懂的初学者，我需要做的唯一一件事，就是学。所以，能够让我真正进入学习状态的，不是智商或勤奋，而是抛开了我的傲慢。</p>
+<p><strong>创业失败了，所以呢？</strong></p>
+<p>创业失败后的总结过程中，我越来越认为创业不是需要去理解多么高阶、深奥、复杂的理论，而是将一些非常简单又基本的原则真正去实践。以下是我认为在所读过的文字中最能够概括创业所需的基本原则：</p>
+<ol>
+<li>Companies create X amount of value, and capture Y% of X（创造价值X，然后获取X里面的Y%占比）.</li>
+<li>Avoid competition and always try to monopolize a small market（避免竞争，尽可能垄断一个微小市场）.</li>
+<li>The best way to think of startup ideas is not to try to think of startup ideas. It’s to look for problems, preferrably problems you have yourself（思考创业点子的最好办法就是不要去想创业点子，而是去找寻问题，最好是你自己正面临的问题）.</li>
+<li>The best startup ideas tent to have three things in common（最好的创业点子拥有以下特征）:<br> a. they’re something the founders themselves want（是创始人自己想要的东西）<br> b. that they themselves can build（是创始人可以创造的东西）<br> c. and that few others realize are worth doing（而且很少其他人会认为这件东西有价值）.</li>
+</ol>
+<p>前两条来自Peter Thiel 2012年在<a href="http://startupclass.samaltman.com/courses/lec05/" target="_blank" rel="external">斯坦福的创业课</a>，后来被整理写入他的书《从零到一》，后两条来自<a href="http://paulgraham.com/startupideas.html" target="_blank" rel="external">Paul Graham的博客</a>，同样写于2012年。</p>
+<p>这些原则可能会是我下一次创业的指南针，但其中有一个很大的缺口：<strong>4.b——创始人需要自己能够打造自己想要用来解决问题的产品。</strong> 而这，也正是我学编程的原因。</p>
+<p>过去两年，我看到了太多创业者在开发上所浪费的时间、精力、钱，最终打造出来设计丑、体验差、没人用的产品。选择创业是为了给世界创造价值，而这样的创业只会摧毁价值。</p>
+<p>我没有对身边的任何人提我要去学编程这件事情。他们不会那么容易理解，我也懒得浪费时间去解释自己。在获得了我唯一需要的支持后（我的家人），我就报名了全栈营。</p>
+<p><strong>全栈营是什么鬼？</strong></p>
+<p>刚来全栈营的时候，我是怀疑的。经验告诉我，大部分告诉你能够速成的东西都是骗人的。</p>
+<p>我不知道Ruby on Rails是什么。我查了网上的解释，还是不知道Ruby on Rails是什么。我听过Github无数次，甚至之前创业的iOS代码就备份在Github上，但我不知道一行Github指令，也不说不出Github是什么。我上一次写代码，是13岁的时候为了让自己的MySpace能够更好看一些，勉强用HTML调整了背景图、字体、颜色。所以对，我也不知道CSS是什么，因为没用过。</p>
+<p>7个星期的项目成果，大概是长这样：</p>
+<p>【第一个项目：贴吧，开学前两周独立完成】<br><img src="http://ww2.sinaimg.cn/large/7853084cjw1fah1wg1dm9j20nd06s0sr.jpg" alt=""></p>
+<p>【第二个项目：论坛，开学前独立完成】<br><img src="http://ww1.sinaimg.cn/large/7853084cjw1fah1yryq10j20xg0bcq3t.jpg" alt=""></p>
+<p>【第三个项目：招聘网站，独立6天完成】<br><img src="http://ww4.sinaimg.cn/large/7853084cjw1fah2n3us8fj20nv0gh77p.jpg" alt=""></p>
+<p>【第四个项目：电商，独立8天完成】<br><img src="http://ww4.sinaimg.cn/large/7853084cjw1fah259q8zwj20de0hejum.jpg" alt=""></p>
+<p>【第五个项目：投票游戏，2人2天完成的Hackathon】<br><img src="http://ww2.sinaimg.cn/large/7853084cjw1fah1zkta87j20xc0dhgpr.jpg" alt=""></p>
+<p>【第六个项目：约饭平台，5人15个工作日完成】<br><img src="http://ww3.sinaimg.cn/large/7853084cjw1fah24sf9p8j20bt0xkwjk.jpg" alt=""></p>
+<p>如果说我曾经怀疑自己成为一个全栈工程师的潜力，在做完这6个项目之后，我不再有任何怀疑。尽管我现在还不足以称自己为“全栈”，但我已经具备了开发最基础功能的web + mobile前端和后端技能（从这里延伸到iOS/Android也提供了快捷的方法和教材）。更重要的是，我已经拥有了自学开发任何其他简单功能的基础。不喜欢写日记的我，也攒下了近60篇博客，其中约10篇是关于开发某个功能的方法或总结。</p>
+<p>不得不承认，在“把学生教会”这一件事上，全栈营做到了。</p>
+<p><strong>所以Ruby on Rails到底是什么？</strong></p>
+<p>如果一个程序是一个世界，那么程序员就是建造这个世界的神。《创世记》中，神说：“要有光”，就有了光。但神是如何获得制作光的工具？万一光子并不知道如何连接在一起让光线可以从A照射到B呢？万一被光照射到的地方并无法反光所以透露不出自己的颜色呢？人只看得到光，所以认为神可以用一句话让光出现，但人并不知道神是这么造光的。</p>
+<p>神要创造光，需要两样东西：给光下达指令的方式，和下达指令的框架。前者可以使任何神和光都懂的语言，而后者，是让神在写任何东西的时候都可以快速高效的写出来，而不需要去担心存放东西空间的大小、里面的物质等其他琐碎却复杂的细节。</p>
+<p>所以，在这个世界里：</p>
+<ul>
+<li>神=程序员</li>
+<li>光=程序</li>
+<li>人=用户</li>
+<li>神对光下达指令的方式=Ruby</li>
+<li>神创造任何东西的框架=Rails</li>
+</ul>
+<p>写程序的人非常多，程序非常多，语言也非常多，但为什么说Ruby on Rails会比其他方式更快？因为Rails对神想要做的事情做了很多的预估和猜测，设计了一系列方便神去创造的框架细节。就像在一个锅碗瓢盆因有尽有的厨房炒菜和跟在一个什么都需要去买的厨房炒菜是完全不一样的。Rails就是那个连新鲜调味料都帮你备好的厨房。</p>
+<p><strong>7个星期中具体都学到了些什么？</strong></p>
+<p>在过去一段时间的学习中，我最大的surprise就是Rails有多么的简单。回顾日记，我可以清楚的看到自己是在哪一天学到了什么：开始学会<a href="http://dyz2102-blog.logdown.com/posts/1013486" target="_blank" rel="external">用Google自己搜教学</a>完成某个功能（第3天…）、<a href="http://dyz2102-blog.logdown.com/posts/1016843" target="_blank" rel="external">如何写seed文档</a>（第4天）、<a href="http://dyz2102-blog.logdown.com/posts/1034465-day01-week02" target="_blank" rel="external">上传附件</a>（第6天）、理解migration和<a href="http://dyz2102-blog.logdown.com/posts/1042590" target="_blank" rel="external">重建db</a>（第8天）、<a href="http://dyz2102-blog.logdown.com/posts/1047572" target="_blank" rel="external">自由搭建routes</a>（第9天）、<a href="http://dyz2102-blog.logdown.com/posts/1061503-day01-week03" target="_blank" rel="external">写CRUD以外的新action</a>（第11天）、<a href="http://dyz2102-blog.logdown.com/posts/1068920-day03-week03-shopping-site-with-order-delivery" target="_blank" rel="external">自动发邮件</a>（第13天）、<a href="http://dyz2102-blog.logdown.com/posts/1070126-day04-week03" target="_blank" rel="external">装状态机</a>（第14天）、<a href="http://dyz2102-blog.logdown.com/posts/1070126-day04-week03" target="_blank" rel="external">使用AWS存储文件</a>（第15天）、<a href="http://dyz2102-blog.logdown.com/posts/1073097-manage-aws-key-using-figaro-on-heroku-for-carrierwave" target="_blank" rel="external">用Figaro保护AWS云服务</a>（第16天）、<a href="http://dyz2102-blog.logdown.com/posts/1084768" target="_blank" rel="external">如何规划Hackathon的超短线开发</a>、<a href="http://dyz2102-blog.logdown.com/posts/1103135" target="_blank" rel="external">做Landing Page</a>（第20天）。</p>
+<p>从第五周起（第21天）我们进入团队开发模式，项目管理和协作变成了首要学习要点，也就是从这里开始真正模拟实战开发项目的场景。没有什么产品会是一个人独立写出来的，而无法协作的人一定无法成为好的程序员。也是在这个时候，我开始觉得我的小宇宙爆发了。从<a href="http://dyz2102-blog.logdown.com/posts/1106141-day01-week05-collab-on-proj-eatgether" target="_blank" rel="external">写User Story</a>、<a href="http://dyz2102-blog.logdown.com/posts/1139165-week06-the-sixth-week-summary-importance-of-teamwork" target="_blank" rel="external">在Redmine上切票</a>、<a href="http://dyz2102-blog.logdown.com/posts/1149797-eat2gether-onboarding-documents" target="_blank" rel="external">写Onboarding文档</a>，到<a href="http://dyz2102-blog.logdown.com/posts/1171106" target="_blank" rel="external">写前端</a>、<a href="http://dyz2102-blog.logdown.com/posts/1138305-day04-week06-demo-version-of-the-product" target="_blank" rel="external">做demo</a>，都在一定程度上发挥了我的罗辑思维能力、项目管理能力和视觉审美。我们团队也顺利成为全班进度最快、产品最完整的团队。</p>
+<p><strong>8周6万的课，是否值得？</strong></p>
+<p>人在衡量一段经历的价值的时候会展现出惊人的认知偏差。成果令人开心的事情价值很容易抬高，反之则无论前面体验如何都会变的不值；自己选择的事情很容易觉得宝贵，被强迫的选择很容易不值；经过千辛万苦被虐到废的经历会十分珍惜，轻易得来的东西则不那么在乎。所以当我们问一个人某段经历是否值得的时候，100个人会有100种答案。</p>
+<p>按照我创业前工资来算，过去2个月的机会成本大概是26万人民币。但我在很早之前就已经放弃了按月计算机会成本的短视角。因为这样算的人，永远不会离开高薪打工的岗位去尝试任何带有较高风险的事情。打工和创业，就像是债权回报和股权回报的对比。买债券拿到的是每月的固定收益（工资），而股权回报可以几年不分红甚至亏损，而在未来的某一天腾飞，获得几十甚至上百倍的回报。</p>
+<p>从一个技术的门外汉，到能独立开发极简程序、共同开发完整可上线程序，能够看懂Stackoverflow上的交流贴并自己实现没有做过的新功能、解决没有碰到过的bug，这一切对我来说，其实已经远远超出了我对自己“程序员”身份的假想。有很多人会去花时间选择编程语言，甚至去网上跟人撕哪一种语言更好。在这一点上quote一句老人的话“不管黑猫白猫，捉到老鼠就是好猫”。</p>
+<p>在我上一次创业当中，开发一款iOS的App，从立项到内测花了近4个月时间，用了1个iOS、1个后端、1个后端实习生、1个产品经理、1个外包设计师、1个全职设计师，开了几十万的工资。而现在的我，再继续练习1-2个月之后，可以1个人完成那6个人做的所有事情。</p>
+<p>但在这里学到比编程更有价值的，是关于创业的一些best practice和know-how。Landing Page, User Story, 项目管理，Growth Hacking…如果说编程让我创业的成功率从1%上升到了2%，那么这些其他的知识可能让2%成为了5%（虽然实际情况可能这些概率都得再除以10，哈哈哈）。</p>
+<p><strong>结论</strong></p>
+<p>在过去半年里，我拒绝了来自投行、PE的offer，以及来自影视行业、医药行业、创业公司CFO的橄榄枝。无论是投资人还是创业者，下注小概率事件的人都是有一定赌性。既然只能下注一次，为什么不博一把大点的呢？</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;如何正确的面对自己？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;起笔写这个心得，比我想象中要难好多。&lt;/p&gt;
+&lt;p&gt;我其实并不是一个喜欢研究如何“学习”的人，或者说我在较早的时候就已经经历了迷恋研究如何学习的时期。我在大一的时候痴迷于GTD，买了很多书，给自己做了in
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【体会】写前端的一些体会</title>
+    <link href="http://yoursite.com/2016/12/04/2016-12-04-front-end-summary/"/>
+    <id>http://yoursite.com/2016/12/04/2016-12-04-front-end-summary/</id>
+    <published>2016-12-04T00:24:00.000Z</published>
+    <updated>2016-12-20T11:20:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>过去两周team基本进入了前后端共同推进阶段，而我作为组内设计元素的主要贡献者，不可避免的花了大量时间写前端。这不是我想做的，因为学技术的目的是希望能够自主开发更多功能，但为了项目推进，必须要实现最大化每个人的产值，同时也是对自己前端HTML、CSS很好的练习。</p>
+<p>两周前端写下来，分享一下自己的体会：</p>
+<p>##前端和后端一样需要提前规划</p>
+<p>我在之前的一篇日记中提到过，在项目进行到一定程度，MVC需要<a href="http://dyz2102-blog.logdown.com/posts/1124801-week05-weekly-summary-group-project-demo-stage" target="_blank" rel="external">提前规划再写入</a>。前端开发其实在荧幕适配这个问题上是类似的。由于我们项目从一开始只想到了电脑荧幕适配，所以没有写入任何的小荧幕适配CSS。这就导致在之后写入这代码的时候需要修改大量以前的代码，排版和CSS定义越多的地方修改越大。</p>
+<p>由于Bootstrap提供了非常便利的responsive grid system，所以其实在一开始写的时候就应该想好两套适配模式：电脑和移动端，基本可以用Bootstrap上的<code>col-md-XX</code>和<code>col-xs-XX</code>覆盖。而只有需要罗列大量物件的地方才需要考虑使用<code>col-lg-XX</code>和其他大小的适配。</p>
+<p>另外，如果所有页面都通过Bootstrap nav tab以及render partial的方式呈现，可以让使用的时候几乎没有任何跳转（“设计师”项目应该就是这样设计的，所有页面都是partial的形态存在views/common下面）。但同样，这种写法需要一开始就定好，因为之后修改的时候营业面需要将view里面的定义通过controller重新确定，越往后越麻烦。</p>
+<p>##前端的核心不是技术，是审美和时间</p>
+<p>之前以为技术大牛朋友跟我说过，后端决定了项目的底线，前端决定了项目的上线。虽然不是100%完全认同，但基本上表达了项目前后端的角色。前端不需要对编程有深刻的理解，不需要对项目管理有详细的规划，只需要懂得如何通过HTML/CSS/jQuery来实现视觉上的效果。而且有了Bootstrap、jQuery、HTML5、CSS3等便捷语言的出现，在开发模式下其实想要调整前端也非常容易。</p>
+<p>但前端却是可以非常耗时间的意向工作。每实现一个新的视觉效果、生成一个新的页面，都需要花大量的时间去编排。甚至套模板也不是很便捷，因为大部分模板都是为基本的HTML、CSS而写，都不那么智能，在根据自己网站需求套上之后如果要加效果还得另行写入。</p>
+<p>所以如Xdite所做的，前端完全可以外包给一个专业点的设计师，同时有一个in-house胜任者就可以完成。</p>
+<p>##珍惜时间，远离APP</p>
+<p>下周希望学习高瑞是如何用15秒生成“法律在线”项目App的，然后如果整个产品都是JS + Partial的形式，基本上不会有太多页面跳转，使用起来跟App的体验是差不多的。App开发时，手机荧幕大小的适配、App Store的认证、审核，都会耗费大量的时间和精力，在创业早期，能不碰就千万别碰。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;过去两周team基本进入了前后端共同推进阶段，而我作为组内设计元素的主要贡献者，不可避免的花了大量时间写前端。这不是我想做的，因为学技术的目的是希望能够自主开发更多功能，但为了项目推进，必须要实现最大化每个人的产值，同时也是对自己前端HTML、CSS很好的练习。&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Weekly Summary - 最后demo + 求职技巧</title>
+    <link href="http://yoursite.com/2016/12/02/2016-12-02-weekly-summary/"/>
+    <id>http://yoursite.com/2016/12/02/2016-12-02-weekly-summary/</id>
+    <published>2016-12-01T23:37:00.000Z</published>
+    <updated>2016-12-20T11:20:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
+<p>关于今天的课程, 你记得什么?</p>
+<ul>
+<li>上午进行了group project的最后一次demo</li>
+<li>下午Xdite分享了有关技术人才求职的技巧与心得，以及如何包装自己的简历和整个public profile</li>
+</ul>
+<p>完成了什么?</p>
+<ul>
+<li>通常demo之后大家都会比较松散，想要多休息和整理</li>
+<li>下午weekly meeting的时候组员们分享了过去一周的感想和心得</li>
+</ul>
+<p><strong>Reflective</strong></p>
+<p>今天的高峰是什么?</p>
+<ul>
+<li>Xdite分享技术行业人才求职的public profile时候，深刻了解到如何去展示自己的学习成果</li>
+</ul>
+<p>今天的低点是什么?</p>
+<ul>
+<li>demo之后效率不高，每次demo后应该立刻开weekly meeting，一天的工作一定要有momentum，否则就会懒散下来浪费很多没必要浪费的时间</li>
+</ul>
+<p><strong>Interpretive</strong></p>
+<p>我们今天学到了什么?</p>
+<ul>
+<li>程序员public profile应该如何建立</li>
+</ul>
+<p>今天一个重要的领悟是什么?</p>
+<ul>
+<li>大家都发现当项目衍生到接近上线时，任何功能上的改动都需要格外小心，一个字段会改掉所有现有数据的呈现、一个新model的关系会将MVC变得更加复杂，所以必须一开始就将MVC全部规划好在开始写，否则会变得非常乱</li>
+</ul>
+<p><strong>Decisional</strong></p>
+<p>我们会如何用一句话形容今天的工作<br>有哪些工作需要明天继续努力?</p>
+<ul>
+<li>周末会花时间写整个课程下来的学习心得，也是我一直以来自己就很想做但一直懒没有做的事情。非常庆幸是课程的一部分。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;关于今天的课程, 你记得什么?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;上午进行了group project的最后一次demo&lt;/li&gt;
+&lt;li&gt;下午Xdite分享了有关技术人才求职的技巧与心得，以及如何包装自己的简历和
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Day04 Week07 - 完成第三次demo的产品</title>
+    <link href="http://yoursite.com/2016/12/02/2016-12-02-day04-week07-third-demo/"/>
+    <id>http://yoursite.com/2016/12/02/2016-12-02-day04-week07-third-demo/</id>
+    <published>2016-12-01T22:54:00.000Z</published>
+    <updated>2016-12-20T11:20:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
+<p>完成了什么?</p>
+<ul>
+<li>今天的主要任务是完善明天的demo版产品</li>
+<li>团队将redmine上的任务继续细分，然后根据redmine各自完成任务</li>
+</ul>
+<p><strong>Reflective</strong></p>
+<p>今天的高峰是什么?</p>
+<ul>
+<li>凌晨2点突然脑子一通就把小头像功能几行代码敲出来了：<br><img src="http://ww3.sinaimg.cn/large/7853084cjw1facghttlsrj20f60pugnx.jpg" alt=""></li>
+</ul>
+<p>今天的低点是什么?</p>
+<ul>
+<li>上传Heroku的版本在上线后还是偶尔会碰到bug，比如一个order生成后它的post还会在后台可见，如果一不小心删除了就会报错</li>
+<li>添加新字段会影响之前的数据，而Heroku的console又比较慢，所以最好是有一个很好的seed文档可以把所有东西做好，另外在添加字段的时候一定要设置default数值防止报错</li>
+</ul>
+<p><strong>Interpretive</strong></p>
+<p>我们今天学到了什么?</p>
+<ul>
+<li>其实有些功能需要多做一些思考，而不是一上来就做。有些时候想清楚了就可以很快做出来</li>
+<li>demo之前需要填写大量的seed数据，其实是需要思考的，不同账号的不同用户发起不同邀约，很耗时间，最好都提前备好在Excel里面</li>
+</ul>
+<p>今天一个重要的领悟是什么?</p>
+<ul>
+<li>在上线一个版本之前，大家都会很急着想上线，不愿意花很多时间测试功能（因为已经开发很久了）。但在上线Heroku之前其实非常需要详细的测试，因为上线之后再看到bug修复就不能立刻看到结果，还需要线下修复再重新部署，效率比较低</li>
+</ul>
+<p><strong>Decisional</strong></p>
+<p>有哪些工作需要明天继续努力?</p>
+<ul>
+<li>明天demo，产品比较成型了，应该会有不错的展示</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;完成了什么?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;今天的主要任务是完善明天的demo版产品&lt;/li&gt;
+&lt;li&gt;团队将redmine上的任务继续细分，然后根据redmine各自完成任务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;s
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【功能】如何将devise的flash提示设置为中文（或其他语言）</title>
+    <link href="http://yoursite.com/2016/12/01/2016-12-01-function-flash-tips-how-to-devise-is-set-to-chinese/"/>
+    <id>http://yoursite.com/2016/12/01/2016-12-01-function-flash-tips-how-to-devise-is-set-to-chinese/</id>
+    <published>2016-11-30T21:46:00.000Z</published>
+    <updated>2016-12-20T11:20:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<ol>
+<li><p>参考这里：<a href="https://github.com/plataformatec/devise/wiki/i18n" target="_blank" rel="external">https://github.com/plataformatec/devise/wiki/i18n</a><br>里面有各种个语言的devise提示讯息，根据自己devise版本下载一个中文的：<br><img src="http://ww3.sinaimg.cn/large/7853084cgw1fab8voj9khj20jn0b4wgv.jpg" alt=""></p>
+</li>
+<li><p>将下载的.yml文件存在config/locale文件夹里面<br><img src="http://ww2.sinaimg.cn/large/7853084cgw1fab90wqtzej207a05b3ym.jpg" alt=""></p>
+</li>
+<li><p>在config/application.rb当中加入一行代码：</p>
+<figure class="highlight ruby"><figcaption><span>config.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> 【项目名称】</span></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Application</span> &lt; Rails::Application</span></div><div class="line">  		config.i18n.default_locale = <span class="symbol">:<span class="string">'【文件名devise后面的部分】'</span></span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="http://ww2.sinaimg.cn/large/7853084cjw1fab9259vobj20ae02wjrl.jpg" alt=""><br>记住别加到外面去了，会报错</p>
+<ol>
+<li>重启服务器</li>
+</ol>
+<p>voila:</p>
+<p><img src="http://ww3.sinaimg.cn/large/7853084cjw1fab8yygvuuj20fy0b5abk.jpg" alt=""></p>
+<ul>
+<li>其他：</li>
+</ul>
+<p>这时候填写表单时候，有日期选择的地方会报错<code>undefined method</code>map’ for “translation missing”`，这是因为日期没有重新翻译，所以需要在config/locales下面创建一个新文件”zh-CN.yml”（或者下载的其他翻译文件的语言名）里面加上如下代码：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">zh-<span class="symbol">CN:</span></div><div class="line">  <span class="symbol">date:</span></div><div class="line">    <span class="symbol">order:</span></div><div class="line">      - <span class="string">"year"</span></div><div class="line">      - <span class="string">"month"</span></div><div class="line">      - <span class="string">"day"</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://ww4.sinaimg.cn/large/7853084cjw1fab9xa1ivoj20dc07c0tg.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ol&gt;
+&lt;li&gt;&lt;p&gt;参考这里：&lt;a href=&quot;https://github.com/plataformatec/devise/wiki/i18n&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/plataformatec
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Day03 Week07 - mobile演示版.ready? == false</title>
+    <link href="http://yoursite.com/2016/12/01/2016-12-01-day03-week07-mobile-demo-version-ready-false/"/>
+    <id>http://yoursite.com/2016/12/01/2016-12-01-day03-week07-mobile-demo-version-ready-false/</id>
+    <published>2016-11-30T21:39:00.000Z</published>
+    <updated>2016-12-20T11:20:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
+<p>今天课程学到了什么？</p>
+<ul>
+<li>Xdite就提速和SEO进行了教程和分享，非常受用</li>
+</ul>
+<p>完成了什么?</p>
+<ul>
+<li>进一步完善Eat2gether网站功能，修改了一些页面</li>
+<li>感谢红红昨天帮我们做了详细的测试，提供了宝贵建议，我们开会讨论列出了20条左右新任务</li>
+<li>有机会到清华苏市民学院做创业分享，展示了一下产品</li>
+</ul>
+<p><strong>Reflective</strong></p>
+<p>今天的高峰是什么?</p>
+<ul>
+<li>做出了一些mobile上好用的功能，比如隐藏无法展开的notifications等</li>
+<li>在清华分享创业（失败）经验</li>
+</ul>
+<p>今天的低点是什么?</p>
+<ul>
+<li>本来以为版本已经mobile-friendly，但发现很多内部页面并不能顺利适配手机，例如account下面的页面</li>
+<li>红杉资本的合伙人是负责消费品行业的，对社交网络没有看过，所以并没有什么机会交流</li>
+</ul>
+<p><strong>Interpretive</strong></p>
+<p>我们今天学到了什么?</p>
+<ul>
+<li>更多mobile技能，因为空间较小，所以从一开始就使用Bootstrap Grid是最高效的方法</li>
+<li>网站产品很难让人wow，手机网页会更容易让人感觉眼前一亮，可能是因为手机页面较小所以错觉内容丰富，或者潜意识里觉得移动开发比网页开发更难</li>
+<li>Xdite的分享内容，以前都只有大概听过，也不知道其中的细节，今天算是比较详细了解了入门。尽管离我们项目距离还有点远（真正上线了可能才需要担心速度和SEO），但这些工具都是很好的备用，以后有需要时不会一头雾水</li>
+</ul>
+<p>今天一个重要的领悟是什么?</p>
+<ul>
+<li>用户使用产品时碰到的问题和开发者想象中永远存在一定差异，所以今早去的用户反馈太重要</li>
+<li>真正会在乎产品的是精准有需求的用户，而不是想听你创业故事的人</li>
+</ul>
+<p><strong>Decisional</strong></p>
+<p>有哪些工作需要明天继续努力?</p>
+<ul>
+<li>明天会继续完善产品，将一些bugs修改，优化流程</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;今天课程学到了什么？&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Xdite就提速和SEO进行了教程和分享，非常受用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;完成了什么?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;进一步完善Eat2gether网站功能
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Day02 Week07 - 移动端适配</title>
+    <link href="http://yoursite.com/2016/11/29/2016-11-29-day02-week07-mobile-adapter/"/>
+    <id>http://yoursite.com/2016/11/29/2016-11-29-day02-week07-mobile-adapter/</id>
+    <published>2016-11-29T09:40:00.000Z</published>
+    <updated>2016-12-20T11:19:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
+<p>完成了什么?</p>
+<ul>
+<li>今天将Redmine上的任务过了一遍，然后坤明和我花了大量时间将页面做成能够手机适配，其他组员负责将功能（表单、调用）持续完善</li>
+</ul>
+<p><strong>Reflective</strong></p>
+<p>你要如何形容今天的情绪<br>今天的高峰是什么?</p>
+<ul>
+<li>做完Landing Page的手机适配之后</li>
+</ul>
+<p>今天的低点是什么?</p>
+<ul>
+<li>手机适配比较tricky，好几个地方卡主比较长时间，比如让nav-bar collapse回去的toggle指令，在韩晗帮助下一起figured out</li>
+</ul>
+<p><strong>Interpretive</strong></p>
+<p>我们今天学到了什么?</p>
+<ul>
+<li>手机适配需要提早做好，最好一开始就想好手机版/小荧幕的显示，后来在回来改代码效率低很多</li>
+</ul>
+<p>今天一个重要的领悟是什么?</p>
+<ul>
+<li>我们第五组从11月10日开始Eatgether这个项目，到明天整整20天。我1年前做的电商导购项目，从立项到内测（也就是我们现在的状态），花了近4个月时间，用了1个iOS、1个后端、1个后端实习生、1个产品经理、1个外包设计师、1个全职设计师，开了几十万的工资。有些傻逼的错误，如果不犯，永远不会让自己跪着去学习写第一行代码</li>
+</ul>
+<p><strong>Decisional</strong></p>
+<p>有哪些工作需要明天继续努力?</p>
+<ul>
+<li>明天需要完善几个页面的小适配问题，然后后天需要填写“看起来真实的”信息和图片才可以演示和测试</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;完成了什么?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;今天将Redmine上的任务过了一遍，然后坤明和我花了大量时间将页面做成能够手机适配，其他组员负责将功能（表单、调用）持续完善&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;stro
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Day01 Week07 - 开始Onboarding讨论</title>
+    <link href="http://yoursite.com/2016/11/29/2016-11-29-day01-week07-start-onboarding-discussion/"/>
+    <id>http://yoursite.com/2016/11/29/2016-11-29-day01-week07-start-onboarding-discussion/</id>
+    <published>2016-11-29T06:56:00.000Z</published>
+    <updated>2016-12-20T11:19:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
+<p>关于今天的课程, 你记得什么?</p>
+<ul>
+<li>今天Xdite讲了“Intro to Growth Hacking #2”的课程，重点讲述概念包括“黄金通道”、“功能组vs成长组”、用户分级和如何计算Project价值</li>
+<li>用户分级：core user / active user / casual user / uniques / channel，最重要为active user和casual user</li>
+<li>Project价值：重点开发low dev cost和high growth score的“Slam Dunks”以及low dev cost和low growth score的“Quickies”</li>
+<li>晚上Xdite分享了在硅谷O2O创业公司Spoon Rocket的故事和对O2O行业的见解</li>
+</ul>
+<p>完成了什么?</p>
+<ul>
+<li>小组花了很长时间各自写出Onboarding的文档，然后开会对照，综合出了我们的第一篇Onboarding文档</li>
+</ul>
+<p><strong>Reflective</strong><br>你要如何形容今天的情绪<br>今天的高峰是什么?</p>
+<ul>
+<li>Growth Hacking课程，很有收获</li>
+</ul>
+<p>今天的低点是什么?</p>
+<ul>
+<li>Onboarding文档写起来很难进入状态</li>
+</ul>
+<p><strong>Interpretive</strong></p>
+<p>我们今天学到了什么?</p>
+<ul>
+<li>Growth Hacking是非常scientific的exercise，完全可以用数据化方式来衡量，而不是感情用事地你一句我一句，大家各有各的想法和意见，有best practice做guideline绝对会大幅提升效率</li>
+</ul>
+<p>今天一个重要的领悟是什么?</p>
+<ul>
+<li>Onboarding思考需要十分周密，有很多细节是开发时候没有想到的。碰到有争执的地方，会等到用户反馈来进行下一步决策</li>
+</ul>
+<p><strong>Decisional</strong></p>
+<p>有哪些工作需要明天继续努力?</p>
+<ul>
+<li>明天会开始做手机适配，周三有个机会见真格和红杉的合伙人，打算把握机会秀一下</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;关于今天的课程, 你记得什么?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;今天Xdite讲了“Intro to Growth Hacking #2”的课程，重点讲述概念包括“黄金通道”、“功能组vs成长组”、用户分级和如何
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Eat2gether] Onboarding文档</title>
+    <link href="http://yoursite.com/2016/11/28/2016-11-28-eat2gether-onboarding-documents/"/>
+    <id>http://yoursite.com/2016/11/28/2016-11-28-eat2gether-onboarding-documents/</id>
+    <published>2016-11-27T19:49:00.000Z</published>
+    <updated>2016-12-20T11:19:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Eat2gether-project-Onboarding"><a href="#Eat2gether-project-Onboarding" class="headerlink" title="Eat2gether project Onboarding"></a>Eat2gether project Onboarding</h1><p>产品是：小组约饭形式的交友平台【约饭社交网站】<br>产品情境：帮助城市年轻人建立起认识新朋友的场景和渠道，通过良好的饭局体验拉进人与人的距离</p>
+<p>Part 1.</p>
+<h3 id="Before-start-date"><a href="#Before-start-date" class="headerlink" title="Before start date"></a>Before start date</h3><ol>
+<li>建立网站微信公众号、微博、Instagram、Facebook，发布最新官方消息、发推广文</li>
+<li>针对建立邀约、发起申请、完成邀约三大功能在网站发布其运作流程</li>
+<li>准备好调查问卷，访问用户使用时候的不便、不理解、以及对产品的反馈意见</li>
+<li>特邀社交达人嘉宾通过平台发起邀约，选择TA们最感兴趣的餐厅、最活跃的地段、最方便约会的时间</li>
+<li>特邀社交达人和参加者撰写博客发表在公众号以及博客中</li>
+<li>每周三定点发布本周最火邀约</li>
+<li>客服电话预约餐厅</li>
+</ol>
+<p>【软文宣传】</p>
+<h3 id="Around-start-date"><a href="#Around-start-date" class="headerlink" title="Around start date"></a>Around start date</h3><ol>
+<li>提前一天提醒约会小组用户第二天时间地点，点击查看“邀约指南”【如何发起具有吸引力的邀约】<br>  邀约指南：<br>   a. 个人照片、生活照【什么样的图片更好】<br> b. 详细的个人信息，完善个人信息页<br> c. 约饭主题新颖<br> d. 聊天内容<br> e. 提醒：越详细的个人信息会提高约饭概率</li>
+<li>撰写“邀约指南”确保组织者和参与者都拥有最佳约会体验</li>
+</ol>
+<h3 id="Start-Date"><a href="#Start-Date" class="headerlink" title="Start Date"></a>Start Date</h3><ol>
+<li>提醒约会小组约会时间地点，提醒千万<strong>不要迟到</strong></li>
+<li>聊天话题推荐：根据小组兴趣爱好标签、根据过去三天时事趣闻，男士/组织者一定要提前准备有趣的话题</li>
+<li>工作人员与餐厅电话确认预约、座位、人数、菜单、【餐厅/网站小礼品】，提醒</li>
+<li>小组可在聊天室当中对话，选择是否提前提供联系方式</li>
+<li>约会期间工作人员随时待命处理客服问题（找不到人、地点、订单出问题等）</li>
+<li>提醒用户查看客户端信息提醒</li>
+<li>邀约之后进行电话回访（包括被拒绝的用户）【标准化问卷】</li>
+</ol>
+<p>The first part</p>
+<ol>
+<li>注册网站，登录</li>
+<li>添加邀约或者申请邀约，具体操作在博客里有说明文档</li>
+</ol>
+<p>中间</p>
+<ol>
+<li>在“发起约饭”界面填写邀约细节【表单改为在行板式】</li>
+<li>主题建议格式【在[地点+餐厅名]一场[形容词]的[料理]，例：在国贸北京亮一个完美的牛扒晚餐】</li>
+<li>详细信息格式【后面在想，很重要，比较复杂，参考在行】</li>
+<li>约饭地点【5个餐厅，每周更新，用户可自定义】</li>
+<li>根据约饭地点自动显示地址、电话、图片、地图</li>
+<li>邀约需要系统审核才可发布，不可超过24小时</li>
+<li><p>邀约通过后可以通过社交平台推广：微信、微博、Facebook、Ins?</p>
+</li>
+<li><p>参与者可以看到邀约明细【餐厅图片、发起人图片、简介】，申请邀约</p>
+</li>
+<li>参与者的个人页面的部分信息可以显示在申请页面下，这个页面展示给申请人preview<br>10、以周为单位，每周末的两次邀约，要求发起人每周【四】必须确认名单</li>
+<li>同一时间不能发起一个以上的申请{}</li>
+<li>同一时间如果又申请、又发起，则申请通过后不得通过自己发起的邀约{}</li>
+<li>取消邀约会有信用分惩罚{}</li>
+</ol>
+<p>Closing &amp; Followup</p>
+<ol>
+<li>邀约结束后，任意用户需要【尽快】确认邀约，【发起人确认后订单就算完结】</li>
+<li>订单完结后双方可以填写反馈【填写反馈者给予奖励】</li>
+<li>5星好评的发起人应得到相应奖励，如【餐厅优惠券、红酒等】</li>
+<li>首次约饭/参与约饭成功，应有相应奖励，如【餐厅优惠券、红酒等】</li>
+</ol>
+<p>Part 2.</p>
+<p><strong>在Start date 前，客户会寄信来问你什么问题</strong></p>
+<ol>
+<li>是不是一定得1对1组局？【测试期功能上必须1x1，但可以提前在聊天室里与对方沟通，但强烈建议男女比例1：1，另外对方有权退出】</li>
+<li>发起邀约的审核标准是什么？【我们选的餐厅，如果不是，会按照符合我们所选择餐厅标准来审核地点。时间必须是周末晚餐。发起人必须实名认证】</li>
+<li>餐厅的选择标准是什么？【适合约会的价格人均[200元]，地点在三里屯、CBD商区】</li>
+<li>约会中出现不快怎么办？【请拨打服务热线，我们会根据用户协议对责任方问责】</li>
+<li>晚饭费用应该如何支付？【建议AA，可自行协商】</li>
+<li>平台给予奖励【如红酒】应该如何分配？【我们会尽可能提供人均可分配奖励，如果无法分配请自行协商】</li>
+<li>我发起的邀约不被通过怎么办？【为了提高邀约品质，带来更好用户天，我们会给予修改意见，请根据修改意见修改后重新提交】</li>
+<li>发起的邀约没有人申请怎么办？【请分享到微信、微博社交媒体，我们每周也会推送最有意思的邀约到平台首页、公众号等社交媒体】</li>
+<li>申请的人都不想通过怎么办？【请分享到微信、微博社交媒体，我们每周也会推送最有意思的邀约到平台首页、公众号等社交媒体】</li>
+<li>邀约过期了怎么办？【邀约每周末过期，请于每周4之后发起下一周周末的邀约】</li>
+<li>临时有事想取消怎么办？【如果已经与申请者成功配对，可在24小时以外取消。24小时以内不得取消，取消平台资格】</li>
+<li>推荐的餐厅都不喜欢怎么办？【如果不喜欢可以自行添加提交，我们会尽快审核】</li>
+<li>与其他社交网站区别？【Eat2gether与其他社交网站不同的是，我们的邀约信息绝对真实，所有用户都需经过实名认证，邀约都需经过平台专员审核，确保邀约质量】</li>
+<li>平台安全吗？用户信息贩卖？【用户信息绝对安全，【参考在行】】</li>
+<li>用户信息真实？约饭信息真实？【用户认证、邀约审核】</li>
+<li>付费吗？【全部免费】</li>
+<li>约到的人不靠谱怎么办？【请拨打服务热线，我们会根据用户协议对责任方问责】</li>
+<li>能了解对方详细信息吗？【发起邀约后，其他用户能够申请，在申请提交时能够查看对方详细信息】</li>
+<li>对方真的愿意线下见面吗？【所有邀约均为用户主动发起，平台不会发出虚假邀约或者聘用人来发起邀约】</li>
+<li>能在约饭前和对方聊天吗？【可以，行程邀约订单后，可以发起对话】</li>
+<li>没赴约之前觉得不合适怎么办？【赴约前24小时可取消】</li>
+<li>约饭流程？【发起、申请、通过、见面、完成、反馈】</li>
+<li>地点是否安全？【地点均在热闹市中心，经过平台专人实地考察并审核】</li>
+<li>对方是一个人还是多个人？【平台邀约均为1对1，如有变动对方需提前24小时以上沟通，临时变动有权取消】</li>
+<li>如何提高发起被申请的概率？【请根据《邀约指南》详细填写邀约信息并配上精美图片】</li>
+<li>什么餐厅图片更好？【平台会根据推荐餐厅提供精美餐厅图片，如选择平台推荐以外餐厅，可自行上传图片，推荐图片大小500x600以上】</li>
+<li>什么个人图片更好？【推荐五官清晰的大头照，也可添加丰富精彩的生活照提高通过申请的机会】</li>
+<li>有没有约饭成功案例？【很多，请参考blog】</li>
+</ol>
+<h3 id="在Start-date当天，客户忘记做什么会让使用者体验搞砸？"><a href="#在Start-date当天，客户忘记做什么会让使用者体验搞砸？" class="headerlink" title="在Start date当天，客户忘记做什么会让使用者体验搞砸？"></a>在Start date当天，客户忘记做什么会让使用者体验搞砸？</h3><ol>
+<li>联系不上、迟到、找不到地点、直接不出现、有事早走</li>
+<li>不参与买单【发起人有权利要求所有参与者AA买单】</li>
+<li>发起人/参与者没有任何准备</li>
+<li>发起人/参与者对晚饭话题不敢兴趣</li>
+</ol>
+<h3 id="他们最常做了什么正确的事达到很好的体验？"><a href="#他们最常做了什么正确的事达到很好的体验？" class="headerlink" title="他们最常做了什么正确的事达到很好的体验？"></a>他们最常做了什么正确的事达到很好的体验？</h3><ol>
+<li>详尽的邀约信息、精美的图片、好吃的餐厅</li>
+<li>提前准备话题、小礼物</li>
+<li>提前到达餐厅，挑选好的座位</li>
+<li>主动正常付款</li>
+<li>填写真实信息</li>
+<li>仔细筛查约会对象</li>
+<li>认真提供约会后反馈，帮助我们更好的完善邀约体验</li>
+</ol>
+<h3 id="他们最常做了什么”错误的事“，结果收到很糟的体验？"><a href="#他们最常做了什么”错误的事“，结果收到很糟的体验？" class="headerlink" title="他们最常做了什么”错误的事“，结果收到很糟的体验？"></a>他们最常做了什么”错误的事“，结果收到很糟的体验？</h3><ol>
+<li>选了难吃、不受欢迎的餐厅</li>
+<li>不好看的图片</li>
+<li>不详细的个人或邀约描述</li>
+<li>填写错误个人信息</li>
+<li>饮食上有忌口没有提前沟通</li>
+</ol>
+<h3 id="东西卖出后你如何检验他们”做了正确的事“或”做了错误的事“？"><a href="#东西卖出后你如何检验他们”做了正确的事“或”做了错误的事“？" class="headerlink" title="东西卖出后你如何检验他们”做了正确的事“或”做了错误的事“？"></a>东西卖出后你如何检验他们”做了正确的事“或”做了错误的事“？</h3><ol>
+<li>通过用户回访了解邀约详细体验</li>
+<li>通过客户的邮件、微信和网站在线沟通工具了解他们的使用行为</li>
+<li>通过客户填写的反馈了解评级</li>
+</ol>
+<h3 id="他们如何联络你修正问题？"><a href="#他们如何联络你修正问题？" class="headerlink" title="他们如何联络你修正问题？"></a>他们如何联络你修正问题？</h3><ol>
+<li>电子邮件</li>
+<li>服务窗口、微信、微博等在线聊天工具</li>
+<li>400客户电话</li>
+</ol>
+<h3 id="你怎么做事后补偿的instruction-有FAQ-说明书-博客-客服专线）？"><a href="#你怎么做事后补偿的instruction-有FAQ-说明书-博客-客服专线）？" class="headerlink" title="你怎么做事后补偿的instruction? (有FAQ/说明书/博客/客服专线）？"></a>你怎么做事后补偿的instruction? (有FAQ/说明书/博客/客服专线）？</h3><ol>
+<li>博客中的【《邀约指南》】</li>
+<li>填写邀约时候的提示</li>
+<li>个人信息的提示</li>
+<li>提高注册门槛、认证用户</li>
+<li>注销不良用户</li>
+<li>通过后台数据统计什么样的邀约可以收到多个申请</li>
+<li>客服专员与发起人沟通改进发起信息</li>
+</ol>
+<h3 id="你希望他们如何事后帮你行销？"><a href="#你希望他们如何事后帮你行销？" class="headerlink" title="你希望他们如何事后帮你行销？"></a>你希望他们如何事后帮你行销？</h3><ol>
+<li>将好的用餐体验分享到社交媒体</li>
+<li>自己发起邀约</li>
+<li>邀请更多人来网站发布约饭</li>
+<li>私下去分享约会体验</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Eat2gether-project-Onboarding&quot;&gt;&lt;a href=&quot;#Eat2gether-project-Onboarding&quot; class=&quot;headerlink&quot; title=&quot;Eat2gether project Onboarding&quot;&gt;&lt;/a
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【功能】打开新页面后jQuery写的功能为什么失效：Turbolinks的坑</title>
+    <link href="http://yoursite.com/2016/11/27/2016-11-27-turbolinks-affecting-jquery/"/>
+    <id>http://yoursite.com/2016/11/27/2016-11-27-turbolinks-affecting-jquery/</id>
+    <published>2016-11-27T09:57:00.000Z</published>
+    <updated>2016-12-20T11:19:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>问题：打开新页面之后很多jQuery的功能失效：<br><a href="http://stackoverflow.com/questions/29018447/bootstrap-dropdown-stops-working-after-i-switch-pages-rails-4-2" target="_blank" rel="external">http://stackoverflow.com/questions/29018447/bootstrap-dropdown-stops-working-after-i-switch-pages-rails-4-2</a></p>
+<p>解决方案（基础版）：干掉application.js里面“//= require turbolinks”代码</p>
+<p>原理：<br><a href="http://railscasts.com/episodes/390-turbolinks?autoplay=true" target="_blank" rel="external">http://railscasts.com/episodes/390-turbolinks?autoplay=true</a></p>
+<p>文档：<br><a href="https://github.com/kossnocorp/jquery.turbolinks" target="_blank" rel="external">https://github.com/kossnocorp/jquery.turbolinks</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;问题：打开新页面之后很多jQuery的功能失效：&lt;br&gt;&lt;a href=&quot;http://stackoverflow.com/questions/29018447/bootstrap-dropdown-stops-working-after-i-switch-pages-ra
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【功能】前后端debug的两大法宝：Developer Tools和gem pry</title>
+    <link href="http://yoursite.com/2016/11/25/2016-11-25-debug-using-developer-tools-and-gem-pry/"/>
+    <id>http://yoursite.com/2016/11/25/2016-11-25-debug-using-developer-tools-and-gem-pry/</id>
+    <published>2016-11-25T02:14:00.000Z</published>
+    <updated>2016-12-20T11:19:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>刚开始学习HTML / CSS / Rails的时候，有两个工具，是我很希望一开始就学会如何使用的：</p>
+<p><strong>前端：</strong></p>
+<p>Google Chrome自带的Developer Tools，快捷键是Cmd + Opt + I，或者如果直接想用鼠标找到页面上想要调整的物件可以用Cmd + Opt + C。</p>
+<p><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1fa4jwzl3upj30kl08dmzc.jpg" alt=""><br><img src="http://ww3.sinaimg.cn/large/006y8mN6jw1fa4k0slu8ej308603wt93.jpg" alt=""></p>
+<p>当发现页面的东西显示不对的时候，打开Cmd + Opt + C，用鼠标找到想要修改的物件，找到左手边HTML文件里相对应的部分，点击，然后找到右手边”style”部分里面的相对应的CSS代码，可以直接修改定义的色值、大小、排版等，也可以直接在左手边HTML里面修改HTML产生效果变动。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006y8mN6jw1fa4kaxdyupj30ls0i478j.jpg" alt=""><br><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1fa4kb410x3j30ix0iudjt.jpg" alt=""></p>
+<p><strong>后端：</strong></p>
+<p>之前文章说过gem “pry”很好用，最近开始用这个gem调出所想要找到的路径和数据，比如在有关联的两组数据，用第一组数据找到第二组数据的某个数值。</p>
+<p>举例：<br>在feedbacks index页面里，想要把所有的@feedbacks中找到跟该feedback管理的order创立的时间：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">binding.pry</span> %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> @<span class="attr">feedbacks.each</span> <span class="attr">do</span> |<span class="attr">feedback</span>| %&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">%=</span> <span class="attr">OrderTwo.find</span>(<span class="attr">feedback.order_two_id</span>)<span class="attr">.created_at.strftime</span>("%<span class="attr">d</span> %<span class="attr">b</span> %<span class="attr">Y</span>")%&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span></div></pre></td></tr></table></figure></p>
+<p>本来并不会写中间那行代码，但可以用pry找到<code>feedback</code>，然后知道<code>feedback</code>里面存有<code>order_two</code>的id，而这个id是可以用来调用OrderTwo这个object的。<br><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1fa4kffuii8j30s104z0tq.jpg" alt=""></p>
+<p>另外，第二行代码后面的strftime也是一个很好用的时间格式method，比<code>to_s</code>要好用。这里有一个<a href="http://dyz2102-blog.logdown.com/posts/1135574" target="_blank" rel="external">简单的教程。</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;刚开始学习HTML / CSS / Rails的时候，有两个工具，是我很希望一开始就学会如何使用的：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;前端：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Google Chrome自带的Developer Tools，快捷键是Cmd + Opt + I，或
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Week06 - 第六周总结：团队协作的重要性</title>
+    <link href="http://yoursite.com/2016/11/25/2016-11-25-week06-the-sixth-week-summary-importance-of-teamwork/"/>
+    <id>http://yoursite.com/2016/11/25/2016-11-25-week06-the-sixth-week-summary-importance-of-teamwork/</id>
+    <published>2016-11-25T02:13:00.000Z</published>
+    <updated>2016-12-20T11:19:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
+<p>关于今天的课程, 你记得什么?</p>
+<ul>
+<li>Xdite讲了关于Onboarding的课程，非常受用。发现自己用过好多觉得不错的互联网产品都具有Onboarding性质的引导。</li>
+</ul>
+<p>完成了什么?</p>
+<ul>
+<li>今天完成了Eatgether项目的第二轮demo，整体表现满意。</li>
+</ul>
+<p><strong>Reflective</strong></p>
+<p>今天的高峰是什么?</p>
+<ul>
+<li>Demo前接受了上周的经验，为了不受到其他团队项目影响我的情绪，我没有看功能上可能比我们厉害的项目，而是专心在思考怎么掩饰我们组的项目。</li>
+</ul>
+<p>今天的低点是什么?</p>
+<ul>
+<li>下午太困了，效率很低，基本除了整理Redmine和列举新的任务之后没有做什么其他事情。</li>
+</ul>
+<p><strong>Interpretive</strong></p>
+<p>我们今天学到了什么?</p>
+<ul>
+<li>Onboarding引导非常重要，下周需要立刻开始学习执行。</li>
+</ul>
+<p>今天一个重要的领悟是什么?</p>
+<ul>
+<li><p>我们今天分享本周收获和坑的stand up meeting中，团员们基本上都谈到了团队协作的事情。我们一致认为，我们组能够如期完成任务，主要是因为拥有较好的团队协作，每个队员都有把团队利益放在自身利益前面的作风，所有工作都以结果为导向、以效率为最重要指标，把情绪和不满统统放在一边，用成果说话。</p>
+</li>
+<li><p>在以前的投行领域，尽管团队协作也非常重要，但基本上都存在上下级汇报关系，有老板愿意陪你多加班几个小时就很开心，帮你干手上的活简直感动的都想流泪。但在编程领域，团队协作几乎是整个项目进度的命脉，别说一起加班了，大家互相需要不断教会对方新的技巧、debug、甚至包括传授完成某项task时的思维方式。非常喜欢编程领域的扁平化模式和meritocracy，之后更有时间了会写多一些这方面的体会发到自己的公众号上。</p>
+</li>
+</ul>
+<p><strong>Decisional</strong></p>
+<p>我们会如何用一句话形容今天的工作</p>
+<ul>
+<li>十分充实。</li>
+</ul>
+<p>有哪些工作需要明天继续努力?</p>
+<ul>
+<li>周末还有挺多小功能需要完善，在下周一前需要部署完毕到Heroku任务还是比较多的。</li>
+<li>非常期待Onboarding的练习。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;关于今天的课程, 你记得什么?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Xdite讲了关于Onboarding的课程，非常受用。发现自己用过好多觉得不错的互联网产品都具有Onboarding性质的引导。&lt;/li&gt;
+&lt;/u
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Day04 Week06 - 完成demo版本的产品</title>
+    <link href="http://yoursite.com/2016/11/25/2016-11-25-day04-week06-demo-version-of-the-product/"/>
+    <id>http://yoursite.com/2016/11/25/2016-11-25-day04-week06-demo-version-of-the-product/</id>
+    <published>2016-11-24T21:25:00.000Z</published>
+    <updated>2016-12-20T11:19:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
+<p>完成了什么?</p>
+<ul>
+<li>完成了所有前端页面的修饰，实现了演示所需的所有功能</li>
+</ul>
+<p><strong>Reflective</strong></p>
+<p>今天的高峰是什么?</p>
+<ul>
+<li>实现一些视觉上有趣的小功能，比如用户圆形头像、小avatar在右上角登陆后出现</li>
+</ul>
+<p>今天的低点是什么?</p>
+<ul>
+<li>部分CSS文件在不同工程师协作时候有格式重复定义，git合成的时候出现一些bug，花了不少时间修复</li>
+</ul>
+<p><strong>Interpretive</strong></p>
+<p>我们今天学到了什么?</p>
+<ul>
+<li>进一步熟练了CSS和HTML定义以及partial的使用</li>
+</ul>
+<p>今天一个重要的领悟是什么?</p>
+<ul>
+<li>CSS想要快速实现排版，需要使用Chrome的Developer Tools，在视窗中直接调整，然后将正确的调整写到代码里</li>
+<li>每一次copy/paste旧的代码到新页面，如需做调整，一定要重新定义CSS名称，把CSS代码拷贝一份重新命名，确保定义都是unique的然后再开始做修改，否则会影响到其他页面调用这部分CSS定义的地方</li>
+</ul>
+<p><strong>Decisional</strong></p>
+<p>有哪些工作需要明天继续努力?</p>
+<ul>
+<li>明天就要demo day了， 非常兴奋，相信我们的demo会非常精彩！</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;完成了什么?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;完成了所有前端页面的修饰，实现了演示所需的所有功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Reflective&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;今天的高峰是什么
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【功能】如何使用Ruby自带的Strftime Method修改日期格式</title>
+    <link href="http://yoursite.com/2016/11/24/2016-11-24-strftime-method-date-formatting/"/>
+    <id>http://yoursite.com/2016/11/24/2016-11-24-strftime-method-date-formatting/</id>
+    <published>2016-11-23T21:32:00.000Z</published>
+    <updated>2016-12-20T11:19:25.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>先看视频：</p>
+<p><a href="http://railscasts.com/episodes/31-formatting-time?autoplay=true" target="_blank" rel="external">http://railscasts.com/episodes/31-formatting-time?autoplay=true</a></p>
+<p>再看解说：</p>
+<p><a href="https://hackhands.com/format-datetime-ruby/" target="_blank" rel="external">https://hackhands.com/format-datetime-ruby/</a></p>
+<p>最后使用这个工具调整自己想要的格式：</p>
+<p><a href="http://www.foragoodstrftime.com/" target="_blank" rel="external">http://www.foragoodstrftime.com/</a></p>
+<p>效果：</p>
+<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1135574/m1ObE6aBQgutxLtNg4mh_Screen%20Shot%202016-11-24%20at%201.35.26%20PM.png" alt="Screen Shot 2016-11-24 at 1.35.26 PM.png"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;先看视频：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://railscasts.com/episodes/31-formatting-time?autoplay=true&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://railscasts.c
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Day03 Week06 - 生成Carousel、完成Blog搭建</title>
+    <link href="http://yoursite.com/2016/11/23/2016-11-23-day03-week-06-carousel-and-feedback-blog/"/>
+    <id>http://yoursite.com/2016/11/23/2016-11-23-day03-week-06-carousel-and-feedback-blog/</id>
+    <published>2016-11-23T09:13:00.000Z</published>
+    <updated>2016-12-20T11:19:21.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
+<p>今天完成了什么?</p>
+<ol>
+<li>成功生成了Landing Page上的Carousel（轮播图）</li>
+<li>完成了Feedback博客的搭建</li>
+</ol>
+<p><strong>Reflective</strong></p>
+<p>今天的高峰是什么?</p>
+<ul>
+<li>Carousel成功的时候。之前在做电商项目的时候就曾经想要将首页做成轮播图，但没有成功，这次顺利做到了，非常兴奋</li>
+<li>Feedback的博客使用了一个Bootstrap博客模板，自己用<code>@feedbacks.each do</code>写出了一个可以让博客自动更新每一条心得Feedback的loop</li>
+</ul>
+<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1133848/8XiGbZj4Qn2HxVo9uhCl_FireShotCaptureEatgetherBlog.png" alt="FireShotCaptureEatgetherBlog.png"></p>
+<p>今天的低点是什么?</p>
+<ul>
+<li>在Carousel的图片超过一定视窗宽度就会拉宽，现在还未解决，很揪心</li>
+</ul>
+<p><strong>Interpretive</strong></p>
+<p>我们今天学到了什么?</p>
+<ul>
+<li>如何把Ruby、HTML、CSS结合写出好看的前端页面</li>
+</ul>
+<p>今天一个重要的领悟是什么?</p>
+<ul>
+<li>更加熟悉了如何使用CSS定义，比如<code>h1 .XXX {}</code>就是定义所有的h1后面带上XXX class的地方，而<code>.XXX h1 {}</code>则是定义在class XXX下面使用h1的地方</li>
+<li>今天写Blog部分时发现图片无法显示，很快找出问题所在是因为Feedback的model没有套上image uploader，因为之前没有要显示过图片所以一直没有发现这个bug</li>
+<li>优势图片上传会倒过来，Carrierwave有一个简单的<a href="http://stackoverflow.com/questions/9558653/rails-paperclip-and-upside-down-oriented-images" target="_blank" rel="external">自带方法</a>可以修复</li>
+</ul>
+<p><strong>Decisional</strong></p>
+<p>有哪些工作需要明天继续努力?</p>
+<ul>
+<li>明天就要把所有工作consolidate开始准备部署了，非常期待成品。到现在还没有弄清楚如何使用我们的域名，十分恼火，希望上线时可以用上。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;今天完成了什么?&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;成功生成了Landing Page上的Carousel（轮播图）&lt;/li&gt;
+&lt;li&gt;完成了Feedback博客的搭建&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;
+    
+    </summary>
+    
+      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
+    
+  </entry>
+  
+</feed>

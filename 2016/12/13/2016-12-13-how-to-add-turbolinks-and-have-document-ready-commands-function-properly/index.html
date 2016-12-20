@@ -76,6 +76,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="DYZ.Life" type="application/atom+xml" />
+
 
 
 
@@ -92,7 +94,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/13/2016-12-13-how-to-add-turbolinks-and-have-document-ready-commands-function-properly/index.html">
 <meta property="og:site_name" content="DYZ.Life">
 <meta property="og:description" content="##问题：Turbolinks在帮助页面加速（不去重新加载已经加载过的物件）的时候，JS指令“document.ready”不会被引发，所以根据该指令产生的jQuery动作也不会执行。在网站页面不多、物件不复杂的时候，直接干掉Turbolinks是可行的（也是之前写的一篇教学中所推荐的），但当页面越来越多，加载速度越来越慢的时候，使用Turbolinks变得十分重要，所以需要将”document.">
-<meta property="og:updated_time" content="2016-12-18T08:47:27.000Z">
+<meta property="og:updated_time" content="2016-12-20T11:21:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【功能】如何在使用Turbolink的时候下达document.ready指令">
 <meta name="twitter:description" content="##问题：Turbolinks在帮助页面加速（不去重新加载已经加载过的物件）的时候，JS指令“document.ready”不会被引发，所以根据该指令产生的jQuery动作也不会执行。在网站页面不多、物件不复杂的时候，直接干掉Turbolinks是可行的（也是之前写的一篇教学中所推荐的），但当页面越来越多，加载速度越来越慢的时候，使用Turbolinks变得十分重要，所以需要将”document.">
@@ -108,7 +110,7 @@
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '0',
+      userId: '6365129204731741000',
       author: '博主'
     },
     algolia: {
@@ -221,6 +223,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
 
       
         <li class="menu-item menu-item-search">
@@ -329,8 +341,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/function/" itemprop="url" rel="index">
-                    <span itemprop="name">function</span>
+                  <a href="/categories/编程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">编程学习</span>
                   </a>
                 </span>
 
@@ -505,7 +517,7 @@ var jiathis_config={
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">113</span>
+              <span class="site-state-item-count">112</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -521,15 +533,22 @@ var jiathis_config={
 
           
             <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">48</span>
+              <a href="/tags">
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -722,6 +741,10 @@ var jiathis_config={
   </script>
 
   
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
     
     
     <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>

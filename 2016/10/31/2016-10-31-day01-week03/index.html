@@ -70,11 +70,13 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="全栈营52天," />
 
 
 
 
+
+  <link rel="alternate" href="/atom.xml" title="DYZ.Life" type="application/atom+xml" />
 
 
 
@@ -95,7 +97,7 @@ Over the weekend I spent some time improving the visuals of the site. I came acr
 <meta property="og:description" content="Objective
 Over the weekend I spent some time improving the visuals of the site. I came across a template for men’s fashion and decided to create a men’s fashion site as I had been shopping for a tuxed">
 <meta property="og:image" content="http://user-image.logdown.io/user/19391/blog/18870/post/1061503/x1HfJVV3QnBahD3RsQKb_Screen%20Shot%202016-10-31%20at%205.15.14%20PM.png">
-<meta property="og:updated_time" content="2016-12-17T19:24:45.000Z">
+<meta property="og:updated_time" content="2016-12-20T11:17:13.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day01 Week03 - Building My Own Method Beyond CRUD">
 <meta name="twitter:description" content="Objective
@@ -113,7 +115,7 @@ Over the weekend I spent some time improving the visuals of the site. I came acr
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: '0',
+      userId: '6365129204731741000',
       author: '博主'
     },
     algolia: {
@@ -226,6 +228,16 @@ Over the weekend I spent some time improving the visuals of the site. I came acr
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
 
       
         <li class="menu-item menu-item-search">
@@ -326,6 +338,24 @@ Over the weekend I spent some time improving the visuals of the site. I came acr
           </span>
 
           
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">编程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -359,7 +389,7 @@ Over the weekend I spent some time improving the visuals of the site. I came acr
 
       
         <p><strong>Objective</strong></p>
-<p>Over the weekend I spent some time improving the visuals of the site. I came across a template for men’s fashion and decided to create a men’s fashion site as I had been shopping for a tuxedo prior to the program. </p>
+<p>Over the weekend I spent some time improving the visuals of the site. I came across a template for men’s fashion and decided to create a men’s fashion site as I had been shopping for a tuxedo prior to the program.</p>
 <p>Today we began Phase 2 of the e-commerce project. This phase involves creating a shopping cart and building all of the necessary functionalities around it. We were given hints on how to add a shopping cart upfront, but had to figure out on our own how to increase the shopping cart’s functionalities.</p>
 <p>I managed to complete Step 1: adding in the shopping cart, creating an index page of cart items, and has a total sum of all the cart items’ price. For the remaining 6 tasks, I only managed to complete 2 of them today: clearing shopping cart, and removing an individual item from shopping cart.</p>
 <p><strong>Reflective</strong></p>
@@ -370,11 +400,11 @@ Over the weekend I spent some time improving the visuals of the site. I came acr
 <p><strong>Interpretive</strong></p>
 <p>Adding the shopping cart was the firt time that we are departing from the plain CRUD methods when creating a model. In building the <em>clear_cart</em> method, we did not use the <em>destroy</em> method, but rather a <em>post</em> action created in the model, by doing the following:</p>
 <ol>
-<li>Config route: <figure class="highlight ruby"><figcaption><span>config/routes.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">resources <span class="symbol">:carts</span> <span class="keyword">do</span></div><div class="line">	collection <span class="keyword">do</span></div><div class="line">		post <span class="symbol">:clear_cart</span></div><div class="line">	<span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<li><p>Config route:</p>
+<figure class="highlight ruby"><figcaption><span>config/routes.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">resources <span class="symbol">:carts</span> <span class="keyword">do</span></div><div class="line">	collection <span class="keyword">do</span></div><div class="line">		post <span class="symbol">:clear_cart</span></div><div class="line">	<span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol>
-<li>Define in controller<figure class="highlight ruby"><figcaption><span>app/controllers/application_controller.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">clear_cart</span></span></div><div class="line">	current_cart.cart_items.each <span class="keyword">do</span> <span class="params">|item|</span></div><div class="line">		item.destroy</div><div class="line">	<span class="keyword">end</span></div><div class="line">	redirect_to <span class="symbol">:back</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<li><p>Define in controller</p>
+<figure class="highlight ruby"><figcaption><span>app/controllers/application_controller.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">clear_cart</span></span></div><div class="line">	current_cart.cart_items.each <span class="keyword">do</span> <span class="params">|item|</span></div><div class="line">		item.destroy</div><div class="line">	<span class="keyword">end</span></div><div class="line">	redirect_to <span class="symbol">:back</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>(Careful not to place this under the “private” section otherwise it won’t be callable globally)</p>
@@ -407,6 +437,12 @@ Over the weekend I spent some time improving the visuals of the site. I came acr
 
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/全栈营52天/" rel="tag"># 全栈营52天</a>
+          
+        </div>
       
 
       
@@ -513,7 +549,7 @@ var jiathis_config={
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">113</span>
+              <span class="site-state-item-count">112</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -529,15 +565,22 @@ var jiathis_config={
 
           
             <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">48</span>
+              <a href="/tags">
+                <span class="site-state-item-count">49</span>
                 <span class="site-state-item-name">标签</span>
-              
+              </a>
             </div>
           
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
@@ -730,6 +773,10 @@ var jiathis_config={
   </script>
 
   
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
     
     
     <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
