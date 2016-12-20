@@ -286,6 +286,167 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/01/2016-12-01-function-flash-tips-how-to-devise-is-set-to-chinese/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ.Life">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/01/2016-12-01-function-flash-tips-how-to-devise-is-set-to-chinese/" itemprop="url">
+                  【功能】如何将devise的flash提示设置为中文（或其他语言）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-01T05:46:00+08:00">
+                2016-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">编程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/12/01/2016-12-01-function-flash-tips-how-to-devise-is-set-to-chinese/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/01/2016-12-01-function-flash-tips-how-to-devise-is-set-to-chinese/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>参考这里：<a href="https://github.com/plataformatec/devise/wiki/i18n" target="_blank" rel="external">https://github.com/plataformatec/devise/wiki/i18n</a><br>里面有各种个语言的devise提示讯息，根据自己devise版本下载一个中文的：<br><img src="http://ww3.sinaimg.cn/large/7853084cgw1fab8voj9khj20jn0b4wgv.jpg" alt=""></p>
+</li>
+<li><p>将下载的.yml文件存在config/locale文件夹里面<br><img src="http://ww2.sinaimg.cn/large/7853084cgw1fab90wqtzej207a05b3ym.jpg" alt=""></p>
+</li>
+<li><p>在config/application.rb当中加入一行代码：</p>
+<figure class="highlight ruby"><figcaption><span>config.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">module</span> 【项目名称】</span></div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Application</span> &lt; Rails::Application</span></div><div class="line">  		config.i18n.default_locale = <span class="symbol">:<span class="string">'【文件名devise后面的部分】'</span></span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><img src="http://ww2.sinaimg.cn/large/7853084cjw1fab9259vobj20ae02wjrl.jpg" alt=""><br>记住别加到外面去了，会报错</p>
+<ol>
+<li>重启服务器</li>
+</ol>
+<p>voila:</p>
+<p><img src="http://ww3.sinaimg.cn/large/7853084cjw1fab8yygvuuj20fy0b5abk.jpg" alt=""></p>
+<ul>
+<li>其他：</li>
+</ul>
+<p>这时候填写表单时候，有日期选择的地方会报错<code>undefined method</code>map’ for “translation missing”`，这是因为日期没有重新翻译，所以需要在config/locales下面创建一个新文件”zh-CN.yml”（或者下载的其他翻译文件的语言名）里面加上如下代码：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">zh-<span class="symbol">CN:</span></div><div class="line">  <span class="symbol">date:</span></div><div class="line">    <span class="symbol">order:</span></div><div class="line">      - <span class="string">"year"</span></div><div class="line">      - <span class="string">"month"</span></div><div class="line">      - <span class="string">"day"</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://ww4.sinaimg.cn/large/7853084cjw1fab9xa1ivoj20dc07c0tg.jpg" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/01/2016-12-01-day03-week07-mobile-demo-version-ready-false/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1872,180 +2033,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/23/2016-11-23-day03-week-06-carousel-and-feedback-blog/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="朱英楠David">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="DYZ.Life">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/23/2016-11-23-day03-week-06-carousel-and-feedback-blog/" itemprop="url">
-                  Day03 Week06 - 生成Carousel、完成Blog搭建
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-23T17:13:00+08:00">
-                2016-11-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程学习/" itemprop="url" rel="index">
-                    <span itemprop="name">编程学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/11/23/2016-11-23-day03-week-06-carousel-and-feedback-blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/23/2016-11-23-day03-week-06-carousel-and-feedback-blog/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>Objective</strong></p>
-<p>今天完成了什么?</p>
-<ol>
-<li>成功生成了Landing Page上的Carousel（轮播图）</li>
-<li>完成了Feedback博客的搭建</li>
-</ol>
-<p><strong>Reflective</strong></p>
-<p>今天的高峰是什么?</p>
-<ul>
-<li>Carousel成功的时候。之前在做电商项目的时候就曾经想要将首页做成轮播图，但没有成功，这次顺利做到了，非常兴奋</li>
-<li>Feedback的博客使用了一个Bootstrap博客模板，自己用<code>@feedbacks.each do</code>写出了一个可以让博客自动更新每一条心得Feedback的loop</li>
-</ul>
-<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1133848/8XiGbZj4Qn2HxVo9uhCl_FireShotCaptureEatgetherBlog.png" alt="FireShotCaptureEatgetherBlog.png"></p>
-<p>今天的低点是什么?</p>
-<ul>
-<li>在Carousel的图片超过一定视窗宽度就会拉宽，现在还未解决，很揪心</li>
-</ul>
-<p><strong>Interpretive</strong></p>
-<p>我们今天学到了什么?</p>
-<ul>
-<li>如何把Ruby、HTML、CSS结合写出好看的前端页面</li>
-</ul>
-<p>今天一个重要的领悟是什么?</p>
-<ul>
-<li>更加熟悉了如何使用CSS定义，比如<code>h1 .XXX {}</code>就是定义所有的h1后面带上XXX class的地方，而<code>.XXX h1 {}</code>则是定义在class XXX下面使用h1的地方</li>
-<li>今天写Blog部分时发现图片无法显示，很快找出问题所在是因为Feedback的model没有套上image uploader，因为之前没有要显示过图片所以一直没有发现这个bug</li>
-<li>优势图片上传会倒过来，Carrierwave有一个简单的<a href="http://stackoverflow.com/questions/9558653/rails-paperclip-and-upside-down-oriented-images" target="_blank" rel="external">自带方法</a>可以修复</li>
-</ul>
-<p><strong>Decisional</strong></p>
-<p>有哪些工作需要明天继续努力?</p>
-<ul>
-<li>明天就要把所有工作consolidate开始准备部署了，非常期待成品。到现在还没有弄清楚如何使用我们的域名，十分恼火，希望上线时可以用上。</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2099,7 +2086,7 @@
           
             <div class="site-state-item site-state-categories">
               
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">分类</span>
               
             </div>
@@ -2108,7 +2095,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

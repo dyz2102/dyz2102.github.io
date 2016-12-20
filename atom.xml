@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-17T06:10:34.000Z</updated>
+  <updated>2016-12-20T16:48:05.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【功能】如何在修改Heroku app名称后重新连接本地的Git</title>
+    <link href="http://yoursite.com/2016/12/21/2016-12-20-how-to-reconnect-git-to-heroku-after-renaming-heroku-app-md/"/>
+    <id>http://yoursite.com/2016/12/21/2016-12-20-how-to-reconnect-git-to-heroku-after-renaming-heroku-app-md/</id>
+    <published>2016-12-20T16:19:23.000Z</published>
+    <updated>2016-12-20T16:48:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在完成第一次Heroku部署的时候，Heroku会自动生成一个项目名称，规格为：形容词+名词+数字，比如”desolate-refuge-11720”。</p>
+<p>但这个名字我们可能不喜欢，或者在之后项目测试的时候需要用户看到辨识度更高的URL。这个时候就需要改名了。</p>
+<p>在Heroku后台可以直接更改项目名称：<br><img src="http://ww3.sinaimg.cn/large/006tNbRwjw1faxqe1qfdvj31920fujtm.jpg" alt=""></p>
+<p>更改后保存时Heroku会自动提示可能会跟本地Git断开：<br><img src="http://ww4.sinaimg.cn/large/006tNbRwjw1faxqed6nduj31kw0isdkb.jpg" alt=""></p>
+<p>保存完毕确认信项目名称：<br><img src="http://ww1.sinaimg.cn/large/006tNbRwjw1faxqej2ybjj313a0eqmz0.jpg" alt=""></p>
+<p>这个时候回到Terminal再进行<code>git push heroku</code>的时候，旧的项目名会找不到：<br><img src="http://ww1.sinaimg.cn/large/006tNbRwjw1faxqeokxdtj313q04c41e.jpg" alt=""></p>
+<p>用两条代码重新建立Heroku关联项目：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git remote rm heroku # 先切断本来heroku的关联</div><div class="line">$ heroku git:remote -a newname # 跟新项目重新建立关联</div></pre></td></tr></table></figure></p>
+<p>再次push就没问题了：<br><img src="http://ww2.sinaimg.cn/large/006tNbRwjw1faxqett447j314209cwl4.jpg" alt=""></p>
+<p>原文参考：<br><a href="https://devcenter.heroku.com/articles/renaming-apps#updating-git-remotes" target="_blank" rel="external">https://devcenter.heroku.com/articles/renaming-apps#updating-git-remotes</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在完成第一次Heroku部署的时候，Heroku会自动生成一个项目名称，规格为：形容词+名词+数字，比如”desolate-refuge-11720”。&lt;/p&gt;
+&lt;p&gt;但这个名字我们可能不喜欢，或者在之后项目测试的时候需要用户看到辨识度更高的URL。这个时候就需要改名了。&lt;
+    
+    </summary>
+    
+      <category term="功能" scheme="http://yoursite.com/categories/%E5%8A%9F%E8%83%BD/"/>
+    
+    
+      <category term="heroku" scheme="http://yoursite.com/tags/heroku/"/>
+    
+      <category term="github" scheme="http://yoursite.com/tags/github/"/>
+    
+      <category term="production" scheme="http://yoursite.com/tags/production/"/>
+    
+  </entry>
   
   <entry>
     <title>【功能】Controller中verify_authenticity_token上传到Heroku出现bug</title>
@@ -995,67 +1031,6 @@
     
       &lt;p&gt;先看视频：&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://railscasts.com/episodes/31-formatting-time?autoplay=true&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://railscasts.c
-    
-    </summary>
-    
-      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Day03 Week06 - 生成Carousel、完成Blog搭建</title>
-    <link href="http://yoursite.com/2016/11/23/2016-11-23-day03-week-06-carousel-and-feedback-blog/"/>
-    <id>http://yoursite.com/2016/11/23/2016-11-23-day03-week-06-carousel-and-feedback-blog/</id>
-    <published>2016-11-23T09:13:00.000Z</published>
-    <updated>2016-12-20T11:19:21.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
-<p>今天完成了什么?</p>
-<ol>
-<li>成功生成了Landing Page上的Carousel（轮播图）</li>
-<li>完成了Feedback博客的搭建</li>
-</ol>
-<p><strong>Reflective</strong></p>
-<p>今天的高峰是什么?</p>
-<ul>
-<li>Carousel成功的时候。之前在做电商项目的时候就曾经想要将首页做成轮播图，但没有成功，这次顺利做到了，非常兴奋</li>
-<li>Feedback的博客使用了一个Bootstrap博客模板，自己用<code>@feedbacks.each do</code>写出了一个可以让博客自动更新每一条心得Feedback的loop</li>
-</ul>
-<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1133848/8XiGbZj4Qn2HxVo9uhCl_FireShotCaptureEatgetherBlog.png" alt="FireShotCaptureEatgetherBlog.png"></p>
-<p>今天的低点是什么?</p>
-<ul>
-<li>在Carousel的图片超过一定视窗宽度就会拉宽，现在还未解决，很揪心</li>
-</ul>
-<p><strong>Interpretive</strong></p>
-<p>我们今天学到了什么?</p>
-<ul>
-<li>如何把Ruby、HTML、CSS结合写出好看的前端页面</li>
-</ul>
-<p>今天一个重要的领悟是什么?</p>
-<ul>
-<li>更加熟悉了如何使用CSS定义，比如<code>h1 .XXX {}</code>就是定义所有的h1后面带上XXX class的地方，而<code>.XXX h1 {}</code>则是定义在class XXX下面使用h1的地方</li>
-<li>今天写Blog部分时发现图片无法显示，很快找出问题所在是因为Feedback的model没有套上image uploader，因为之前没有要显示过图片所以一直没有发现这个bug</li>
-<li>优势图片上传会倒过来，Carrierwave有一个简单的<a href="http://stackoverflow.com/questions/9558653/rails-paperclip-and-upside-down-oriented-images" target="_blank" rel="external">自带方法</a>可以修复</li>
-</ul>
-<p><strong>Decisional</strong></p>
-<p>有哪些工作需要明天继续努力?</p>
-<ul>
-<li>明天就要把所有工作consolidate开始准备部署了，非常期待成品。到现在还没有弄清楚如何使用我们的域名，十分恼火，希望上线时可以用上。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;今天完成了什么?&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;成功生成了Landing Page上的Carousel（轮播图）&lt;/li&gt;
-&lt;li&gt;完成了Feedback博客的搭建&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;
     
     </summary>
     
