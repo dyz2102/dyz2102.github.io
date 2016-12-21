@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-20T17:03:39.000Z</updated>
+  <updated>2016-12-21T11:50:29.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>【功能】如何将git的当前本地分支还原</title>
+    <link href="http://yoursite.com/2016/12/21/2016-12-21-how-to-reset-working-progress-in-git-branch/"/>
+    <id>http://yoursite.com/2016/12/21/2016-12-21-how-to-reset-working-progress-in-git-branch/</id>
+    <published>2016-12-21T11:43:11.000Z</published>
+    <updated>2016-12-21T11:50:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>将本地的branch还原：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout .</div></pre></td></tr></table></figure></p>
+<p>将本地的git全部重置，将所有尚未push到云端的commits取消：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reset</div></pre></td></tr></table></figure></p>
+<p>将某一个commit重置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git revert &lt;commit 1&gt; &lt;commit 2&gt;</div></pre></td></tr></table></figure></p>
+<p>将新生成的文件重置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clean -f</div></pre></td></tr></table></figure></p>
+<p>将新生成的文件夹重置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clean -fd</div></pre></td></tr></table></figure></p>
+<p>原文参考：<a href="http://stackoverflow.com/questions/1146973/how-do-i-revert-all-local-changes-in-git-managed-project-to-previous-state" target="_blank" rel="external">Stackoverflow</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;将本地的branch还原：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;
+    
+    </summary>
+    
+      <category term="功能" scheme="http://yoursite.com/categories/%E5%8A%9F%E8%83%BD/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【功能】Rails中如何一次修改数据库中的多个字段</title>
+    <link href="http://yoursite.com/2016/12/21/2016-12-21-how-to-rename-multiple-columns-in-one-migration/"/>
+    <id>http://yoursite.com/2016/12/21/2016-12-21-how-to-rename-multiple-columns-in-one-migration/</id>
+    <published>2016-12-21T09:22:16.000Z</published>
+    <updated>2016-12-21T09:39:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>创建新的migration文件：<br>‘rails g migration FixColumnName’<br><strong><em>文件名不会被ActiveRecord辨识，只是给自己识别文件用途</em></strong></p>
+<p>旧版本Rails的写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class FixColumnName &lt; ActiveRecord::Migration</div><div class="line">  def self.up</div><div class="line">    rename_column :table_name, :old_column, :new_column</div><div class="line">  end</div><div class="line"></div><div class="line">  def self.down</div><div class="line">    # rename back if you need or do something else or do nothing</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p>Rails 3.1之后的写法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class FixColumnName &lt; ActiveRecord::Migration</div><div class="line">  def change</div><div class="line">    rename_column :table_name, :old_column, :new_column</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p>多字段写法（重复rename部分）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">rename_column :table_name, :old_column1, :new_column1</div><div class="line">rename_column :table_name, :old_column2, :new_column2</div><div class="line">...</div></pre></td></tr></table></figure></p>
+<p>不用重复写<code>table_name</code>那么多次简写方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class FixColumnNames &lt; ActiveRecord::Migration</div><div class="line">  def change</div><div class="line">    change_table :table_name do |t|</div><div class="line">      t.rename :old_column1, :new_column1</div><div class="line">      t.rename :old_column2, :new_column2</div><div class="line">      ...</div><div class="line">    end</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure></p>
+<p>改了以后不要忘记run<code>rake db:migrate</code>。如果migration出现问题，且数据库可以充值（没有需要保存的东西），可以试试run <code>rake db:reset</code>然后再migrate。</p>
+<p>参考：<a href="http://stackoverflow.com/questions/1992019/how-can-i-rename-a-database-column-in-a-ruby-on-rails-migration/" target="_blank" rel="external">Stackoverflow原文答案</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;创建新的migration文件：&lt;br&gt;‘rails g migration FixColumnName’&lt;br&gt;&lt;strong&gt;&lt;em&gt;文件名不会被ActiveRecord辨识，只是给自己识别文件用途&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;旧版本Rails的写法：&lt;b
+    
+    </summary>
+    
+      <category term="功能" scheme="http://yoursite.com/categories/%E5%8A%9F%E8%83%BD/"/>
+    
+    
+      <category term="ActiveRecord" scheme="http://yoursite.com/tags/ActiveRecord/"/>
+    
+      <category term="migration" scheme="http://yoursite.com/tags/migration/"/>
+    
+      <category term="rails" scheme="http://yoursite.com/tags/rails/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【功能】如何在修改Heroku app名称后重新连接本地的Git</title>
     <link href="http://yoursite.com/2016/12/21/2016-12-20-how-to-reconnect-git-to-heroku-after-renaming-heroku-app-md/"/>
     <id>http://yoursite.com/2016/12/21/2016-12-20-how-to-reconnect-git-to-heroku-after-renaming-heroku-app-md/</id>
     <published>2016-12-20T16:19:23.000Z</published>
-    <updated>2016-12-20T17:03:39.000Z</updated>
+    <updated>2016-12-21T11:50:04.000Z</updated>
     
     <content type="html"><![CDATA[<p>在完成第一次Heroku部署的时候，Heroku会自动生成一个项目名称，规格为：形容词+名词+数字，比如”desolate-refuge-11720”。</p>
 <p>但这个名字我们可能不喜欢，或者在之后项目测试的时候需要用户看到辨识度更高的URL。这个时候就需要改名了。</p>
@@ -30,7 +92,7 @@
 <p>这个时候回到Terminal再进行<code>git push heroku</code>的时候，旧的项目名会找不到：<br><img src="http://ww1.sinaimg.cn/large/006tNbRwjw1faxqeokxdtj313q04c41e.jpg" alt=""></p>
 <p>用两条代码重新建立Heroku关联项目：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git remote rm heroku # 先切断本来heroku的关联</div><div class="line">$ heroku git:remote -a newname # 跟新项目重新建立关联</div></pre></td></tr></table></figure></p>
 <p>再次push就没问题了：<br><img src="http://ww2.sinaimg.cn/large/006tNbRwjw1faxqett447j314209cwl4.jpg" alt=""></p>
-<p>原文参考：<br><a href="https://devcenter.heroku.com/articles/renaming-apps#updating-git-remotes" target="_blank" rel="external">https://devcenter.heroku.com/articles/renaming-apps#updating-git-remotes</a></p>
+<p>原文参考：<a href="https://devcenter.heroku.com/articles/renaming-apps#updating-git-remotes" target="_blank" rel="external">Stackoverflow</a></p>
 ]]></content>
     
     <summary type="html">
@@ -45,7 +107,7 @@
     
       <category term="heroku" scheme="http://yoursite.com/tags/heroku/"/>
     
-      <category term="github" scheme="http://yoursite.com/tags/github/"/>
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
       <category term="production" scheme="http://yoursite.com/tags/production/"/>
     
@@ -56,7 +118,7 @@
     <link href="http://yoursite.com/2016/12/16/2016-12-16-problem-with-verify-authenticity-token-when-uploading-to-heroku/"/>
     <id>http://yoursite.com/2016/12/16/2016-12-16-problem-with-verify-authenticity-token-when-uploading-to-heroku/</id>
     <published>2016-12-15T23:30:00.000Z</published>
-    <updated>2016-12-17T06:10:34.000Z</updated>
+    <updated>2016-12-21T11:50:46.000Z</updated>
     
     <content type="html"><![CDATA[<p>原本代码：</p>
 <figure class="highlight ruby"><figcaption><span>application_controller.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ApplicationController</span> &lt; ActionController::Base</span></div><div class="line">  protect_from_forgery <span class="symbol">with:</span> <span class="symbol">:exception</span></div><div class="line">  skip_before_action <span class="symbol">:verify_authenticity_token</span></div></pre></td></tr></table></figure>
@@ -74,6 +136,8 @@
 &lt;figure class=&quot;highlight ruby&quot;&gt;&lt;figcaption&gt;&lt;span&gt;application_controller.rb&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pr
     
     </summary>
+    
+      <category term="功能" scheme="http://yoursite.com/categories/%E5%8A%9F%E8%83%BD/"/>
     
     
   </entry>
@@ -943,94 +1007,6 @@
 &lt;ul&gt;
 &lt;li&gt;Xdite讲了关于Onboarding的课程，非常受用。发现自己用过好多觉得不错的互联网产品都具有Onboarding性质的引导。&lt;/li&gt;
 &lt;/u
-    
-    </summary>
-    
-      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Day04 Week06 - 完成demo版本的产品</title>
-    <link href="http://yoursite.com/2016/11/25/2016-11-25-day04-week06-demo-version-of-the-product/"/>
-    <id>http://yoursite.com/2016/11/25/2016-11-25-day04-week06-demo-version-of-the-product/</id>
-    <published>2016-11-24T21:25:00.000Z</published>
-    <updated>2016-12-20T11:19:29.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
-<p>完成了什么?</p>
-<ul>
-<li>完成了所有前端页面的修饰，实现了演示所需的所有功能</li>
-</ul>
-<p><strong>Reflective</strong></p>
-<p>今天的高峰是什么?</p>
-<ul>
-<li>实现一些视觉上有趣的小功能，比如用户圆形头像、小avatar在右上角登陆后出现</li>
-</ul>
-<p>今天的低点是什么?</p>
-<ul>
-<li>部分CSS文件在不同工程师协作时候有格式重复定义，git合成的时候出现一些bug，花了不少时间修复</li>
-</ul>
-<p><strong>Interpretive</strong></p>
-<p>我们今天学到了什么?</p>
-<ul>
-<li>进一步熟练了CSS和HTML定义以及partial的使用</li>
-</ul>
-<p>今天一个重要的领悟是什么?</p>
-<ul>
-<li>CSS想要快速实现排版，需要使用Chrome的Developer Tools，在视窗中直接调整，然后将正确的调整写到代码里</li>
-<li>每一次copy/paste旧的代码到新页面，如需做调整，一定要重新定义CSS名称，把CSS代码拷贝一份重新命名，确保定义都是unique的然后再开始做修改，否则会影响到其他页面调用这部分CSS定义的地方</li>
-</ul>
-<p><strong>Decisional</strong></p>
-<p>有哪些工作需要明天继续努力?</p>
-<ul>
-<li>明天就要demo day了， 非常兴奋，相信我们的demo会非常精彩！</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;完成了什么?&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;完成了所有前端页面的修饰，实现了演示所需的所有功能&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Reflective&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;今天的高峰是什么
-    
-    </summary>
-    
-      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【功能】如何使用Ruby自带的Strftime Method修改日期格式</title>
-    <link href="http://yoursite.com/2016/11/24/2016-11-24-strftime-method-date-formatting/"/>
-    <id>http://yoursite.com/2016/11/24/2016-11-24-strftime-method-date-formatting/</id>
-    <published>2016-11-23T21:32:00.000Z</published>
-    <updated>2016-12-20T11:19:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>先看视频：</p>
-<p><a href="http://railscasts.com/episodes/31-formatting-time?autoplay=true" target="_blank" rel="external">http://railscasts.com/episodes/31-formatting-time?autoplay=true</a></p>
-<p>再看解说：</p>
-<p><a href="https://hackhands.com/format-datetime-ruby/" target="_blank" rel="external">https://hackhands.com/format-datetime-ruby/</a></p>
-<p>最后使用这个工具调整自己想要的格式：</p>
-<p><a href="http://www.foragoodstrftime.com/" target="_blank" rel="external">http://www.foragoodstrftime.com/</a></p>
-<p>效果：</p>
-<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1135574/m1ObE6aBQgutxLtNg4mh_Screen%20Shot%202016-11-24%20at%201.35.26%20PM.png" alt="Screen Shot 2016-11-24 at 1.35.26 PM.png"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;先看视频：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://railscasts.com/episodes/31-formatting-time?autoplay=true&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://railscasts.c
     
     </summary>
     

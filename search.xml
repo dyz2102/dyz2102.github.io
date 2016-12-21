@@ -3,9 +3,23 @@
   
     
     <entry>
+      <title><![CDATA[【功能】如何将git的当前本地分支还原]]></title>
+      <url>%2F2016%2F12%2F21%2F2016-12-21-how-to-reset-working-progress-in-git-branch%2F</url>
+      <content type="text"><![CDATA[将本地的branch还原：1git checkout . 将本地的git全部重置，将所有尚未push到云端的commits取消：1git reset 将某一个commit重置：1git revert &lt;commit 1&gt; &lt;commit 2&gt; 将新生成的文件重置：1git clean -f 将新生成的文件夹重置：1git clean -fd 原文参考：Stackoverflow]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[【功能】Rails中如何一次修改数据库中的多个字段]]></title>
+      <url>%2F2016%2F12%2F21%2F2016-12-21-how-to-rename-multiple-columns-in-one-migration%2F</url>
+      <content type="text"><![CDATA[创建新的migration文件：‘rails g migration FixColumnName’文件名不会被ActiveRecord辨识，只是给自己识别文件用途 旧版本Rails的写法：123456789class FixColumnName &lt; ActiveRecord::Migration def self.up rename_column :table_name, :old_column, :new_column end def self.down # rename back if you need or do something else or do nothing endend Rails 3.1之后的写法：12345class FixColumnName &lt; ActiveRecord::Migration def change rename_column :table_name, :old_column, :new_column endend 多字段写法（重复rename部分）：123rename_column :table_name, :old_column1, :new_column1rename_column :table_name, :old_column2, :new_column2... 不用重复写table_name那么多次简写方法：123456789class FixColumnNames &lt; ActiveRecord::Migration def change change_table :table_name do |t| t.rename :old_column1, :new_column1 t.rename :old_column2, :new_column2 ... end endend 改了以后不要忘记runrake db:migrate。如果migration出现问题，且数据库可以充值（没有需要保存的东西），可以试试run rake db:reset然后再migrate。 参考：Stackoverflow原文答案]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[【功能】如何在修改Heroku app名称后重新连接本地的Git]]></title>
       <url>%2F2016%2F12%2F21%2F2016-12-20-how-to-reconnect-git-to-heroku-after-renaming-heroku-app-md%2F</url>
-      <content type="text"><![CDATA[在完成第一次Heroku部署的时候，Heroku会自动生成一个项目名称，规格为：形容词+名词+数字，比如”desolate-refuge-11720”。 但这个名字我们可能不喜欢，或者在之后项目测试的时候需要用户看到辨识度更高的URL。这个时候就需要改名了。 在Heroku后台可以直接更改项目名称： 更改后保存时Heroku会自动提示可能会跟本地Git断开： 保存完毕确认信项目名称： 这个时候回到Terminal再进行git push heroku的时候，旧的项目名会找不到： 用两条代码重新建立Heroku关联项目：12$ git remote rm heroku # 先切断本来heroku的关联$ heroku git:remote -a newname # 跟新项目重新建立关联 再次push就没问题了： 原文参考：https://devcenter.heroku.com/articles/renaming-apps#updating-git-remotes]]></content>
+      <content type="text"><![CDATA[在完成第一次Heroku部署的时候，Heroku会自动生成一个项目名称，规格为：形容词+名词+数字，比如”desolate-refuge-11720”。 但这个名字我们可能不喜欢，或者在之后项目测试的时候需要用户看到辨识度更高的URL。这个时候就需要改名了。 在Heroku后台可以直接更改项目名称： 更改后保存时Heroku会自动提示可能会跟本地Git断开： 保存完毕确认信项目名称： 这个时候回到Terminal再进行git push heroku的时候，旧的项目名会找不到： 用两条代码重新建立Heroku关联项目：12$ git remote rm heroku # 先切断本来heroku的关联$ heroku git:remote -a newname # 跟新项目重新建立关联 再次push就没问题了： 原文参考：Stackoverflow]]></content>
     </entry>
 
     

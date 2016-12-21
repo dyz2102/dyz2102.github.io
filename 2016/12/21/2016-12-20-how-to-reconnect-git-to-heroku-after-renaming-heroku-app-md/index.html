@@ -70,7 +70,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="heroku,github,production," />
+  <meta name="keywords" content="heroku,git,production," />
 
 
 
@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNbRwjw1faxqej2ybjj313a0eqmz0.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006tNbRwjw1faxqeokxdtj313q04c41e.jpg">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/006tNbRwjw1faxqett447j314209cwl4.jpg">
-<meta property="og:updated_time" content="2016-12-20T17:03:39.000Z">
+<meta property="og:updated_time" content="2016-12-21T11:50:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【功能】如何在修改Heroku app名称后重新连接本地的Git">
 <meta name="twitter:description" content="在完成第一次Heroku部署的时候，Heroku会自动生成一个项目名称，规格为：形容词+名词+数字，比如”desolate-refuge-11720”。
@@ -412,7 +412,7 @@
 <p>这个时候回到Terminal再进行<code>git push heroku</code>的时候，旧的项目名会找不到：<br><img src="http://ww1.sinaimg.cn/large/006tNbRwjw1faxqeokxdtj313q04c41e.jpg" alt=""></p>
 <p>用两条代码重新建立Heroku关联项目：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git remote rm heroku # 先切断本来heroku的关联</div><div class="line">$ heroku git:remote -a newname # 跟新项目重新建立关联</div></pre></td></tr></table></figure></p>
 <p>再次push就没问题了：<br><img src="http://ww2.sinaimg.cn/large/006tNbRwjw1faxqett447j314209cwl4.jpg" alt=""></p>
-<p>原文参考：<br><a href="https://devcenter.heroku.com/articles/renaming-apps#updating-git-remotes" target="_blank" rel="external">https://devcenter.heroku.com/articles/renaming-apps#updating-git-remotes</a></p>
+<p>原文参考：<a href="https://devcenter.heroku.com/articles/renaming-apps#updating-git-remotes" target="_blank" rel="external">Stackoverflow</a></p>
 
       
     </div>
@@ -438,7 +438,7 @@
           
             <a href="/tags/heroku/" rel="tag"># heroku</a>
           
-            <a href="/tags/github/" rel="tag"># github</a>
+            <a href="/tags/git/" rel="tag"># git</a>
           
             <a href="/tags/production/" rel="tag"># production</a>
           
@@ -458,6 +458,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/21/2016-12-21-how-to-rename-multiple-columns-in-one-migration/" rel="prev" title="【功能】Rails中如何一次修改数据库中的多个字段">
+                【功能】Rails中如何一次修改数据库中的多个字段 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -545,7 +549,7 @@ var jiathis_config={
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">112</span>
+              <span class="site-state-item-count">114</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -562,7 +566,7 @@ var jiathis_config={
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">52</span>
+                <span class="site-state-item-count">55</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
