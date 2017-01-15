@@ -286,6 +286,181 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/03/2016-11-03-day04-week03/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ.Life">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/03/2016-11-03-day04-week03/" itemprop="url">
+                  Day04 Week03 - Using AASM Status to Manage Orders
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-03T03:30:00+08:00">
+                2016-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">编程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/11/03/2016-11-03-day04-week03/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/03/2016-11-03-day04-week03/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Today we began introducing order status management using AASM gem. This allowed for order status to be managed more efficiently and effectively.</p>
+<p>In order to change order status, an <em>event</em> (keyword) must be invoked in the controller. The <em>event</em> is triggered by a post request from views. This completes the MVC loop.</p>
+<p>How to add a new <code>:post</code> action:</p>
+<ol>
+<li>Create post path in <em>route</em> and <code>rake db:migrate</code></li>
+<li>Define post action in <em>controller</em>, linking another “<em>action</em>!”</li>
+<li>Create “<em>action</em>!” in <em>model</em></li>
+<li>Create button in <em>views</em>, linking to path in <em>route</em>, remember to add <code>:method =&gt; :post</code></li>
+</ol>
+<p>I also jot down some important notes and learning points that I found useful:</p>
+<p><strong>How to change AASM state manually in terminal console:</strong></p>
+<p>_[recommend first install <em>gem awesome_rails_console</em> to better view console results]_</p>
+<ol>
+<li>See all orders by using <code>Order.all</code></li>
+<li>Find the one you want by using <code>Order.find(#)</code> with # = the ID number</li>
+<li>Define a variable for this order <code>AAA = Order.find(#)</code></li>
+<li>Check the AASM state of the order <code>AAA.aasm_state</code></li>
+<li>Assign new AASM state (in this case we’ll use “paid”) <code>AAA.aasm_state = &quot;paid&quot;</code></li>
+<li>Save <code>AAA.save!</code> (Must add “!” here to force save into the Order, otherwise only the variable AAA’s aasm state will be saved but not when you check again in Order)</li>
+</ol>
+<p><strong>Important Distinction Between = vs. ===</strong></p>
+<p>When I tried to build an <em>if… end</em> statement using = to check value, it didn’t work. This is because = assigns value to a variable, not checking if there is an equality relationship. I changed this to === and it worked. This is a very juvenile mistake that I don’t think will happen again.</p>
+<p><strong>Important Distinction Between Array and Single Variable</strong></p>
+<p>When I tried to pull the admin user’s email address to send a notification email, the email pull could not work. In the console, I was told the “email” method was undefined.</p>
+<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1070126/tkPd9OpkQy2CnwJA3au9_Screen%20Shot%202016-11-03%20at%203.43.10%20PM.png" alt="Screen Shot 2016-11-03 at 3.43.10 PM.png"></p>
+<p>So I checked <em>order.user</em> vs. <em>User.where(is_admin: true)</em>:</p>
+<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1070126/fWsC9xJgTlXRX9IxIKA9_Screen%20Shot%202016-11-03%20at%203.44.01%20PM.png" alt="Screen Shot 2016-11-03 at 3.44.01 PM.png"></p>
+<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1070126/bea4oTnCTKyWOhViLNAP_Screen%20Shot%202016-11-03%20at%203.43.29%20PM.png" alt="Screen Shot 2016-11-03 at 3.43.29 PM.png"></p>
+<p>Initially they looked the same to me. Then I noticed the <code>[0]</code> in front of the user details. I know that <code>[ ]</code> indicates an array, and <code>0</code> would be the position of the value in the array. So this is an array with just 1 value. Which meant that I had to specify which value in the array I wanted to call in order for the <code>.email</code> method to work. So I added <code>.first</code> at the end of the variable and pulled the email address successfully.</p>
+<p><strong>How to correctly use Roadie Rails automatically</strong></p>
+<p>I checked the <code>gem roadie-rails</code> <a href="https://github.com/Mange/roadie-rails" target="_blank" rel="external">website</a>, for whatever reason they didn’t mention how to include the <em>stylesheet</em> inside the email template.</p>
+<figure class="highlight ruby"><figcaption><span>app/views/order_mailer/notify_order_placed.html.erb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ &lt;link rel=<span class="string">"stylesheet"</span> type=<span class="string">"text/css"</span> href=<span class="string">"/assets/application.scss"</span> /&gt;</div></pre></td></tr></table></figure>
+<p>This is a key step and without it the CSS would obviously not show up. For a more complete step-by-step simple installation, please see <a href="http://yy4ever.logdown.com/posts/1070697-using-roadie-rails-display-css-layouts" target="_blank" rel="external">here</a>.</p>
+<p>I have completed everything in the development stage at this point. The next step will be deployment onto <em>Heroku</em>, which will require an email client (<em>MailGun</em>), a password manager (<em>figaro</em>), and an image host, in addition to a number of issues that may come up along the way. I now understand why it is <strong>critical</strong> to leave out 1/3 of the time for deployment and user testing.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/02/2016-11-02-day03-week03-shopping-site-with-order-delivery/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1672,161 +1847,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/26/2016-10-26-1042590/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="朱英楠David">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="DYZ.Life">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/26/2016-10-26-1042590/" itemprop="url">
-                  【功能】Repeated Issue with DB Migration
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-26T08:59:00+08:00">
-                2016-10-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程学习/" itemprop="url" rel="index">
-                    <span itemprop="name">编程学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/26/2016-10-26-1042590/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/26/2016-10-26-1042590/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>When trying to add attachment “image” to model “product” using gem <em>CarrierWave</em>, I used the following steps:</p>
-<ol>
-<li><p>Created a new column with <code>rails g migration AddImageToProduct</code></p>
-</li>
-<li><p><code>rake db:migrate</code></p>
-</li>
-<li><p>Added <code>:image</code> in <code>product_params</code> in the <code>private</code> section of <code>products_controller.rb</code></p>
-</li>
-</ol>
-<p>However, I found out that even after repeated <code>db:migrate</code> / <code>db:reset</code> commands, I still could not get the uploader working. I then realized that in the <code>schema.rb</code> file that the “image” had not been added as a column, so the migration had failed.</p>
-<p>The fix was to run the following commands:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">rake db:drop</div><div class="line">rake db:create</div><div class="line">rake db:migrate</div><div class="line">rake db:seed</div></pre></td></tr></table></figure>
-<p>(The <code>db:seed</code>command is optional as I had manipulated the <code>seed.rb</code> file to create an admin account and normal account everytime the database is recreated.)</p>
-<p>This fixed the database issue and now the <code>schema.rb</code> file has the “image” column added, and I could upload images successfully. Apparently when running <code>db:reset</code>, even though the system drops and recreates the database, it takes the old schema document rather than re-running all the migration files to update the schema.</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1872,7 +1892,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">114</span>
+              <span class="site-state-item-count">115</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1889,7 +1909,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-count">56</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1973,8 +1993,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-telegram"></i>
   </span>

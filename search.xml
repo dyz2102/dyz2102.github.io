@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[【功能】如何用青云注册服务器和部署网站]]></title>
+      <url>%2F2017%2F01%2F15%2F2017-01-09-using-qingyun-to-deploy%2F</url>
+      <content type="text"><![CDATA[从开始学习RoR以来，一直认为用国内服务器会面临企业认证的问题。但是最近发现原来青云是可以不用公司认证也可以使用的（当然公网IP随时可能被墙），和Heroku相比，除了装环境非常耗时/琐碎之外，还需要承担一些费用。一个公网IP每天0.72人民币，一个1核1G的Linux主机每天2.4人民币，部署一个能用的网站最低是每月107.86人民币的开销。但作为学习练习部署来说，是脱离Heroku的好渠道。 第一步：注册青云账号 第二步：选择用户类型 个人用户也需要认证使用，但只需要填写身份证信息，然后青云工作人员可能会电话核实本人存在，了解一下申请账号用途（自己学习做网站）就可以顺利通过了。我们基本上都是半小时内通过。 第三步：申请资源配额 第四步：选择区域 第五步：开启一个主机和一个公网IP地址 第六步：选择主机类型（所有配置按照最低选择即可） 第七步：设置一个SSH密匙（设置之后下载到电脑，保存在该项目文件夹） 第八步：将密匙和公网IP配置给主机 第九步：打开防火墙允许访问（网站访问默认为80端口） 第十步：从本地访问远程服务器（iTerm到存储SSH密匙的文件夹） 12$ chmod 600 kp-[密匙文件名]$ ssh -i kp-[密匙文件名] root@[公网IP地址] 接下来就可以用其他网络教程开始安装Ruby了，可以参考： Xdite的全栈班部署教程 DigitalOcean教程（从第二步开始）]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[【功能】如何将git的当前本地分支还原]]></title>
       <url>%2F2016%2F12%2F21%2F2016-12-21-how-to-reset-working-progress-in-git-branch%2F</url>
       <content type="text"><![CDATA[将本地的branch还原：1git checkout . 将本地的git全部重置，将所有尚未push到云端的commits取消：1git reset 将某一个commit重置：1git revert &lt;commit 1&gt; &lt;commit 2&gt; 将新生成的文件重置：1git clean -f 将新生成的文件夹重置：1git clean -fd 原文参考：Stackoverflow]]></content>

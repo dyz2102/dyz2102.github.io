@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-21T11:50:29.000Z</updated>
+  <updated>2017-01-15T15:39:56.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【功能】如何用青云注册服务器和部署网站</title>
+    <link href="http://yoursite.com/2017/01/15/2017-01-09-using-qingyun-to-deploy/"/>
+    <id>http://yoursite.com/2017/01/15/2017-01-09-using-qingyun-to-deploy/</id>
+    <published>2017-01-15T11:54:23.000Z</published>
+    <updated>2017-01-15T15:39:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>从开始学习RoR以来，一直认为用国内服务器会面临企业认证的问题。但是最近发现原来青云是可以不用公司认证也可以使用的（当然公网IP随时可能被墙），和Heroku相比，除了装环境非常耗时/琐碎之外，还需要承担一些费用。一个公网IP每天0.72人民币，一个1核1G的Linux主机每天2.4人民币，部署一个能用的网站最低是每月107.86人民币的开销。但作为学习练习部署来说，是脱离Heroku的好渠道。</p>
+<p>第一步：注册青云账号</p>
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcly1fbrpa9dbqsj31kw11b1kx.jpg" alt=""></p>
+<p>第二步：选择用户类型</p>
+<p><img src="https://ww1.sinaimg.cn/large/006tKfTcly1fbrpbay565j31kw11bk0p.jpg" alt=""></p>
+<p>个人用户也需要认证使用，但只需要填写身份证信息，然后青云工作人员可能会电话核实本人存在，了解一下申请账号用途（自己学习做网站）就可以顺利通过了。我们基本上都是半小时内通过。</p>
+<p>第三步：申请资源配额</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcly1fbrpcfulyaj319v14un5w.jpg" alt=""></p>
+<p>第四步：选择区域</p>
+<p><img src="https://ww3.sinaimg.cn/large/006tKfTcly1fbrpt2jqutj30fu0f9wgk.jpg" alt=""></p>
+<p>第五步：开启一个主机和一个公网IP地址</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcly1fbrptmegbrj318t0uq0zr.jpg" alt=""></p>
+<p>第六步：选择主机类型（所有配置按照最低选择即可）</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcly1fbrpx15f5ej31kw11baol.jpg" alt=""></p>
+<p>第七步：设置一个SSH密匙（设置之后下载到电脑，保存在该项目文件夹）</p>
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcly1fbrpy115vhj31ha0j5gr4.jpg" alt=""></p>
+<p>第八步：将密匙和公网IP配置给主机</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcly1fbrq4z8hgkj30q40hxgqr.jpg" alt=""></p>
+<p><img src="https://ww3.sinaimg.cn/large/006tKfTcly1fbrq57lau7j30l10fzgpx.jpg" alt=""></p>
+<p>第九步：打开防火墙允许访问（网站访问默认为80端口）</p>
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcly1fbrq66g307j30vq0g5wia.jpg" alt=""></p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcly1fbrq6f9howj30x90n5doe.jpg" alt=""></p>
+<p><img src="https://ww2.sinaimg.cn/large/006tKfTcly1fbrq6sf7npj30ob0aj0ud.jpg" alt=""></p>
+<p>第十步：从本地访问远程服务器（iTerm到存储SSH密匙的文件夹）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ chmod 600 kp-[密匙文件名]</div><div class="line">$ ssh -i kp-[密匙文件名] root@[公网IP地址]</div></pre></td></tr></table></figure>
+<p>接下来就可以用其他网络教程开始安装Ruby了，可以参考：</p>
+<ol>
+<li><a href="https://fullstack.xinshengdaxue.com/posts/268" target="_blank" rel="external">Xdite的全栈班部署教程</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-passenger-and-nginx-on-ubuntu-14-04" target="_blank" rel="external">DigitalOcean教程（从第二步开始）</a></li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从开始学习RoR以来，一直认为用国内服务器会面临企业认证的问题。但是最近发现原来青云是可以不用公司认证也可以使用的（当然公网IP随时可能被墙），和Heroku相比，除了装环境非常耗时/琐碎之外，还需要承担一些费用。一个公网IP每天0.72人民币，一个1核1G的Linux主机
+    
+    </summary>
+    
+      <category term="功能" scheme="http://yoursite.com/categories/%E5%8A%9F%E8%83%BD/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+      <category term="deploy" scheme="http://yoursite.com/tags/deploy/"/>
+    
+  </entry>
   
   <entry>
     <title>【功能】如何将git的当前本地分支还原</title>
@@ -941,72 +995,6 @@
       &lt;p&gt;刚开始学习HTML / CSS / Rails的时候，有两个工具，是我很希望一开始就学会如何使用的：&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;前端：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Google Chrome自带的Developer Tools，快捷键是Cmd + Opt + I，或
-    
-    </summary>
-    
-      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Week06 - 第六周总结：团队协作的重要性</title>
-    <link href="http://yoursite.com/2016/11/25/2016-11-25-week06-the-sixth-week-summary-importance-of-teamwork/"/>
-    <id>http://yoursite.com/2016/11/25/2016-11-25-week06-the-sixth-week-summary-importance-of-teamwork/</id>
-    <published>2016-11-25T02:13:00.000Z</published>
-    <updated>2016-12-20T11:19:39.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
-<p>关于今天的课程, 你记得什么?</p>
-<ul>
-<li>Xdite讲了关于Onboarding的课程，非常受用。发现自己用过好多觉得不错的互联网产品都具有Onboarding性质的引导。</li>
-</ul>
-<p>完成了什么?</p>
-<ul>
-<li>今天完成了Eatgether项目的第二轮demo，整体表现满意。</li>
-</ul>
-<p><strong>Reflective</strong></p>
-<p>今天的高峰是什么?</p>
-<ul>
-<li>Demo前接受了上周的经验，为了不受到其他团队项目影响我的情绪，我没有看功能上可能比我们厉害的项目，而是专心在思考怎么掩饰我们组的项目。</li>
-</ul>
-<p>今天的低点是什么?</p>
-<ul>
-<li>下午太困了，效率很低，基本除了整理Redmine和列举新的任务之后没有做什么其他事情。</li>
-</ul>
-<p><strong>Interpretive</strong></p>
-<p>我们今天学到了什么?</p>
-<ul>
-<li>Onboarding引导非常重要，下周需要立刻开始学习执行。</li>
-</ul>
-<p>今天一个重要的领悟是什么?</p>
-<ul>
-<li><p>我们今天分享本周收获和坑的stand up meeting中，团员们基本上都谈到了团队协作的事情。我们一致认为，我们组能够如期完成任务，主要是因为拥有较好的团队协作，每个队员都有把团队利益放在自身利益前面的作风，所有工作都以结果为导向、以效率为最重要指标，把情绪和不满统统放在一边，用成果说话。</p>
-</li>
-<li><p>在以前的投行领域，尽管团队协作也非常重要，但基本上都存在上下级汇报关系，有老板愿意陪你多加班几个小时就很开心，帮你干手上的活简直感动的都想流泪。但在编程领域，团队协作几乎是整个项目进度的命脉，别说一起加班了，大家互相需要不断教会对方新的技巧、debug、甚至包括传授完成某项task时的思维方式。非常喜欢编程领域的扁平化模式和meritocracy，之后更有时间了会写多一些这方面的体会发到自己的公众号上。</p>
-</li>
-</ul>
-<p><strong>Decisional</strong></p>
-<p>我们会如何用一句话形容今天的工作</p>
-<ul>
-<li>十分充实。</li>
-</ul>
-<p>有哪些工作需要明天继续努力?</p>
-<ul>
-<li>周末还有挺多小功能需要完善，在下周一前需要部署完毕到Heroku任务还是比较多的。</li>
-<li>非常期待Onboarding的练习。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;关于今天的课程, 你记得什么?&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Xdite讲了关于Onboarding的课程，非常受用。发现自己用过好多觉得不错的互联网产品都具有Onboarding性质的引导。&lt;/li&gt;
-&lt;/u
     
     </summary>
     
