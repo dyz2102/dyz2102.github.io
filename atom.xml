@@ -159,9 +159,9 @@
       <category term="功能" scheme="http://yoursite.com/categories/%E5%8A%9F%E8%83%BD/"/>
     
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
       <category term="heroku" scheme="http://yoursite.com/tags/heroku/"/>
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
       <category term="production" scheme="http://yoursite.com/tags/production/"/>
     
