@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-15T15:39:56.000Z</updated>
+  <updated>2017-01-23T07:20:06.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何让Rails Console的数据变得能看 - Awesome Rails Console</title>
+    <link href="http://yoursite.com/2017/01/23/2017-01-23-%E5%A6%82%E4%BD%95%E8%AE%A9Rails-Console%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8F%98%E5%BE%97%E8%83%BD%E7%9C%8B/"/>
+    <id>http://yoursite.com/2017/01/23/2017-01-23-如何让Rails-Console的数据变得能看/</id>
+    <published>2017-01-23T07:06:59.000Z</published>
+    <updated>2017-01-23T07:20:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Rails Console有个不太完美的地方，就是在后台看数据就有一种看天书的赶脚。比如，我们想看一下目前用户当中都有哪些人是admin，进入console之后输入User.all，结果是让人崩溃的：</p>
+<p><img src="https://ww2.sinaimg.cn/large/006tNbRwly1fc0l4em9eij312w0fsgru.jpg" alt=""></p>
+<p>但Rails世界有一个很好用的gem，可以将这些错乱的一串字符排序。Gem的名字也相当有说明度，叫做<a href="https://github.com/ascendbruce/awesome_rails_console" target="_blank" rel="external">“Awesome Rails Console”</a>.</p>
+<p>安装非常简单，Gemfile里加入一行<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem <span class="string">'awesome_rails_console'</span></div></pre></td></tr></table></figure></p>
+<p>安装之后，再次输入User.all长成这个样子：</p>
+<p><img src="https://ww2.sinaimg.cn/large/006tNbRwly1fc0l6ai2e4j318y0x4k0d.jpg" alt=""></p>
+<p>有没有瞬间心情大好？</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Rails Console有个不太完美的地方，就是在后台看数据就有一种看天书的赶脚。比如，我们想看一下目前用户当中都有哪些人是admin，进入console之后输入User.all，结果是让人崩溃的：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ww2.sinaimg
+    
+    </summary>
+    
+      <category term="功能" scheme="http://yoursite.com/categories/%E5%8A%9F%E8%83%BD/"/>
+    
+    
+      <category term="rails" scheme="http://yoursite.com/tags/rails/"/>
+    
+  </entry>
   
   <entry>
     <title>【功能】如何用青云注册服务器和部署网站</title>
@@ -123,11 +153,11 @@
       <category term="功能" scheme="http://yoursite.com/categories/%E5%8A%9F%E8%83%BD/"/>
     
     
+      <category term="rails" scheme="http://yoursite.com/tags/rails/"/>
+    
       <category term="ActiveRecord" scheme="http://yoursite.com/tags/ActiveRecord/"/>
     
       <category term="migration" scheme="http://yoursite.com/tags/migration/"/>
-    
-      <category term="rails" scheme="http://yoursite.com/tags/rails/"/>
     
   </entry>
   
@@ -960,41 +990,6 @@
     <summary type="html">
     
       &lt;p&gt;问题：打开新页面之后很多jQuery的功能失效：&lt;br&gt;&lt;a href=&quot;http://stackoverflow.com/questions/29018447/bootstrap-dropdown-stops-working-after-i-switch-pages-ra
-    
-    </summary>
-    
-      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【功能】前后端debug的两大法宝：Developer Tools和gem pry</title>
-    <link href="http://yoursite.com/2016/11/25/2016-11-25-debug-using-developer-tools-and-gem-pry/"/>
-    <id>http://yoursite.com/2016/11/25/2016-11-25-debug-using-developer-tools-and-gem-pry/</id>
-    <published>2016-11-25T02:14:00.000Z</published>
-    <updated>2016-12-20T11:19:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>刚开始学习HTML / CSS / Rails的时候，有两个工具，是我很希望一开始就学会如何使用的：</p>
-<p><strong>前端：</strong></p>
-<p>Google Chrome自带的Developer Tools，快捷键是Cmd + Opt + I，或者如果直接想用鼠标找到页面上想要调整的物件可以用Cmd + Opt + C。</p>
-<p><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1fa4jwzl3upj30kl08dmzc.jpg" alt=""><br><img src="http://ww3.sinaimg.cn/large/006y8mN6jw1fa4k0slu8ej308603wt93.jpg" alt=""></p>
-<p>当发现页面的东西显示不对的时候，打开Cmd + Opt + C，用鼠标找到想要修改的物件，找到左手边HTML文件里相对应的部分，点击，然后找到右手边”style”部分里面的相对应的CSS代码，可以直接修改定义的色值、大小、排版等，也可以直接在左手边HTML里面修改HTML产生效果变动。</p>
-<p><img src="http://ww1.sinaimg.cn/large/006y8mN6jw1fa4kaxdyupj30ls0i478j.jpg" alt=""><br><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1fa4kb410x3j30ix0iudjt.jpg" alt=""></p>
-<p><strong>后端：</strong></p>
-<p>之前文章说过gem “pry”很好用，最近开始用这个gem调出所想要找到的路径和数据，比如在有关联的两组数据，用第一组数据找到第二组数据的某个数值。</p>
-<p>举例：<br>在feedbacks index页面里，想要把所有的@feedbacks中找到跟该feedback管理的order创立的时间：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">binding.pry</span> %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> @<span class="attr">feedbacks.each</span> <span class="attr">do</span> |<span class="attr">feedback</span>| %&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">%=</span> <span class="attr">OrderTwo.find</span>(<span class="attr">feedback.order_two_id</span>)<span class="attr">.created_at.strftime</span>("%<span class="attr">d</span> %<span class="attr">b</span> %<span class="attr">Y</span>")%&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span></div></pre></td></tr></table></figure></p>
-<p>本来并不会写中间那行代码，但可以用pry找到<code>feedback</code>，然后知道<code>feedback</code>里面存有<code>order_two</code>的id，而这个id是可以用来调用OrderTwo这个object的。<br><img src="http://ww2.sinaimg.cn/large/006y8mN6jw1fa4kffuii8j30s104z0tq.jpg" alt=""></p>
-<p>另外，第二行代码后面的strftime也是一个很好用的时间格式method，比<code>to_s</code>要好用。这里有一个<a href="http://dyz2102-blog.logdown.com/posts/1135574" target="_blank" rel="external">简单的教程。</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;刚开始学习HTML / CSS / Rails的时候，有两个工具，是我很希望一开始就学会如何使用的：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;前端：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Google Chrome自带的Developer Tools，快捷键是Cmd + Opt + I，或
     
     </summary>
     
