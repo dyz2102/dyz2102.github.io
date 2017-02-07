@@ -286,6 +286,309 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/28/2016-10-28-1048473/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ.Life">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/28/2016-10-28-1048473/" itemprop="url">
+                  Week02 - Biggest Challenge
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-28T07:13:00+08:00">
+                2016-10-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">编程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/10/28/2016-10-28-1048473/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/28/2016-10-28-1048473/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>The most challenging part of this year was getting the image uploader gem <em>CarrierWave</em> to work. I did these steps below:</p>
+<ol>
+<li>Installing the gem</li>
+<li>Loading the uploader in the <em>model</em></li>
+<li>Adding a column using <code>rails g migration AddImageToProduct</code></li>
+<li>Run <code>rake db:migrate</code></li>
+<li>Adding the new column to the “product” <em>controller</em></li>
+</ol>
+<p>… yet the upload still returned error!</p>
+<p>The error was that image was “nil”, which meant that the image didn’t get uploaded, or that in the <em>product</em> image wasn’t attached. So I checked the <em>schema</em> document and realized that even though I ran <code>db:migrate</code>, the image was never added to the <em>schema</em> - not sure why though.</p>
+<p>First, I tried to fix this with <code>rake db:reset</code>, which didn’t work because it takes the schema document rather than updating it. Then I used rake db:drop, rake db:create, and rake db:migrate to recreate the database, which finally worked.</p>
+<p>I wrote a more detailed version of the above issue <a href="http://dyz2102-blog.logdown.com/posts/1042590" target="_blank" rel="external">here</a>.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/28/2016-10-28-1047572/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ.Life">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/28/2016-10-28-1047572/" itemprop="url">
+                  Day04 Week02
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-28T03:45:00+08:00">
+                2016-10-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">编程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/10/28/2016-10-28-1047572/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/28/2016-10-28-1047572/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Objective</strong></p>
+<p>Today I came into the classroom with 2 outstanding issues to resolve based on this week’s assignments: The first being fixing the routing such that products <em>index</em> and <em>show</em> can be accessed without the <code>admin</code> namespace, and the second being displaying the products index page as an image grid rather than a table. I finished both tasks largely on my own, with the only hint from the TA being “use Bootstrap code” for the second issue.</p>
+<p><strong>Reflective</strong></p>
+<p>It felt great to be able to resolve the above issues on my own. I am getting a better hang of the MVC framework, and can largely use <code>rake routes</code> to figure out the correct paths to direct links. I also finally understood the difference between <em>namespace</em> and <em>resources</em>.</p>
+<p><strong>Interpretive</strong></p>
+<p>I had previously worked on a e-commerce startup idea, and during the product sorting process my CTO told the team to only use square photos. After playing with <em>CarrierWave</em> and <em>MiniMagick</em> I now understand why. Square photos are easier to display as we can change dimension without having to worry about proportional ratios.</p>
+<p>I also understand now that some CSS codes are “hidden” inside the Bootstrap gem and can be called in the HTML directly (such as <code>&lt;class=&quot;thumbnail&quot;&gt;</code> would add a round-cornered border around an image or division.</p>
+<p> <strong>Decisional</strong></p>
+<p>The tasks over the past two days have been fairly simple, and I have completed them without too much trouble, which means that I had learned sufficiently from the previous projects. However, as the e-commerce project grows in complexity (adding shopping cart, payment, inventory management, etc.) I very much expect and look forward to stretch my knowledge and brain next week.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/26/2016-10-26-1043312/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1465,303 +1768,13 @@
 <h2>Interpretive</h2>
 
 <p>I learned two very important lessons today. One is that when building a form to enter information for a second-layer model, the code @MODEL isn’t sufficient, but needed to include [:MODEL1, @MODEL2]. For instance, in the second line below, <em>resume</em> is under <em>job</em>, and a form to upload <em>resume</em> would require square brackets around to establish a relationship with <em>job</em>:</p>
-<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div class="well"&gt;</div><div class="line">  &lt;%= form_for [:job, @resume], html: &#123; multipart: true &#125; do |f| %&gt;</div><div class="line">    &lt;%= f.label :name %&gt;</div><div class="line">    &lt;%= f.text_field :name %&gt;</div><div class="line">    &lt;%= f.label :attachment %&gt;</div><div class="line">    &lt;%= f.file_field :attachment %&gt;</div><div class="line">    &lt;%= f.submit "Save", class: "btn btn-primary" %&gt;</div><div class="line">  &lt;% end %&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div class="well"&gt;</div><div class="line">  &lt;%=<span class="ruby"> form_for [<span class="symbol">:job</span>, @resume], <span class="symbol">html:</span> &#123; <span class="symbol">multipart:</span> <span class="literal">true</span> &#125; <span class="keyword">do</span> <span class="params">|f|</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.label <span class="symbol">:name</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.text_field <span class="symbol">:name</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.label <span class="symbol">:attachment</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.file_field <span class="symbol">:attachment</span> </span>%&gt;</div><div class="line">    &lt;%=<span class="ruby"> f.submit <span class="string">"Save"</span>, <span class="class"><span class="keyword">class</span>: "<span class="title">btn</span> <span class="title">btn</span>-<span class="title">primary</span>" </span></span>%&gt;</div><div class="line">  &lt;%<span class="ruby"> <span class="keyword">end</span> </span>%&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 <p>Another important lessons I learned today is that in a three-model situation, when uploading a <em>resume</em>, we need to also set <strong>which</strong> <em>job</em> and <em>user</em> the resume belonged to. This is established by the following under the `resumes_controller.rb’:</p>
 <figure class="highlight ruby"><figcaption><span>jobs_controller.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create</span></span></div><div class="line">   @job = Job.find(params[<span class="symbol">:job_id</span>])</div><div class="line">   @resume = Resume.new(resume_params)</div><div class="line"></div><div class="line">   @resume.job = @job</div><div class="line">   @resume.user = current_user</div><div class="line"></div><div class="line">	<span class="keyword">if</span> @resume.save</div><div class="line">     redirect_to job_path(@job), <span class="symbol">notice:</span> <span class="string">"The resume <span class="subst">#&#123;@resume.name&#125;</span> has been uploaded."</span></div><div class="line">   <span class="keyword">else</span></div><div class="line">     render <span class="string">"new"</span></div><div class="line">   <span class="keyword">end</span></div></pre></td></tr></table></figure>
 <p>Essentially, if in the model there is a “belongs_to” relationship from one model to another, this needs also to be reflected in the controller.</p>
 <h2>Decisional</h2>
 
 <p>Today was overall productive as I was able to complete the assignment using Google (StackOverflow), the instructor’s PDF instructions, as well as the TA’s assistance. But I feel that I still lack understanding of the Ruby language and will begin to spend more time learning the fundamental aspects this week.</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/23/2016-10-23-1032025/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="朱英楠David">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="DYZ.Life">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/23/2016-10-23-1032025/" itemprop="url">
-                  Week01 - Best Concept/Tool
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-23T06:18:00+08:00">
-                2016-10-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程学习/" itemprop="url" rel="index">
-                    <span itemprop="name">编程学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/23/2016-10-23-1032025/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/23/2016-10-23-1032025/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>During this week, a couple of resources have helped me the most in getting the project done and resolving all types of issues along the way. One key resources is <em>StackOverflow</em>. I found that virtually anything I can possibly ask has already been asked by someone else on StackOverflow, with many comprehensive answers not only giving solutions but also providing explanations for the concepts working behind them. Another key resource is <em>W3 Schools</em>. In learning basic HTML and CSS codes, I was able to distinguish which codes were responsible for which visual element in the website.</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/23/2016-10-23-1031809/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="朱英楠David">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="DYZ.Life">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/23/2016-10-23-1031809/" itemprop="url">
-                  Week01 - Biggest Challenge
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-23T05:29:00+08:00">
-                2016-10-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程学习/" itemprop="url" rel="index">
-                    <span itemprop="name">编程学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/23/2016-10-23-1031809/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/23/2016-10-23-1031809/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>During this week, my biggest challenge during the project was with Ruby’s syntax and understanding how the Rails database system worked.</p>
-<h2>Ruby Syntax Problems</h2>
-
-<p>For instance, I would often write “&lt;%= %&gt;” without the “=” and end up not displaying what I want. Or I would misplace a gem in the inside of a “do…end” loop and end up having the gems not working properly. I think over the next week, I will spend some time on learning Ruby’s syntax to better familiarize myself with how these codes work.</p>
-<h2>Rails Database</h2>
-
-<p>When to use “<em>rails g model XXX</em>“ and how to establish relationships betwen various resources in the database is something I have yet to understand fully. I think only by doing more projects seeing more examples would I be able to get a better grasp of how these complex relationships worked in the Rails tree.</p>
 
           
         
@@ -1836,7 +1849,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">116</span>
+              <span class="site-state-item-count">118</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

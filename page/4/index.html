@@ -286,6 +286,317 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/17/2016-11-17-day04-week05-further-stuck-on-feedback-controller/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ.Life">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/17/2016-11-17-day04-week05-further-stuck-on-feedback-controller/" itemprop="url">
+                  Day04 Week05 - Further Stuck on Feedback Controller
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-17T16:54:00+08:00">
+                2016-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">编程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/11/17/2016-11-17-day04-week05-further-stuck-on-feedback-controller/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/17/2016-11-17-day04-week05-further-stuck-on-feedback-controller/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Objective</strong></p>
+<p>Today we were told there will be a demo day tomorrow to show case our project. We got pretty nervous and spent a lot of time cutting down time spent on building new features and allocated a lot more resources on improving existing features and rendering better layouts and visuals.</p>
+<p>In the end, we decided to allocate the day time to working separately on improving features and then group together after dinner to merge all the git branches together and enter some dummie data for demo purposes.</p>
+<p><strong>Reflective</strong></p>
+<p>So I had been stuck on the <code>feedback</code> feature’s deleting function for a day, and Xdite told me to write a new ticket and table it for now. I did that, but because we are also building a new model for <code>order_two</code> (allowing users to request pairing with someone rather than admin pairing users together), this created a lot of problems when merging <code>feedback</code>, which has <code>belongs_to</code> relationships with both <code>users</code> and <code>orders</code> (now <code>order_twos</code>), which meant we had to change a lot of routes and controller commands.</p>
+<p>By the end of the day we still couldn’t figure out all the linkages to add <code>feedback</code> as a full-CRUD feature, so we decided to take out some features like deletion and editing for demo day.</p>
+<p>I spent most of my afternoon improving visuals of the site, including finding a font for the company name/logo, changing color scheme of the navbar, and redoing the layouts of all user and admin’s console pages.</p>
+<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1115560/6Sb8z2EJSfKnQgkwQLNq_Screen%20Shot%202016-11-18%20at%201.09.33%20AM.png" alt="Screen Shot 2016-11-18 at 1.09.33 AM.png"></p>
+<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1115560/Ftn6N2k2QniBVux4hmFE_Screen%20Shot%202016-11-18%20at%201.09.00%20AM.png" alt="Screen Shot 2016-11-18 at 1.09.00 AM.png"></p>
+<p>I was pretty pleased with how the layouts turned out in the end.</p>
+<p><strong>Interpretive</strong></p>
+<p>I learned the importance of writing clean codes today as during merging we had a lot of conflicts, and it wasn’t always clear which codes were doing what. I got a chance to look at Liang Chao’s code for installing JQuery command for “five-star rating”, and he made sure to comment at places where codes looked confusing.</p>
+<p>Also in terms of routing, which I have been picking up a lot on by doing the <code>feedback</code> feature, I am still at the point where I can only read a few lines of code to understand why they were written that way, and replicate code structures from a previous project to the current project. I am not at a point where I can write fresh code to do CRUD actions in a complex relationship situation. My teammate Han Han seems to be very good at this, and I really look forward to learning more from him.</p>
+<p><strong>Decisional</strong></p>
+<p>Today was productive and the team all worked very hard together. We have managed to put together a visually-pleasing and functionally-passable product together for demo. Let’s see how we do tomorrow.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/16/2016-11-16-day03-week05-stuck-on-feedback-controller/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ.Life">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/11/16/2016-11-16-day03-week05-stuck-on-feedback-controller/" itemprop="url">
+                  Day03 Week05 - Stuck on "Feedback" Controller
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-16T15:32:00+08:00">
+                2016-11-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">编程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/11/16/2016-11-16-day03-week05-stuck-on-feedback-controller/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/16/2016-11-16-day03-week05-stuck-on-feedback-controller/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>Objective</strong></p>
+<p>Today we went over User Story again and came up with a series of tasks, which would change our app from a site where admins matched users on dates, to users (“askers”) requesting dates and having post owners (“posters”) deciding who to pick. The most important of which were: building an <code>asker_request</code> relationship that askers would generate once they request a date; building a separate <code>order_two</code> model that would hold 1 post (date, which includes 1 user who posted the post) and 1 user (asker). Other tasks involved further enhancing webpage views, connecting various pages and adding to forms, building an <code>interests</code> model to hold interest tags of users, as well as making the <code>feedback</code> model more usable.</p>
+<p>My main focus has been on the <code>feedback</code> model. I’m nearly done but still has one but yet to be fixed regarding deletion (I believe).</p>
+<p><strong>Reflective</strong></p>
+<p>Today was bad because it’s my second time being late to our morning meeting, prompting everyone to ask me what’s going on. I have a chronic bad habit of staying up late, and it’s something I <em>really really really</em> need to fix.</p>
+<p>For this reason I’m going to leave my computer at the classroom so that I can go home and sleep right away tonight.</p>
+<p>With regards to the project, I learned a lot about routing and CRUD today through practice. My first version of <code>feedback</code> MVC was terribly written with many unused CRUD actions in different controllers, and view files that weren’t being accessed - it was all over the place.</p>
+<p>I saved a version and restarted the MVC codes, only this time I wrote down before hand which pages needed to be made and which actions were needed in which controllers. This made things much more clear and I was able to get all the URLs to display correctly (e.g. <code>admin/order/5/feedback/2/edit</code>, instead of <code>admin/feedback/2/edit</code>).</p>
+<p>However, there is still an issue outstanding whereby if the admin deletes a feedback in the console, then when a new feedback is written it cannot be found by the current code (off by 1 id). I’ve worked on this the past couple hours to no avail. Hopefully we can figure this out tomorrow.</p>
+<p><strong>Interpretive</strong></p>
+<p>A key learning today was the importance to plan ahead when writing controllers that are accessed by multiple namespaces, it’s simply too confusing if you code on the fly.</p>
+<p>Another key learning today was how to submit form info into a specific route. So we’ve learned from <em>rails101</em> project that if you want to submit to <code>posts</code> under <code>groups</code>, then the form should have <code>form_for [@group,@post] do |post|</code>. And yesterday we figured out that to submit under a namespace would be <code>form_for [:admin,@post] do |post|</code>. Combining the two together we’d get <code>[form_for [:admin,@order,@feedback] do |feedback|</code> for something to be submitted in namespace “admin” and under an “order” resources.</p>
+<p><strong>Decisional</strong></p>
+<p>Today was very challenging in general given both a bad start and a tough problem to tackle. Tomorrow I’ll get the day started early and hopefully crack the <code>feedback</code> CRUD issue.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/15/2016-11-15-day02-week05-building-mailer-and-model-feedbacks/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1493,319 +1804,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/08/2016-11-08-day01-week-04-first-ever-hackathon/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="朱英楠David">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="DYZ.Life">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/08/2016-11-08-day01-week-04-first-ever-hackathon/" itemprop="url">
-                  Day01 Week04 - My First-Ever Hackathon
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-08T09:40:00+08:00">
-                2016-11-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程学习/" itemprop="url" rel="index">
-                    <span itemprop="name">编程学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/11/08/2016-11-08-day01-week-04-first-ever-hackathon/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/08/2016-11-08-day01-week-04-first-ever-hackathon/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>This past weekend, we completed our first-ever Hackathon.</p>
-<p>Our product - a mining game designed to use rubies as virtual currency to vote for questions that we’d like to ask the instructor. Since it’s a video game, we created the below theme to fit a “digging gems inside a cave” kind of scenario.</p>
-<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1084768/Z1VGrzBSluRubJEDSwca_Screen%20Shot%202016-11-08%20at%206.31.14%20PM.png" alt="Screen Shot 2016-11-08 at 6.31.14 PM.png"></p>
-<p>We began working on the project starting Saturday, but we did not foresee the massive amount of work it would take to implement the backend logic as well as the frontend designs. On Sunday, I went home at 6am, but luckily the project was largely completed by then.</p>
-<p>The highlight was definitely being able to build a <em>fantasy</em> game styled theme. I had always wanted to build games when I was a kid, and finally having the chance and skills to do so is very rewarding. As our previous projects involved mostly Bootstrap and very little CSS work, this project challenged us to learn more about HTML/CSS. We added images to different behaviors (hover, active, etc.) and also sound effects for digging and finding treasure.</p>
-<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1084768/FvESXsUTFnhJk1dR1Y7Q_Screen%20Shot%202016-11-08%20at%207.01.43%20PM.png" alt="Screen Shot 2016-11-08 at 7.01.43 PM.png"></p>
-<p>One key learning from this Hackathon was team collaboration using Github. Our previous projects only involved forking from an original git and pull revised versions compared with the same original git. However, as now there are two people collaborating, and both working on the entire project at the same time, there will be conflicts when creating pull requests. Merging turned out to be rather complex when there are too many files that had been changed by both teammates. The low point of the project was at 5 in the morning, when I accidentally thought using “git rm” would remove the duplicate files and allow for merger to complete. I did this to about 10 files, after which I realized I couldn’t even get any page to open anymore. I began to freak out and frantically started Googling. I then found an incredible solution:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reset --hard master@&#123;&quot;20 minutes ago&quot;&#125;</div></pre></td></tr></table></figure>
-<p>This command saved my life. The entire local git returned to its prestine state 20min ago and I was able to make edits manually on top of the origin file. This was more tedious of course, butit beats crashing the whole site.</p>
-<p>At the end of the presentations, our team came out tied for <strong>first place in the Hackathon</strong>. That was pretty awesome. We’re due for a fancy dinner with Xdite Wednesday at <a href="https://beijing.park.hyatt.com/en/hotel/dining/ChinaGrill.html" target="_blank" rel="external">China Grill</a>. Wasn’t expecting this when I signed up for the class so… pretty stoked!</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/11/05/2016-11-05-day05-week03-launching-e-commerce-site/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="朱英楠David">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="DYZ.Life">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/11/05/2016-11-05-day05-week03-launching-e-commerce-site/" itemprop="url">
-                  Week03 - Weekly Summary - Building and Launching an E-Commerce Site
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-11-05T07:56:00+08:00">
-                2016-11-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程学习/" itemprop="url" rel="index">
-                    <span itemprop="name">编程学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/11/05/2016-11-05-day05-week03-launching-e-commerce-site/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/05/2016-11-05-day05-week03-launching-e-commerce-site/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><strong>Objective</strong></p>
-<p>This week we further developed the e-commerce site with more core functionalities, including adding shopping cart, checkout order formation, order management, and deploying project onto Heroku.</p>
-<p>This is by far the most complex project compare to the previous projects. I now have 7 models, 8 controllers, a mailer, an uploader, and vendor CSS files.</p>
-<p><strong>Reflective</strong></p>
-<p>Some of the key learning this week came from being able to debug our code. <strong>I found <code>gem pry</code> to be an extremely helpful tool to accomplish this.</strong> By entering the error code line-by-line, I can pinpoint exactly which line contains the error, and by trying variations of the code in console, I can figure out exactly what works. Pry has been the most powerful tool I’ve found in this class so far.</p>
-<p><strong>On the other hand, Heroku deployment is always a pain.</strong> I think I still need more practice with deploying onto Heroku in general, and getting used to the idea of development vs. production environment.</p>
-<p>I didn’t get Mail Gun to work because my account was suspended due to lack of business verification, and AWS also had problems with verifying my credit card address and my account was suspended. This is quite frustrating as using outside services means that there is no instant feedback and I’d have to wait for customer service to get back to me (probably after the weekend too).</p>
-<p><strong>Interpretive</strong></p>
-<p>I understand even better now why it is critical to leave out ample time for deployment because there’s a lot more moving pieces once you’re in the production phase of the project. I also have a better grip of how to add a <em>post</em> action, how to use various gems like <em>aasm</em>, <em>roadie-rails</em>, <em>letter_opener</em>, <em>figaro</em>, and <em>fog</em>. I also used a <code>case... where</code> statement to write how to display various action buttons, and making it look quite organized like this:</p>
-<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1076722/7wkoVkABQ5OLCTz55gUk_Screen%20Shot%202016-11-05%20at%207.15.59%20PM.png" alt="Screen Shot 2016-11-05 at 7.15.59 PM.png"></p>
-<p>I also began to summarize some key learnings into blog posts, some good ones from this week include:</p>
-<ol>
-<li><p><a href="http://dyz2102-blog.logdown.com/posts/1073097-manage-aws-key-using-figaro-on-heroku-for-carrierwave" target="_blank" rel="external">Managing AWS Key Using Figaro on Heroku for CarrierWave</a></p>
-</li>
-<li><p><a href="http://dyz2102-blog.logdown.com/posts/1070126-day04-week03" target="_blank" rel="external">Using AASM Status to Manage Orders</a></p>
-</li>
-<li><p><a href="http://dyz2102-blog.logdown.com/posts/1061503-day01-week03" target="_blank" rel="external">Building My Own Method Beyond CRUD</a></p>
-</li>
-</ol>
-<p><strong>Decisional</strong></p>
-<p>I feel quite good about this week and the progress that’s been made on the e-commerce project. I do feel quite stuck on deployment and hope to learn more about how to deploy going forward, particularly with regards to using Chinese services and possible integration with Wechat.</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1851,7 +1849,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">116</span>
+              <span class="site-state-item-count">118</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

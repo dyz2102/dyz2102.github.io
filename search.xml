@@ -3,6 +3,20 @@
   
     
     <entry>
+      <title><![CDATA[2017-02-07-Font-Awesome部署后被CORS Policy屏蔽显示方框]]></title>
+      <url>%2F2017%2F02%2F07%2F2017-02-07-Font-Awesome%E9%83%A8%E7%BD%B2%E5%90%8E%E8%A2%ABCORS-Policy%E5%B1%8F%E8%94%BD%E6%98%BE%E7%A4%BA%E6%96%B9%E6%A1%86%2F</url>
+      <content type="text"><![CDATA[跨来源资源共享（Cross-origin resource sharing，简称“CORS”）让我们网站在部署之后，Font-awesome的icon就都看不见了。 解决办法有两种，要么将CDN链接的资源存到本地（划为同一个域名下），要么打开CORS。我选择了后者： 在服务器端修改Nginx config，输入：sudo vi /opt/nginx/conf/nginx.conf 在server部分加入以下代码： 123location / &#123; add_header &apos;Access-Control-Allow-Origin&apos; *;&#125; 结果张这样： 然后重启Nginx server：sudo /etc/init.d/nginx restart 现在打开网页Font-awesome的icon就会正常显示了。如果没有的话可以清理一下游览器的cache。 资料参考：CORS原理开启CORS进阶方法]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[2017-02-04-如何让Carrierwave上传图片后读取绝对路径（WickedPDF需要）]]></title>
+      <url>%2F2017%2F02%2F04%2F2017-02-04-%E5%A6%82%E4%BD%95%E8%AE%A9Carrierwave%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%90%8E%E8%AF%BB%E5%8F%96%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%2F</url>
+      <content type="text"><![CDATA[最近在做一个简历编辑器，需要将HTML转成PDF，用了个叫做wicked_pdf的gem。但发现图片一直显示不出来（用的Carrierwave上传至本地，因为前期用户也不多就没上AWS，因为用AWS生成PDF会变很慢）。 原来是因为图片上传后路径显示的是相对路径，比如/uploads/images/XXX.jpg，但因为PDF完全在环境外发生所以读不到这个路径的图片。 解决方法就是在Carrierwave的config中设置图片的”asset_host”，这样所有路径就会将asset_host的名字变为前缀。 先改Carrierwave config： config/initializers/carrierwave.rb1234CarrierWave.configure do |config|... config.asset_host = ActionController::Base.asset_hostend config/environment/development.rb1234Rails.application.configure do... config.asset_host = 'http://localhost:3000'end 这样再上传图片的时候，URL就会变成http://localhost:300/uploads/images/XXX.jpg。 上线版本也需要写：config/environment/production.rb1234Rails.application.configure do... config.asset_host = 'http://example.com' #你的网站URLend 这样再上传图片的时候，URL就会变成http://example.com/uploads/images/XXX.jpg 资料参考：Stackoverflow]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[如何让Rails Console的数据变得能看 - Awesome Rails Console]]></title>
       <url>%2F2017%2F01%2F23%2F2017-01-23-%E5%A6%82%E4%BD%95%E8%AE%A9Rails-Console%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8F%98%E5%BE%97%E8%83%BD%E7%9C%8B%2F</url>
       <content type="text"><![CDATA[Rails Console有个不太完美的地方，就是在后台看数据就有一种看天书的赶脚。比如，我们想看一下目前用户当中都有哪些人是admin，进入console之后输入User.all，结果是让人崩溃的： 但Rails世界有一个很好用的gem，可以将这些错乱的一串字符排序。Gem的名字也相当有说明度，叫做“Awesome Rails Console”. 安装非常简单，Gemfile里加入一行1gem 'awesome_rails_console' 安装之后，再次输入User.all长成这个样子： 有没有瞬间心情大好？]]></content>
