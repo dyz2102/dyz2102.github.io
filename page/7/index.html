@@ -286,6 +286,166 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/24/2016-10-24-day01-week02/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="朱英楠David">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="DYZ.Life">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/24/2016-10-24-day01-week02/" itemprop="url">
+                  Day01 Week02
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-24T06:24:00+08:00">
+                2016-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程学习/" itemprop="url" rel="index">
+                    <span itemprop="name">编程学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/2016/10/24/2016-10-24-day01-week02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/24/2016-10-24-day01-week02/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2>Objective</h2>
+
+<p>Today we began “Phase 2” of the Job Listing Project, which involved Steps 6 through 8.</p>
+<p>Step 6 involved using the .order method and the “case…when…else…” statement to sort job listing by different metrics. This was fairly simple as the instructor has given sufficient hints in the slides.</p>
+<p>Step 7 involved using the Carrierwave gem to upload PDF-version resumes. Installing the gem and get the uploaded to work was the easy part, but establishing the relationship between <em>Resume</em>, <em>Job</em>, and <em>User</em> was challenging (details below).</p>
+<p>Step 8 involved adding the number of resume applied to a certain job posting to the admin view page, as well as making this number a live HTML link connecting to the resume index for view and download. This required good grasp of <em>rake routes</em> to ensure that I got the right paths set for links and was quite challenging as well.</p>
+<h2>Reflective</h2>
+
+<p>I got quite stuck during the part which needed to establish relationship between the three models, and even with the help of the TA it took me quite a while to realize what I missed. I need to better understand how to establish relationships between different models.</p>
+<h2>Interpretive</h2>
+
+<p>I learned two very important lessons today. One is that when building a form to enter information for a second-layer model, the code @MODEL isn’t sufficient, but needed to include [:MODEL1, @MODEL2]. For instance, in the second line below, <em>resume</em> is under <em>job</em>, and a form to upload <em>resume</em> would require square brackets around to establish a relationship with <em>job</em>:</p>
+<figure class="highlight erb"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div class="well"&gt;</div><div class="line">  &lt;%= form_for [:job, @resume], html: &#123; multipart: true &#125; do |f| %&gt;</div><div class="line">    &lt;%= f.label :name %&gt;</div><div class="line">    &lt;%= f.text_field :name %&gt;</div><div class="line">    &lt;%= f.label :attachment %&gt;</div><div class="line">    &lt;%= f.file_field :attachment %&gt;</div><div class="line">    &lt;%= f.submit "Save", class: "btn btn-primary" %&gt;</div><div class="line">  &lt;% end %&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>Another important lessons I learned today is that in a three-model situation, when uploading a <em>resume</em>, we need to also set <strong>which</strong> <em>job</em> and <em>user</em> the resume belonged to. This is established by the following under the `resumes_controller.rb’:</p>
+<figure class="highlight ruby"><figcaption><span>jobs_controller.rb</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create</span></span></div><div class="line">   @job = Job.find(params[<span class="symbol">:job_id</span>])</div><div class="line">   @resume = Resume.new(resume_params)</div><div class="line"></div><div class="line">   @resume.job = @job</div><div class="line">   @resume.user = current_user</div><div class="line"></div><div class="line">	<span class="keyword">if</span> @resume.save</div><div class="line">     redirect_to job_path(@job), <span class="symbol">notice:</span> <span class="string">"The resume <span class="subst">#&#123;@resume.name&#125;</span> has been uploaded."</span></div><div class="line">   <span class="keyword">else</span></div><div class="line">     render <span class="string">"new"</span></div><div class="line">   <span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>Essentially, if in the model there is a “belongs_to” relationship from one model to another, this needs also to be reflected in the controller.</p>
+<h2>Decisional</h2>
+
+<p>Today was overall productive as I was able to complete the assignment using Google (StackOverflow), the instructor’s PDF instructions, as well as the TA’s assistance. But I feel that I still lack understanding of the Ruby language and will begin to spend more time learning the fundamental aspects this week.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/23/2016-10-23-1032025/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1605,156 +1765,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/17/2016-10-17-homework/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="朱英楠David">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="DYZ.Life">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="DYZ.Life" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/17/2016-10-17-homework/" itemprop="url">
-                  Homework
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-10-17T05:23:00+08:00">
-                2016-10-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程学习/" itemprop="url" rel="index">
-                    <span itemprop="name">编程学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/2016/10/17/2016-10-17-homework/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/17/2016-10-17-homework/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Have managed to complete Medium Pre-Course Homework while I was traveling in Europe.</p>
-<p>I have managed to remember basic commands such as “rails s”, “git add .”, “git commit -m”, “rake db:migrate” etc.</p>
-<p>I had trouble with Gem installations, particularly on handling “sqlite3” (I placed it between a do/end command which caused problems).</p>
-<p>When everything flows and works, I felt great.</p>
-<p>I learned to find files faster by remembering the first couple letters in the file locations. I learned that Gem installation is an important and tricky part of programming.</p>
-<p>I will be more careful and follow instructions more closely going forward.</p>
-<p>— Update —</p>
-<p><img src="http://user-image.logdown.io/user/19391/blog/18870/post/1004357/2V8MeEngQi6OgUqv9CEg_Screen%20Shot%202016-10-17%20at%207.49.38%20PM.png" alt="Screen Shot 2016-10-17 at 7.49.38 PM.png"></p>
-<p>Quick suggestion: In this instruction, the last line “+end” is unnecessary, because the existing code already has an “end” for the previous “do” command, so adding “end” here would create 4 “end” commands while there are only 3 “do” commands.</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1800,7 +1810,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">118</span>
+              <span class="site-state-item-count">119</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1817,7 +1827,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">56</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

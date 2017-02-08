@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-07T10:36:32.000Z</updated>
+  <updated>2017-02-08T16:31:36.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2017-02-07-Font-Awesome部署后被CORS Policy屏蔽显示方框</title>
+    <title>用简单的方法生成表格（Table）</title>
+    <link href="http://yoursite.com/2017/02/09/2017-02-09-%E7%8F%8D%E6%83%9C%E7%94%9F%E5%91%BD%EF%BC%8C%E7%94%A8%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95%E7%94%9F%E6%88%90Table/"/>
+    <id>http://yoursite.com/2017/02/09/2017-02-09-珍惜生命，用简单的方法生成Table/</id>
+    <published>2017-02-08T16:10:26.000Z</published>
+    <updated>2017-02-08T16:31:36.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在写订单页面的时候，发现多态上面的订单页面简单简洁，想要模仿一个，后来发现写table写得我好头疼。</p>
+<p><img src="https://ww1.sinaimg.cn/large/006tKfTcly1fcjiq39y72j31360uswgz.jpg" alt=""></p>
+<p>于是随手Google一下发现了一个<a href="http://www.tablesgenerator.com/" target="_blank" rel="external">Table生成器</a>，试了一下发现挺好用，下面是简单教程：</p>
+<p>Table Generator拥有LaTeX, HTML, Text, Markdown, 和MediaWiki五种格式的表格。编程通常是用HTML，写博客用到Markdown。这里选择HTML。</p>
+<p>首先要告诉生成器要多少数量的行和列（随时可以添加删除），写入表格内容，然后点击生成：<br><img src="https://ww4.sinaimg.cn/large/006tKfTcly1fcjilpku9tj31ia0zoahu.jpg" alt=""></p>
+<p>生成器还自带不同颜色字体的主题，会生成CSS:</p>
+<p><img src="https://ww3.sinaimg.cn/large/006tKfTcly1fcjilvkqghj31h80wgwk9.jpg" alt=""></p>
+<p>点击生成（”Generate”）之后会产生一堆代码，直接复制粘贴（可以将<code>&lt;style&gt;</code>里面的CSS单独拷贝保存一个文件然后放入assets文件夹里）：</p>
+<p><img src="https://ww1.sinaimg.cn/large/006tKfTcly1fcjim14ou9j31kw0t6dvk.jpg" alt=""></p>
+<p>Markdown格式长这样：</p>
+<p><img src="https://ww3.sinaimg.cn/large/006tKfTcly1fcjimdi2a2j31440awwgh.jpg" alt=""></p>
+<p>如果你有自己从数据库导出的CSV文件或者想要保存现在的表格以后再使用：</p>
+<p><img src="https://ww4.sinaimg.cn/large/006tKfTcly1fcjimdowvgj30ao0d8js5.jpg" alt=""></p>
+<p>最终输出结果：</p>
+<p><img src="https://ww1.sinaimg.cn/large/006tKfTcly1fcjj0sh6pvj30hf093t9p.jpg" alt=""></p>
+<p>链接：<a href="http://www.tablesgenerator.com/" target="_blank" rel="external">www.tablegenerator.com</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在写订单页面的时候，发现多态上面的订单页面简单简洁，想要模仿一个，后来发现写table写得我好头疼。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://ww1.sinaimg.cn/large/006tKfTcly1fcjiq39y72j31360uswgz.jpg&quot; 
+    
+    </summary>
+    
+      <category term="功能" scheme="http://yoursite.com/categories/%E5%8A%9F%E8%83%BD/"/>
+    
+    
+      <category term="HTML" scheme="http://yoursite.com/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Font-Awesome部署后被CORS Policy屏蔽显示方框</title>
     <link href="http://yoursite.com/2017/02/07/2017-02-07-Font-Awesome%E9%83%A8%E7%BD%B2%E5%90%8E%E8%A2%ABCORS-Policy%E5%B1%8F%E8%94%BD%E6%98%BE%E7%A4%BA%E6%96%B9%E6%A1%86/"/>
     <id>http://yoursite.com/2017/02/07/2017-02-07-Font-Awesome部署后被CORS-Policy屏蔽显示方框/</id>
     <published>2017-02-07T10:24:22.000Z</published>
-    <updated>2017-02-07T10:36:32.000Z</updated>
+    <updated>2017-02-08T16:12:16.000Z</updated>
     
     <content type="html"><![CDATA[<p>跨来源资源共享（Cross-origin resource sharing，简称“CORS”）让我们网站在部署之后，Font-awesome的icon就都看不见了。</p>
 <p>解决办法有两种，要么将CDN链接的资源存到本地（划为同一个域名下），要么打开CORS。我选择了后者：</p>
@@ -815,65 +854,6 @@
 &lt;li&gt;今天将Redmine上的任务过了一遍，然后坤明和我花了大量时间将页面做成能够手机适配，其他组员负责将功能（表单、调用）持续完善&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;stro
-    
-    </summary>
-    
-      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Day01 Week07 - 开始Onboarding讨论</title>
-    <link href="http://yoursite.com/2016/11/29/2016-11-29-day01-week07-start-onboarding-discussion/"/>
-    <id>http://yoursite.com/2016/11/29/2016-11-29-day01-week07-start-onboarding-discussion/</id>
-    <published>2016-11-29T06:56:00.000Z</published>
-    <updated>2016-12-20T11:19:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
-<p>关于今天的课程, 你记得什么?</p>
-<ul>
-<li>今天Xdite讲了“Intro to Growth Hacking #2”的课程，重点讲述概念包括“黄金通道”、“功能组vs成长组”、用户分级和如何计算Project价值</li>
-<li>用户分级：core user / active user / casual user / uniques / channel，最重要为active user和casual user</li>
-<li>Project价值：重点开发low dev cost和high growth score的“Slam Dunks”以及low dev cost和low growth score的“Quickies”</li>
-<li>晚上Xdite分享了在硅谷O2O创业公司Spoon Rocket的故事和对O2O行业的见解</li>
-</ul>
-<p>完成了什么?</p>
-<ul>
-<li>小组花了很长时间各自写出Onboarding的文档，然后开会对照，综合出了我们的第一篇Onboarding文档</li>
-</ul>
-<p><strong>Reflective</strong><br>你要如何形容今天的情绪<br>今天的高峰是什么?</p>
-<ul>
-<li>Growth Hacking课程，很有收获</li>
-</ul>
-<p>今天的低点是什么?</p>
-<ul>
-<li>Onboarding文档写起来很难进入状态</li>
-</ul>
-<p><strong>Interpretive</strong></p>
-<p>我们今天学到了什么?</p>
-<ul>
-<li>Growth Hacking是非常scientific的exercise，完全可以用数据化方式来衡量，而不是感情用事地你一句我一句，大家各有各的想法和意见，有best practice做guideline绝对会大幅提升效率</li>
-</ul>
-<p>今天一个重要的领悟是什么?</p>
-<ul>
-<li>Onboarding思考需要十分周密，有很多细节是开发时候没有想到的。碰到有争执的地方，会等到用户反馈来进行下一步决策</li>
-</ul>
-<p><strong>Decisional</strong></p>
-<p>有哪些工作需要明天继续努力?</p>
-<ul>
-<li>明天会开始做手机适配，周三有个机会见真格和红杉的合伙人，打算把握机会秀一下</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;关于今天的课程, 你记得什么?&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;今天Xdite讲了“Intro to Growth Hacking #2”的课程，重点讲述概念包括“黄金通道”、“功能组vs成长组”、用户分级和如何
     
     </summary>
     

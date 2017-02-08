@@ -3,7 +3,14 @@
   
     
     <entry>
-      <title><![CDATA[2017-02-07-Font-Awesome部署后被CORS Policy屏蔽显示方框]]></title>
+      <title><![CDATA[用简单的方法生成表格（Table）]]></title>
+      <url>%2F2017%2F02%2F09%2F2017-02-09-%E7%8F%8D%E6%83%9C%E7%94%9F%E5%91%BD%EF%BC%8C%E7%94%A8%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95%E7%94%9F%E6%88%90Table%2F</url>
+      <content type="text"><![CDATA[今天在写订单页面的时候，发现多态上面的订单页面简单简洁，想要模仿一个，后来发现写table写得我好头疼。 于是随手Google一下发现了一个Table生成器，试了一下发现挺好用，下面是简单教程： Table Generator拥有LaTeX, HTML, Text, Markdown, 和MediaWiki五种格式的表格。编程通常是用HTML，写博客用到Markdown。这里选择HTML。 首先要告诉生成器要多少数量的行和列（随时可以添加删除），写入表格内容，然后点击生成： 生成器还自带不同颜色字体的主题，会生成CSS: 点击生成（”Generate”）之后会产生一堆代码，直接复制粘贴（可以将&lt;style&gt;里面的CSS单独拷贝保存一个文件然后放入assets文件夹里）： Markdown格式长这样： 如果你有自己从数据库导出的CSV文件或者想要保存现在的表格以后再使用： 最终输出结果： 链接：www.tablegenerator.com]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[Font-Awesome部署后被CORS Policy屏蔽显示方框]]></title>
       <url>%2F2017%2F02%2F07%2F2017-02-07-Font-Awesome%E9%83%A8%E7%BD%B2%E5%90%8E%E8%A2%ABCORS-Policy%E5%B1%8F%E8%94%BD%E6%98%BE%E7%A4%BA%E6%96%B9%E6%A1%86%2F</url>
       <content type="text"><![CDATA[跨来源资源共享（Cross-origin resource sharing，简称“CORS”）让我们网站在部署之后，Font-awesome的icon就都看不见了。 解决办法有两种，要么将CDN链接的资源存到本地（划为同一个域名下），要么打开CORS。我选择了后者： 在服务器端修改Nginx config，输入：sudo vi /opt/nginx/conf/nginx.conf 在server部分加入以下代码： 123location / &#123; add_header &apos;Access-Control-Allow-Origin&apos; *;&#125; 结果张这样： 然后重启Nginx server：sudo /etc/init.d/nginx restart 现在打开网页Font-awesome的icon就会正常显示了。如果没有的话可以清理一下游览器的cache。 资料参考：CORS原理开启CORS进阶方法]]></content>
     </entry>
