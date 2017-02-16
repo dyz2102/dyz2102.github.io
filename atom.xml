@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-08T16:31:36.000Z</updated>
+  <updated>2017-02-09T11:57:44.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>用简单的方法生成表格（Table）</title>
-    <link href="http://yoursite.com/2017/02/09/2017-02-09-%E7%8F%8D%E6%83%9C%E7%94%9F%E5%91%BD%EF%BC%8C%E7%94%A8%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95%E7%94%9F%E6%88%90Table/"/>
-    <id>http://yoursite.com/2017/02/09/2017-02-09-珍惜生命，用简单的方法生成Table/</id>
-    <published>2017-02-08T16:10:26.000Z</published>
-    <updated>2017-02-08T16:31:36.000Z</updated>
+    <link href="http://yoursite.com/2017/02/08/2017-02-08-%E7%8F%8D%E6%83%9C%E7%94%9F%E5%91%BD%EF%BC%8C%E7%94%A8%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95%E7%94%9F%E6%88%90Table/"/>
+    <id>http://yoursite.com/2017/02/08/2017-02-08-珍惜生命，用简单的方法生成Table/</id>
+    <published>2017-02-07T16:10:26.000Z</published>
+    <updated>2017-02-09T11:57:44.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天在写订单页面的时候，发现多态上面的订单页面简单简洁，想要模仿一个，后来发现写table写得我好头疼。</p>
 <p><img src="https://ww1.sinaimg.cn/large/006tKfTcly1fcjiq39y72j31360uswgz.jpg" alt=""></p>
@@ -91,7 +91,7 @@
     <link href="http://yoursite.com/2017/02/04/2017-02-04-%E5%A6%82%E4%BD%95%E8%AE%A9Carrierwave%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%90%8E%E8%AF%BB%E5%8F%96%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/"/>
     <id>http://yoursite.com/2017/02/04/2017-02-04-如何让Carrierwave上传图片后读取绝对路径/</id>
     <published>2017-02-04T05:17:44.000Z</published>
-    <updated>2017-02-07T11:00:48.000Z</updated>
+    <updated>2017-02-09T13:22:16.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近在做一个简历编辑器，需要将HTML转成PDF，用了个叫做wicked_pdf的gem。但发现图片一直显示不出来（用的Carrierwave上传至本地，因为前期用户也不多就没上AWS，因为用AWS生成PDF会变很慢）。</p>
 <p>原来是因为图片上传后路径显示的是相对路径，比如<code>/uploads/images/XXX.jpg</code>，但因为PDF完全在环境外发生所以读不到这个路径的图片。</p>
@@ -102,6 +102,8 @@
 <p>这样再上传图片的时候，URL就会变成<code>http://localhost:300/uploads/images/XXX.jpg</code>。</p>
 <p>上线版本也需要写：<br>config/environment/production.rb<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Rails.application.configure <span class="keyword">do</span></div><div class="line">...</div><div class="line">	config.asset_host = <span class="string">'http://example.com'</span> <span class="comment">#你的网站URL</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
 <p>这样再上传图片的时候，URL就会变成<code>http://example.com/uploads/images/XXX.jpg</code></p>
+<p><strong>但是！！</strong></p>
+<p><em>这么做之后，每一次部署的时候一定要确定asset_host的路径是正确的，比如新注册了一个domain或者新设立了一个服务器先用IP测试部署，忘记更改asset_host会导致整个网站的CSS全部无法读取（屡试不爽之后怒更…）。</em></p>
 <p>资料参考：<a href="http://stackoverflow.com/questions/5484809/full-url-for-an-image-path-in-rails-3/15011797#15011797" target="_blank" rel="external">Stackoverflow</a></p>
 ]]></content>
     

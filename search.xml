@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[用简单的方法生成表格（Table）]]></title>
-      <url>%2F2017%2F02%2F09%2F2017-02-09-%E7%8F%8D%E6%83%9C%E7%94%9F%E5%91%BD%EF%BC%8C%E7%94%A8%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95%E7%94%9F%E6%88%90Table%2F</url>
+      <url>%2F2017%2F02%2F08%2F2017-02-08-%E7%8F%8D%E6%83%9C%E7%94%9F%E5%91%BD%EF%BC%8C%E7%94%A8%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95%E7%94%9F%E6%88%90Table%2F</url>
       <content type="text"><![CDATA[今天在写订单页面的时候，发现多态上面的订单页面简单简洁，想要模仿一个，后来发现写table写得我好头疼。 于是随手Google一下发现了一个Table生成器，试了一下发现挺好用，下面是简单教程： Table Generator拥有LaTeX, HTML, Text, Markdown, 和MediaWiki五种格式的表格。编程通常是用HTML，写博客用到Markdown。这里选择HTML。 首先要告诉生成器要多少数量的行和列（随时可以添加删除），写入表格内容，然后点击生成： 生成器还自带不同颜色字体的主题，会生成CSS: 点击生成（”Generate”）之后会产生一堆代码，直接复制粘贴（可以将&lt;style&gt;里面的CSS单独拷贝保存一个文件然后放入assets文件夹里）： Markdown格式长这样： 如果你有自己从数据库导出的CSV文件或者想要保存现在的表格以后再使用： 最终输出结果： 链接：www.tablegenerator.com]]></content>
     </entry>
 
@@ -19,7 +19,7 @@
     <entry>
       <title><![CDATA[2017-02-04-如何让Carrierwave上传图片后读取绝对路径（WickedPDF需要）]]></title>
       <url>%2F2017%2F02%2F04%2F2017-02-04-%E5%A6%82%E4%BD%95%E8%AE%A9Carrierwave%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%90%8E%E8%AF%BB%E5%8F%96%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%2F</url>
-      <content type="text"><![CDATA[最近在做一个简历编辑器，需要将HTML转成PDF，用了个叫做wicked_pdf的gem。但发现图片一直显示不出来（用的Carrierwave上传至本地，因为前期用户也不多就没上AWS，因为用AWS生成PDF会变很慢）。 原来是因为图片上传后路径显示的是相对路径，比如/uploads/images/XXX.jpg，但因为PDF完全在环境外发生所以读不到这个路径的图片。 解决方法就是在Carrierwave的config中设置图片的”asset_host”，这样所有路径就会将asset_host的名字变为前缀。 先改Carrierwave config： config/initializers/carrierwave.rb1234CarrierWave.configure do |config|... config.asset_host = ActionController::Base.asset_hostend config/environment/development.rb1234Rails.application.configure do... config.asset_host = 'http://localhost:3000'end 这样再上传图片的时候，URL就会变成http://localhost:300/uploads/images/XXX.jpg。 上线版本也需要写：config/environment/production.rb1234Rails.application.configure do... config.asset_host = 'http://example.com' #你的网站URLend 这样再上传图片的时候，URL就会变成http://example.com/uploads/images/XXX.jpg 资料参考：Stackoverflow]]></content>
+      <content type="text"><![CDATA[最近在做一个简历编辑器，需要将HTML转成PDF，用了个叫做wicked_pdf的gem。但发现图片一直显示不出来（用的Carrierwave上传至本地，因为前期用户也不多就没上AWS，因为用AWS生成PDF会变很慢）。 原来是因为图片上传后路径显示的是相对路径，比如/uploads/images/XXX.jpg，但因为PDF完全在环境外发生所以读不到这个路径的图片。 解决方法就是在Carrierwave的config中设置图片的”asset_host”，这样所有路径就会将asset_host的名字变为前缀。 先改Carrierwave config： config/initializers/carrierwave.rb1234CarrierWave.configure do |config|... config.asset_host = ActionController::Base.asset_hostend config/environment/development.rb1234Rails.application.configure do... config.asset_host = 'http://localhost:3000'end 这样再上传图片的时候，URL就会变成http://localhost:300/uploads/images/XXX.jpg。 上线版本也需要写：config/environment/production.rb1234Rails.application.configure do... config.asset_host = 'http://example.com' #你的网站URLend 这样再上传图片的时候，URL就会变成http://example.com/uploads/images/XXX.jpg 但是！！ 这么做之后，每一次部署的时候一定要确定asset_host的路径是正确的，比如新注册了一个domain或者新设立了一个服务器先用IP测试部署，忘记更改asset_host会导致整个网站的CSS全部无法读取（屡试不爽之后怒更…）。 资料参考：Stackoverflow]]></content>
     </entry>
 
     

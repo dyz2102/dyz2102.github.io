@@ -98,7 +98,7 @@
 <meta property="og:description" content="最近在做一个简历编辑器，需要将HTML转成PDF，用了个叫做wicked_pdf的gem。但发现图片一直显示不出来（用的Carrierwave上传至本地，因为前期用户也不多就没上AWS，因为用AWS生成PDF会变很慢）。
 原来是因为图片上传后路径显示的是相对路径，比如/uploads/images/XXX.jpg，但因为PDF完全在环境外发生所以读不到这个路径的图片。
 解决方法就是在Carrier">
-<meta property="og:updated_time" content="2017-02-07T11:00:48.000Z">
+<meta property="og:updated_time" content="2017-02-09T13:22:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017-02-04-如何让Carrierwave上传图片后读取绝对路径（WickedPDF需要）">
 <meta name="twitter:description" content="最近在做一个简历编辑器，需要将HTML转成PDF，用了个叫做wicked_pdf的gem。但发现图片一直显示不出来（用的Carrierwave上传至本地，因为前期用户也不多就没上AWS，因为用AWS生成PDF会变很慢）。
@@ -296,7 +296,7 @@
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="朱英楠David">
     <meta itemprop="description" content="">
-    <meta itemprop="image" content="/uploads/tshirt_fullstack.jpg">
+    <meta itemprop="image" content="/uploads/DZ_bw_2_sm.JPG">
   </span>
 
   <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -398,6 +398,8 @@
 <p>这样再上传图片的时候，URL就会变成<code>http://localhost:300/uploads/images/XXX.jpg</code>。</p>
 <p>上线版本也需要写：<br>config/environment/production.rb<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Rails.application.configure <span class="keyword">do</span></div><div class="line">...</div><div class="line">	config.asset_host = <span class="string">'http://example.com'</span> <span class="comment">#你的网站URL</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure></p>
 <p>这样再上传图片的时候，URL就会变成<code>http://example.com/uploads/images/XXX.jpg</code></p>
+<p><strong>但是！！</strong></p>
+<p><em>这么做之后，每一次部署的时候一定要确定asset_host的路径是正确的，比如新注册了一个domain或者新设立了一个服务器先用IP测试部署，忘记更改asset_host会导致整个网站的CSS全部无法读取（屡试不爽之后怒更…）。</em></p>
 <p>资料参考：<a href="http://stackoverflow.com/questions/5484809/full-url-for-an-image-path-in-rails-3/15011797#15011797" target="_blank" rel="external">Stackoverflow</a></p>
 
       
@@ -523,7 +525,7 @@ var jiathis_config={
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/uploads/tshirt_fullstack.jpg"
+               src="/uploads/DZ_bw_2_sm.JPG"
                alt="朱英楠David" />
           <p class="site-author-name" itemprop="name">朱英楠David</p>
           <p class="site-description motion-element" itemprop="description">Aim for the moon, <br>  and land among the stars.</p>
