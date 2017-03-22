@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-09T11:57:44.000Z</updated>
+  <updated>2017-03-22T07:38:41.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>学编程半年后我终于搞懂了怎么调Bootstrap Button按下去的颜色</title>
+    <link href="http://yoursite.com/2017/03/22/2017-03-22-bootstrap-btn-colors/"/>
+    <id>http://yoursite.com/2017/03/22/2017-03-22-bootstrap-btn-colors/</id>
+    <published>2017-03-22T07:19:58.000Z</published>
+    <updated>2017-03-22T07:38:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Ok so I haven’t updated this blog for a while. But this is actually blog-worthy. The colors of my Bootstrap buttons have been driving me nuts. I found various online tools that had CSS help to<br>auto-generate bootstrap buttons, but I guess they all forgot to address one situation: the “active” + “focus” state.</p>
+<p>So I would have a nice customized btn that fits the orange theme of my site, the CSS looking like this:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$themeColor: #e55c1c;</div><div class="line">$themeColorLite: #ff6600;</div><div class="line">$background_grey: #f1f6fb;</div><div class="line">$themeGrey: #777;</div><div class="line">/* you can set the overall theme colors using the below code</div><div class="line">at the top of any CSS file. They'd only apply to the file though,</div><div class="line">so if you call these from other CSS, even if they're compiled by</div><div class="line">Rails they wouldn't be recognized.*/</div><div class="line"></div><div class="line"></div><div class="line">.btn-primary &#123;</div><div class="line">  min-width: auto;</div><div class="line">  font-size: 16px;</div><div class="line">  color: $background_grey !important;</div><div class="line">  background-color: $themeColor;</div><div class="line">  border-color: transparent;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.btn-primary:hover, .btn-primary:focus, .btn-primary.hover, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open &gt; .dropdown-toggle.btn-primary &#123;</div><div class="line">  background-color: #cd552b; //This is a darker orange when the mouse hovers over the button</div><div class="line">  border-color: transparent;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>So I’d get a nice Bootstrap button that looks something like this:<br><img src="https://ww1.sinaimg.cn/large/006tNc79ly1fdvnfwznt3j30ew0addgp.jpg" alt=""></p>
+<p>Great, except when I click on it, it turns BLUE.</p>
+<p><img src="https://ww1.sinaimg.cn/large/006tNc79ly1fdvni0en09j30cw08x0tw.jpg" alt=""></p>
+<p>This isn’t really noticeable, except when you hold the mouse click for over 30ms or so, which most people don’t do. So I just left it there since the day of my first-ever Rails app.</p>
+<p>A couple months later, this problem is still there. Right, because I’m my only front-end dev so if I don’t fix it, no one will. It was gradually driving me nuts.</p>
+<p>So I finally decided to do it the right way - I opened up Twitter Bootstrap CSS file and found the <code>btn-primary</code> class, and discovered that the state which was blue was when a button is both “active” and “focused”. So I needed to add the following:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus, .open &gt; .btn-primary.dropdown-toggle:hover, .open &gt; .btn-primary.dropdown-toggle:focus, .open &gt; .btn-primary.dropdown-toggle.focus &#123;</div><div class="line">	background-color: #983b1a; //I made an even darker shade of orange for when the mouse clicked on button</div><div class="line">  border-color: transparent;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>And finally, no more blue on my orange button. Hope after reading this you won’t have to endure with this for as long.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Ok so I haven’t updated this blog for a while. But this is actually blog-worthy. The colors of my Bootstrap buttons have been driving me 
+    
+    </summary>
+    
+      <category term="功能" scheme="http://yoursite.com/categories/%E5%8A%9F%E8%83%BD/"/>
+    
+    
+      <category term="HTML" scheme="http://yoursite.com/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
     <title>用简单的方法生成表格（Table）</title>
     <link href="http://yoursite.com/2017/02/08/2017-02-08-%E7%8F%8D%E6%83%9C%E7%94%9F%E5%91%BD%EF%BC%8C%E7%94%A8%E7%AE%80%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95%E7%94%9F%E6%88%90Table/"/>
     <id>http://yoursite.com/2017/02/08/2017-02-08-珍惜生命，用简单的方法生成Table/</id>
     <published>2017-02-07T16:10:26.000Z</published>
-    <updated>2017-02-09T11:57:44.000Z</updated>
+    <updated>2017-03-22T07:20:53.000Z</updated>
     
     <content type="html"><![CDATA[<p>今天在写订单页面的时候，发现多态上面的订单页面简单简洁，想要模仿一个，后来发现写table写得我好头疼。</p>
 <p><img src="https://ww1.sinaimg.cn/large/006tKfTcly1fcjiq39y72j31360uswgz.jpg" alt=""></p>
@@ -87,11 +120,11 @@
   </entry>
   
   <entry>
-    <title>2017-02-04-如何让Carrierwave上传图片后读取绝对路径（WickedPDF需要）</title>
+    <title>如何让Carrierwave上传图片后读取绝对路径（WickedPDF需要）</title>
     <link href="http://yoursite.com/2017/02/04/2017-02-04-%E5%A6%82%E4%BD%95%E8%AE%A9Carrierwave%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E5%90%8E%E8%AF%BB%E5%8F%96%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84/"/>
     <id>http://yoursite.com/2017/02/04/2017-02-04-如何让Carrierwave上传图片后读取绝对路径/</id>
     <published>2017-02-04T05:17:44.000Z</published>
-    <updated>2017-02-09T13:22:16.000Z</updated>
+    <updated>2017-03-22T07:20:44.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近在做一个简历编辑器，需要将HTML转成PDF，用了个叫做wicked_pdf的gem。但发现图片一直显示不出来（用的Carrierwave上传至本地，因为前期用户也不多就没上AWS，因为用AWS生成PDF会变很慢）。</p>
 <p>原来是因为图片上传后路径显示的是相对路径，比如<code>/uploads/images/XXX.jpg</code>，但因为PDF完全在环境外发生所以读不到这个路径的图片。</p>
@@ -801,61 +834,6 @@
 &lt;p&gt;完成了什么?&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;进一步完善Eat2gether网站功能
-    
-    </summary>
-    
-      <category term="编程学习" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-      <category term="全栈营52天" scheme="http://yoursite.com/tags/%E5%85%A8%E6%A0%88%E8%90%A552%E5%A4%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Day02 Week07 - 移动端适配</title>
-    <link href="http://yoursite.com/2016/11/29/2016-11-29-day02-week07-mobile-adapter/"/>
-    <id>http://yoursite.com/2016/11/29/2016-11-29-day02-week07-mobile-adapter/</id>
-    <published>2016-11-29T09:40:00.000Z</published>
-    <updated>2016-12-20T11:19:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>Objective</strong></p>
-<p>完成了什么?</p>
-<ul>
-<li>今天将Redmine上的任务过了一遍，然后坤明和我花了大量时间将页面做成能够手机适配，其他组员负责将功能（表单、调用）持续完善</li>
-</ul>
-<p><strong>Reflective</strong></p>
-<p>你要如何形容今天的情绪<br>今天的高峰是什么?</p>
-<ul>
-<li>做完Landing Page的手机适配之后</li>
-</ul>
-<p>今天的低点是什么?</p>
-<ul>
-<li>手机适配比较tricky，好几个地方卡主比较长时间，比如让nav-bar collapse回去的toggle指令，在韩晗帮助下一起figured out</li>
-</ul>
-<p><strong>Interpretive</strong></p>
-<p>我们今天学到了什么?</p>
-<ul>
-<li>手机适配需要提早做好，最好一开始就想好手机版/小荧幕的显示，后来在回来改代码效率低很多</li>
-</ul>
-<p>今天一个重要的领悟是什么?</p>
-<ul>
-<li>我们第五组从11月10日开始Eatgether这个项目，到明天整整20天。我1年前做的电商导购项目，从立项到内测（也就是我们现在的状态），花了近4个月时间，用了1个iOS、1个后端、1个后端实习生、1个产品经理、1个外包设计师、1个全职设计师，开了几十万的工资。有些傻逼的错误，如果不犯，永远不会让自己跪着去学习写第一行代码</li>
-</ul>
-<p><strong>Decisional</strong></p>
-<p>有哪些工作需要明天继续努力?</p>
-<ul>
-<li>明天需要完善几个页面的小适配问题，然后后天需要填写“看起来真实的”信息和图片才可以演示和测试</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;Objective&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;完成了什么?&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;今天将Redmine上的任务过了一遍，然后坤明和我花了大量时间将页面做成能够手机适配，其他组员负责将功能（表单、调用）持续完善&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;stro
     
     </summary>
     
